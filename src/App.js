@@ -1,10 +1,28 @@
 import { useState, useEffect } from 'react';
 import './css/game.css';
 import { Story } from 'inkjs';
+import Line from './components/Line';
+import ProgressButton from './components/ProgressButton';
+import Choices from './components/Choices';
+
+// Background images
+import mansion from './images/backgrounds/mansion.png';
+import newspaper from './images/backgrounds/newspaper.png';
+
+// Character portraits
+import uglyPerson from './images/characters/ugly-mess.png';
 
 function App() {
 	const [inkStory, setInkStory] = useState(false);
 	const [currentText, setCurrentText] = useState(false);
+	const [showMenu, setShowMenu] = useState(true);
+
+	const characters = {
+		'wenche': {
+			name: 'Wenche X',
+			portrait: uglyPerson,
+		}
+	};
 
 	useEffect(() => {
 		const json = require('./story.json');
@@ -14,20 +32,35 @@ function App() {
 	
 	const progress = () => {
 		if (inkStory.canContinue) {
+			if (showMenu) {
+				setShowMenu(false);
+			}
 			const text = inkStory.Continue();
 			const textObject = {
 				...currentText,
 				choices: [],
-				text: text,
+				text: text.trim(),
 			}
 			inkStory.currentTags.forEach(element => {
 				const tag = element.split(':');
-				textObject[tag[0]] = tag[1];
+				if (tag[0] === 'person' && characters[tag[1]]) {
+					textObject[tag[0]] = characters[tag[1]];
+				}
+				else {
+					textObject[tag[0]] = tag[1];
+
+				}
 			});
 			console.log(textObject);
 			setCurrentText(textObject);
+			if (!textObject.text) {
+				progress();
+			}
 		}
 		else if (inkStory.currentChoices.length > 0) {
+			if (showMenu) {
+				setShowMenu(false);
+			}
 			const textObject = {
 				...currentText,
 				choices: inkStory.currentChoices,
@@ -44,13 +77,14 @@ function App() {
 
 	return (
 		<>
-			{currentText.text ? <div className="story-line">
-				{currentText.person ? <div className="speaker-name">{currentText.person}</div> : false}
-				<div className="text">{currentText.text}</div>
-			</div> : false}
-			{(!currentText.choices || !currentText.choices.length) ? <button className="progress-button" onClick={() => progress()}></button> : false}
-			{(currentText.choices && currentText.choices.length) ? <div className="choices">
-				{currentText.choices.map((el, index) => <button key={index} className="option" onClick={() => makeChoice(index)}>{el.text}</button>)}
+			<div className="background"><img src={newspaper} /></div>
+			<Line currentText={currentText} />
+			<div className="portrait"><img src={uglyPerson} /></div>
+			<ProgressButton currentText={currentText} showMenu={showMenu} progress={progress} />
+			<Choices choices={currentText.choices} makeChoice={makeChoice} />
+			{showMenu ? <div className="start-menu">
+				<h1>TITTEL og den forbaska undertittelen</h1>
+				<button onClick={() => progress()}>Start</button>
 			</div> : false}
 		</>
 	)

@@ -1,27 +1,11 @@
-En bussjåfør! #stil:dialog #person:hamilton
+->kontoret
 
-En bussjåfør, Sir? #person:burr
+=== kontoret
+Det var ein grå og regnfull formiddag. Den typen grå og regnfull du berre finner i Oslo i april. #style:narrative
+Utanfor det dårleg isolerte vindauget 
+Eg hadde ikkje hatt ein kunde på mange dagar. Alt tyda på at dette kom til å bli ein særs uproduktiv dag.
+Iallfall fram til det banka på døra
+Unnskyld, kan eg kome inn? #style:dialog #person:wenche
 
-Det er en mann med godt humør. #person:hamilton
 
-Sure... #person:burr
-
-Men har han ikke godt humør?
-
-Hør; #person:hamilton
-
-Da er han ingen bussjåfør.
-
-Kjør. #person:burr
-
-+ Kjør til venstre
-+ Kjør til høgre
-+ Kjør rett fram
-
-- Kva er det du gjør?
-
-Det snør det snør
-
-Det er det det gjør, Sir
-
-    -> END
+->END
