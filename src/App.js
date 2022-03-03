@@ -56,6 +56,7 @@ function App() {
 			if (!textObject.text) {
 				progress();
 			}
+			console.log(inkStory.state);
 		}
 		else if (inkStory.currentChoices.length > 0) {
 			if (showMenu) {
