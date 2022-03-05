@@ -12,13 +12,14 @@
 	--orange-1: #edb458;
 	--orange-2: #e8871e;
 	--orange-3: #ffc482;
+	--white: #ffffff;
 	--yellow: #edd83d;
 
 	--text-font: 'Share Tech Mono';
 
 	--background-color:  var(--black-1);
 	--border-color: var(--pink-2);
-	--text-color: var(--pink-1);
+	--text-color: var(--white);
 	--box-background-color: var(--black-2);
 }
 
@@ -51,6 +52,7 @@ button {
 	z-index: 5;
 
 	&.style-narrative {
+		font-family: Garamond, serif;
 		top: 0;
 		margin: 0;
 		background: var(--black-2);
@@ -99,6 +101,10 @@ button {
 		width: 100vw;
 		object-fit: contain;
 		object-position: right bottom;
+		filter: drop-shadow(.2rem .2rem .2rem #000000)
+		drop-shadow(.2rem -.2rem .2rem #000000)
+		drop-shadow(-.2rem .2rem .2rem #000000)
+		drop-shadow(-.2rem -.2rem .2rem #000000);
 	}
 }
 
@@ -126,6 +132,11 @@ button {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	button {
+		&:active, &:focus {
+			background: var(--pink-2);
+		}
+	}
 }
 
 .background {
