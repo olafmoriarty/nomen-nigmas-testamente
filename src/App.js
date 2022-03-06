@@ -18,13 +18,14 @@ function App() {
 	const [inkStory, setInkStory] = useState(false);
 	const [currentText, setCurrentText] = useState(false);
 	const [showMenu, setShowMenu] = useState(true);
+	const [storyLog, setStoryLog] = useState([]);
 
 	const tittel = 'Nomen Nigmas testamente';
 
 	const characters = {
 		'wenche': {
 			name: 'Wenche X',
-			portrait: uglyPerson,
+			portrait: "/images/characters/ugly-mess.png",
 			color: "#00ff00",
 		}
 	};
@@ -43,6 +44,8 @@ function App() {
 			const text = inkStory.Continue();
 			const textObject = {
 				...currentText,
+				input: false,
+				var: '',
 				choices: [],
 				text: text.trim(),
 			}
@@ -61,10 +64,15 @@ function App() {
 
 				}
 			});
-			console.log(textObject);
 			setCurrentText(textObject);
-			if (!textObject.text) {
+			if (!textObject.text || textObject.text === 'BLANK') {
 				progress();
+			}
+			else {
+				// If text exists, add it to the story log.
+				const newStoryLog = [...storyLog, textObject];
+				setStoryLog(newStoryLog);
+				console.log(newStoryLog);
 			}
 			console.log(inkStory.state.ToJson());
 		}
@@ -81,6 +89,11 @@ function App() {
 		}
 	}
 
+	const changeVariable = (name, value) => {
+		inkStory.variablesState[name] = value;
+		progress();
+	}
+
 	const makeChoice = choice => {
 		inkStory.ChooseChoiceIndex(choice);
 		progress();
@@ -89,7 +102,7 @@ function App() {
 	return (
 		<>
 			{<div className="background"><img src={office} /></div>}
-			<Line currentText={currentText} />
+			<Line currentText={currentText} changeVariable={changeVariable} />
 			<Portrait currentText={currentText} />
 			<ProgressButton currentText={currentText} showMenu={showMenu} progress={progress} />
 			<Choices choices={currentText.choices} makeChoice={makeChoice} />

@@ -57,6 +57,7 @@ button {
 		margin: 0;
 		background: var(--black-2);
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
@@ -66,6 +67,14 @@ button {
 		.text {
 			border: none;
 			background: transparent;
+		}
+
+		.text-input {
+			font-size: 1rem;
+			display: block;
+			width: 100%;
+			padding: .5rem;
+			text-align: center;
 		}
 	}
 

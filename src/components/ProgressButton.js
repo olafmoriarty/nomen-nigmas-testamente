@@ -4,7 +4,7 @@ function ProgressButton(props) {
 
 	const {currentText, progress, showMenu} = props;
 
-	if ((currentText.choices && currentText.choices.length) || showMenu) {
+	if ((currentText.choices && currentText.choices.length) || showMenu || currentText.input) {
 		return false;
 	}
 
