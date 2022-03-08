@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import './css/game.css';
 import { Story } from 'inkjs';
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
+  import { faComments } from '@fortawesome/free-solid-svg-icons'
+
 import Line from './components/Line';
 import ProgressButton from './components/ProgressButton';
 import Choices from './components/Choices';
 import Portrait from './components/Portrait';
+import StoryLog from './components/StoryLog';
 
 // Background images
 import mansion from './images/backgrounds/mansion.png';
@@ -19,6 +23,7 @@ function App() {
 	const [currentText, setCurrentText] = useState(false);
 	const [showMenu, setShowMenu] = useState(true);
 	const [storyLog, setStoryLog] = useState([]);
+	const [overlay, setOverlay] = useState(0);
 
 	const tittel = 'Nomen Nigmas testamente';
 
@@ -70,7 +75,7 @@ function App() {
 			}
 			else {
 				// If text exists, add it to the story log.
-				const newStoryLog = [...storyLog, textObject];
+				const newStoryLog = [textObject, ...storyLog];
 				setStoryLog(newStoryLog);
 				console.log(newStoryLog);
 			}
@@ -99,8 +104,20 @@ function App() {
 		progress();
 	}
 
+	const toggleOverlay = (newOverlay) => {
+		if (overlay === newOverlay) {
+			setOverlay(0);
+		}
+		else {
+			setOverlay(newOverlay);
+		}
+	}
+
 	return (
 		<>
+			<div className="top-menu">
+				<button onClick={() => toggleOverlay('log')}><Icon icon={faComments} /></button>
+			</div>
 			{<div className="background"><img src={office} /></div>}
 			<Line currentText={currentText} changeVariable={changeVariable} />
 			<Portrait currentText={currentText} />
@@ -110,6 +127,7 @@ function App() {
 				<h1>{tittel}</h1>
 				<button onClick={() => progress()}>Start</button>
 			</div> : false}
+			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
 		</>
 	)
 }

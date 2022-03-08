@@ -1,5 +1,4 @@
 LIST inv = visittkort, testamente
-VAR namn=""
 
 // Historia starter på kontoret, så gå dit
 ->kontoret
@@ -16,7 +15,7 @@ VAR namn=""
     Det står ikkje ei e-postadresse her. Bah, typisk.
     Det står eit telefonnummer nederst på kortet. Eg hatar å ringe folk, så å bruke det blir ikkje aktuelt.
 + ->
-Lommene mine er tomme. ->->
+Lommene mine var tomme. ->->
 - ->->
 
 === kontoret
@@ -28,12 +27,10 @@ Lommene mine er tomme. ->->
 + [I lommene mine hadde eg ...] ->inventory->kontoret
 
 = first
-Kva er ditt namn? #input:true #var:namn #style:narrative
-Hei, {namn}!
 Det var ein grå og regnfull formiddag. Den typen grå og regnfull du berre finner i Oslo i april. #style:narrative
 Utanfor det dårleg isolerte kontorvindauget var gata allereie fylt av bilar på veg til påskefjellet, og stressa menneske løp inn og ut av butikkar for å kjøpe marsipan eller skismurning eller noko anna dei berre måtte ha til påske.
 Eg hadde ikkje hatt ein kunde på mange dagar. Alt tyda på at dette kom til å bli ein særs uproduktiv dag.
-Det forandra seg brått og storslagent då det ut av det blå banka på døra, og ei kvinne i førtiåra spaserte inn.
+Men det forandra seg brått og storslagent då det ut av det blå banka på døra, og ei kvinne i førtiåra spaserte inn.
 God dag. Kan eg kome inn? #style:dialog #person:wenche
 Ho venta ikkje på eit svar. Ho hadde neppe tatt nei for eit svar uansett. Den rakrygga haldninga, det overlegne blikket og kjolen som nærmest dufta av tusendollarsedlar sendte klare signal om at dette var ein person som var svært vant til å få det som ho ville.  #style:narrative
 Ho fiska eit visittkort opp av veska, og la det på skrivebordet.
@@ -100,7 +97,7 @@ Redaksjonsområdet til
 ->END
 
 === snobbediengen
-Eg var framme.
+{!Eg var framme.}
 + [Eg bestemte meg for å dra til ...] ->map
 + [I lommene mine hadde eg ...] ->inventory->snobbediengen
 ->END

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Share+Tech+Mono&display=swap');
 
 :root {
 	--black-1: #000000;
@@ -23,12 +23,19 @@
 	--box-background-color: var(--black-2);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: var(--background-color);
 	box-sizing: border-box;
 	font-family: var(--text-font);
 }
 
+p {
+	margin: 0;
+}
 button {
 	display: block;
 	width: 100%;
@@ -53,7 +60,7 @@ button {
 
 	&.style-narrative {
 		font-family: Garamond, serif;
-		top: 0;
+		top: 2rem;
 		margin: 0;
 		background: var(--black-2);
 		display: flex;
@@ -69,12 +76,24 @@ button {
 			background: transparent;
 		}
 
+		form {
+			width: 100%;
+			padding: 0 1rem;
+		}
 		.text-input {
 			font-size: 1rem;
 			display: block;
 			width: 100%;
-			padding: .5rem;
+			padding: .2rem .5rem;
 			text-align: center;
+			margin-bottom: .5rem;
+			font-family: "Shadows Into Light";
+			color: var(--yellow);
+			background: var(--black-2);
+		}
+		.input-submit-button {
+			width: 100%;
+			display: block;
 		}
 	}
 
@@ -120,7 +139,7 @@ button {
 .progress-button {
 	position: absolute;
 	z-index: 10;
-	top: 0;
+	top: 2rem;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -171,8 +190,67 @@ button {
 	text-align: center;
 	left: 1rem;
 	right: 1rem;
-	top: 2rem;
+	top: 2.5rem;
 	box-shadow: .5rem .5rem .5rem #2b3a67;
+}
+
+.story-log {
+	position: absolute;
+	z-index: 10;
+	display: flex;
+	flex-direction: column-reverse;
+	top: 2.5rem;
+	left: .5rem;
+	right: .5rem;
+	bottom: .5rem;
+	background: var(--black-2);
+	color: var(--white);
+	padding: .5rem;
+	border: solid 2px var(--cyan);
+	overflow: auto;
+
+	.log-line {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-bottom: 1rem;
+	}
+	.log-speaker-name {
+		font-weight: bold;
+		color: var(--orange-1);
+		padding-right: .5rem;
+	}
+	.log-style-narrative {
+		font-style: italic;
+	}
+	.log-style-dialog .log-line-text {
+		&::before, &::after {
+			content:"\"";
+		}
+	}
+}
+
+.top-menu {
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2rem;
+	color: var(--white);
+	background: var(--black-2);
+	display: flex;
+	border-bottom: solid 1px var(--cyan);
+	button {
+		display: block;
+		font-size: 1rem;
+		color: var(--white);
+		background: transparent;
+		box-shadow: none;
+		border: none;
+		padding: .5rem;
+		margin-bottom: 0;
+	}
 }
 
 @media screen and (min-width: 800px) {
@@ -192,5 +270,16 @@ button {
 	.choices {
 		position: static;
 		min-width: 50%;
+	}
+
+	.story-log {
+		font-size: .5rem;
+		.log-line {
+			flex-direction: row;
+		}
+		.log-speaker-name {
+			min-width: 20%;
+			text-align: right;
+		}
 	}
 }

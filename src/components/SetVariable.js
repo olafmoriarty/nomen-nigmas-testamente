@@ -21,7 +21,7 @@ function SetVariable(props) {
 	return (
 		<form onSubmit={e => onSubmit(e)}>
 			<input type="text" className="text-input" value={input} onChange={e => updateInput(e)} />
-			<button type="submit" />
+			<button className="input-submit-button" type="submit">Svar</button>
 		</form>
 	)
 }
