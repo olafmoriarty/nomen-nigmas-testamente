@@ -230,6 +230,71 @@ button {
 	}
 }
 
+.credits {
+	position: absolute;
+	z-index: 30;
+	background: #000000;
+	top: 2rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	color: var(--white);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+
+	section {
+		animation-name: scroll-in-and-out;
+		animation-duration: 5s;
+	}
+
+	.thanks-for-playing {
+		animation-name: scroll-in;
+		animation-duration: 1s;
+	}
+
+	h2 {
+		color: var(--yellow);
+		font-size: 1rem;
+		margin: 2rem 0 .5rem;
+	}
+	p {
+		margin: 0 0 .5rem;
+	}
+	a {
+		color: var(--cyan);
+	}
+
+	.developed-by {
+		font-size: .8rem;
+	}
+	.next-credits-page-button {
+		display: block;
+		position: absolute;
+		bottom: .5rem;
+		right: .5rem;
+		border: none;
+		width: initial;
+		color: var(--white);
+		background: transparent;
+		box-shadow: none;
+	}
+}
+
+@keyframes scroll-in-and-out {
+	0% {transform: translateY(100vh);}
+	20% {transform: translateY(0);}
+	80% {transform: translateY(0);}
+	100% {transform: translateY(-100vh);}
+}
+@keyframes scroll-in {
+	0% {transform: translateY(100vh);}
+	100% {transform: translateY(0);}
+}
+
 .top-menu {
 	position: absolute;
 	z-index: 20;

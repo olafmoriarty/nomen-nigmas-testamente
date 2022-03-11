@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './css/game.css';
 import { Story } from 'inkjs';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faRectangleList } from '@fortawesome/free-solid-svg-icons';
 
 import Line from './components/Line';
 import ProgressButton from './components/ProgressButton';
@@ -12,9 +12,10 @@ import StoryLog from './components/StoryLog';
 
 // Background images
 import office from './images/backgrounds/office.png';
+import Credits from './components/Credits';
 
 function Game(props) {
-	const {json, title, characters} = props;
+	const {json, title, characters, credits} = props;
 
 	const [inkStory, setInkStory] = useState(false);
 	const [currentText, setCurrentText] = useState(false);
@@ -100,7 +101,8 @@ function Game(props) {
 	return (
 		<>
 			<div className="top-menu">
-				<button onClick={() => toggleOverlay('log')}><Icon icon={faComments} /></button>
+				{storyLog.length ? <button onClick={() => toggleOverlay('log')}><Icon icon={faComments} /></button> : false}
+				<button onClick={() => toggleOverlay('credits')}><Icon icon={faRectangleList} /></button>
 			</div>
 			{<div className="background"><img src={office} alt="" /></div>}
 			<Line currentText={currentText} changeVariable={changeVariable} />
@@ -112,6 +114,7 @@ function Game(props) {
 				<button onClick={() => progress()}>Start</button>
 			</div> : false}
 			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
+			{overlay === 'credits' ? <Credits credits={credits} setOverlay={setOverlay} /> : false}
 		</>
 	)
 
