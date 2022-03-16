@@ -12,11 +12,16 @@ VAR puzzle1 = false
 + {inv ? mobil} [Mobiltelefonen]
     Eg fann fram mobilen, skrolla raskt gjennom Twitter, og la han tilbake i lomma.
 + {inv ? testamente} [Theodor Krankelfnaas' testamente]
-    I denne konvolutten lå testamentet til Theodor Krankelfnaas. Eit testamente som, visstnok, innehaldt ei gåte som leia til ein skatt.
+    I denne konvolutten lå testamentet til Theodor Krankelfnaas. Eit testamente som, visstnok, innehaldt ei gåte som leia til ein skatt. #style:narrative
     Eg burde levere dette tilbake til fru Krankelfnaas så fort som mogleg, men ...
     ... det skader vel ingen om eg berre tar ein kjapp titt?
     ++ [Les testamentet]
         MINIGAME #minigame:puzzle1
+        {puzzle1:
+            Akersgata. Det gav perfekt meining.
+            -> kontoret
+        }
+        Eg hadde ikkje peiling på kva eg skulle gjera.
     ++ [La vera]
 + {inv ? visittkort} [Fru Krankelfnaas' visittkort]
     På visittkortet står det eit namn - "Wenche Krankelfnaas" - og ei adresse - "Snobbediengen 3, Oslo". #style:narrative

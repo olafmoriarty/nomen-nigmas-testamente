@@ -11,7 +11,8 @@ This component
 * Displays different background images depending on where you are in the story (**NOT FINISHED**)
 * Adds a story log that the player can open at any time
 * Adds text inputs that lets you set variables in your Ink file
-* Lets you add credits to your game (**NOT FINISHED**)
+* Lets you add credits to your game
+* Lets you add interactive minigames to your game
 * Lets your player load and save their game state (**NOT FINISHED**)
 
 ## Writing your story in Inky
@@ -31,6 +32,8 @@ The component is used in the following way:
         json={json}
         characters={characters}
         title="The title of the game!"
+        credits={credits}
+        minigames={minigames}
     />
 
 At the time of writing this, all attributes are mandatory. At the time of publishing, the `json` attribute will be mandatory and the others will be optional.
@@ -63,6 +66,14 @@ If a character referenced in the Ink file (as described below) is found in this 
     Sounds good to me! #style:dialog #person:john
 
 ... John's name and portrait will be displayed on screen.
+
+### `minigames`
+A javascript object containing all the minigames you wish to include in the game, in the following format:
+
+    {
+        cardGame: <CardGame />,
+        jigsawPuzzle: <Jigsaw />,
+    }
 
 ## Ink file setup
 The component uses the tags provided in your ink script for formatting and stuff.
@@ -119,3 +130,38 @@ Use the `input` tag to let the player enter text in an input field and save this
     The prime minister has been dead for ten years. #style:dialog person:receptionist
     Also, this is a Starbucks.
 
+### `minigame:[minigame-name]`
+In this context, a "minigame" is any chunk of gameplay that's not made in Ink, that you wish to include in your game that your player has to finish *) before the ink story continues. Basically every time you want your player to do something that it's easier for you to code in a React component than it is to create in Ink. From your minigame you can then alter Ink variables or just tell the game to continue.
+
+In the example below, imagine I have set up a minigame containing a small racing game, and that inside this minigame I have a function that sets the Ink variable `arcadeGameScore` to the score you get:
+
+    VAR arcadeGameScore = 0
+    
+    I walked up to the arcade cabinet. The title screen, "CAIRO KART", flashed towards me, luring me in.
+    + [Play game!]
+        MINIGAME #minigame:racing
+        I got {arcadeGameScore} points.
+    + [Nah, don't do it.]
+        I decided against it. It looked like a lot of fun, though.
+    - Then, I sat back down.
+
+Note that as long as a `minigame` tag is present, the text itself will not be displayed to the player, so you can write anything you want on that line. (In the example above, I've written "MINIGAME".)
+
+*) Since the minigame is made by you, "Finish" can mean whatever you want, including clicking "I give up". If so, adding a conditional right after the minigame to check whether the player completed the goal or not is a good idea.
+
+For coding the minigame itself, see "Anatomy of a minigame" below.
+
+### Tags without text
+Ink requires there to be a line of text for you to register tags. As this component stores tags for future use, you may want to set a tag without outputting any text, for example if you wish to alter the tags before displaying a list of options. As a workaround, you can use the text BLANK to set the tags and then progress in the story without pausing to display text, like this:
+
+    // The following example changes the CSS style from dialog to narrative and clear the person portrait before displaying the beverage options.
+    And what would you like to drink? #style:dialog #person:waitress
+    BLANK #style:narrative #person:
+    + Coffee.
+    + Tea.
+    + Lemonade.
+
+(This is not very useful at the moment, but as the plan is to expand the component to also let you change backgrounds and soundtracks using tags, something like this could come in very handy.)
+
+## Anatomy of a minigame
+*(To be written later.)*
