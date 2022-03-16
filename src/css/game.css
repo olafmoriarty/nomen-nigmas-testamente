@@ -184,7 +184,7 @@ button {
 
 .story-log {
   position: absolute;
-  z-index: 10;
+  z-index: 25;
   display: flex;
   flex-direction: column-reverse;
   top: 2.5rem;
@@ -252,6 +252,8 @@ button {
 }
 .credits .developed-by {
   font-size: 0.8rem;
+  font-family: "Shadows Into Light";
+  color: var(--pink-2);
 }
 .credits .next-credits-page-button {
   display: block;
@@ -310,6 +312,29 @@ button {
   margin-bottom: 0;
 }
 
+.minigame {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  padding: 1rem;
+  overflow: auto;
+  text-align: center;
+  background: var(--white);
+  font-family: Garamond, serif;
+}
+.minigame h1 {
+  font-size: 1.5rem;
+}
+.minigame h2 {
+  font-size: 1.25rem;
+}
+.minigame p, .minigame ol li {
+  margin-bottom: 0.8rem;
+}
+
 @media screen and (min-width: 800px) {
   html {
     font-size: 200%;
@@ -339,6 +364,148 @@ button {
     min-width: 20%;
     text-align: right;
   }
+}
+/* NNT */
+.puzzle {
+  --number-of-letters: 10;
+}
+
+.puzzle[data-answer-length="3"] {
+  --number-of-letters: 3;
+}
+
+.puzzle[data-answer-length="4"] {
+  --number-of-letters: 4;
+}
+
+.puzzle[data-answer-length="5"] {
+  --number-of-letters: 5;
+}
+
+.puzzle[data-answer-length="6"] {
+  --number-of-letters: 6;
+}
+
+.puzzle[data-answer-length="7"] {
+  --number-of-letters: 7;
+}
+
+.puzzle[data-answer-length="8"] {
+  --number-of-letters: 8;
+}
+
+.puzzle[data-answer-length="9"] {
+  --number-of-letters: 9;
+}
+
+.puzzle[data-answer-length="10"] {
+  --number-of-letters: 10;
+}
+
+.puzzle[data-answer-length="11"] {
+  --number-of-letters: 11;
+}
+
+.puzzle[data-answer-length="12"] {
+  --number-of-letters: 12;
+}
+
+.puzzle[data-answer-length="13"] {
+  --number-of-letters: 13;
+}
+
+.puzzle[data-answer-length="14"] {
+  --number-of-letters: 14;
+}
+
+.puzzle[data-answer-length="15"] {
+  --number-of-letters: 15;
+}
+
+.puzzle-answer-button {
+  margin-top: 2rem;
+}
+
+.puzzle-answer-wrapper {
+  background: var(--black-2);
+  position: fixed;
+  display: flex;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.puzzle-answer-wrapper h2 {
+  color: var(--yellow);
+}
+
+.puzzle-answer {
+  position: relative;
+  display: flex;
+  --letter-box-width: calc((100vw - ((var(--number-of-letters) - 1) * .4rem) - 2rem) / var(--number-of-letters));
+  margin-bottom: 1rem;
+}
+
+.puzzle-answer-letter {
+  font-family: "Shadows Into Light";
+  margin: 0.2rem;
+  background: var(--white);
+  width: var(--letter-box-width);
+  height: var(--letter-box-width);
+  line-height: var(--letter-box-width);
+  font-size: calc(var(--letter-box-width) * 0.6);
+  font-weight: bold;
+  border: solid 0.1rem var(--blue-1);
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--black-1);
+}
+.puzzle-answer-letter.active {
+  animation-name: blinking-letter;
+  animation-duration: 0.6s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.puzzle-answer-letter.space {
+  background: var(--black-1);
+  color: var(--white);
+}
+
+@keyframes blinking-letter {
+  0% {
+    background: var(--white);
+  }
+  40% {
+    background: var(--white);
+  }
+  60% {
+    background: var(--pink-2);
+  }
+  100% {
+    background: var(--pink-2);
+  }
+}
+.puzzle-answer-input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+button.link {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  color: var(--blue-2);
+  text-decoration: underline;
+}
+
+.puzzle .link {
+  font-family: Garamond, serif;
 }
 
 /*# sourceMappingURL=game.css.map */

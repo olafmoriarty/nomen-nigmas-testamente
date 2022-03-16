@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import './css/game.css';
 import { Story } from 'inkjs';
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { faComments, faRectangleList } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faFloppyDisk, faRectangleList } from '@fortawesome/free-solid-svg-icons';
 
 import Line from './components/Line';
 import ProgressButton from './components/ProgressButton';
@@ -13,9 +13,10 @@ import StoryLog from './components/StoryLog';
 // Background images
 import office from './images/backgrounds/office.png';
 import Credits from './components/Credits';
+import Minigame from './components/Minigame';
 
 function Game(props) {
-	const {json, title, characters, credits} = props;
+	const {json, title, characters, credits, minigames} = props;
 
 	const [inkStory, setInkStory] = useState(false);
 	const [currentText, setCurrentText] = useState(false);
@@ -37,6 +38,7 @@ function Game(props) {
 			const textObject = {
 				...currentText,
 				input: false,
+				minigame: false,
 				var: '',
 				choices: [],
 				text: text.trim(),
@@ -56,16 +58,18 @@ function Game(props) {
 
 				}
 			});
+			if (textObject.text === 'BLANK' || textObject.minigame) {
+				textObject.text = '';
+			}
 			setCurrentText(textObject);
-			if (!textObject.text || textObject.text === 'BLANK') {
+			if (!textObject.text && !textObject.minigame) {
 				progress();
 			}
-			else {
+			else if (!textObject.minigame) {
 				// If text exists, add it to the story log.
 				const newStoryLog = [textObject, ...storyLog];
 				setStoryLog(newStoryLog);
 			}
-			// console.log(inkStory.state.ToJson());
 		}
 		else if (inkStory.currentChoices.length > 0) {
 			if (showMenu) {
@@ -73,15 +77,18 @@ function Game(props) {
 			}
 			const textObject = {
 				...currentText,
+				minigame: false,
 				choices: inkStory.currentChoices,
 			}
 			setCurrentText(textObject);
 		}
 	}
 
-	const changeVariable = (name, value) => {
+	const changeVariable = (name, value, doProgress = true) => {
 		inkStory.variablesState[name] = value;
-		progress();
+		if (doProgress) {
+			progress();
+		}
 	}
 
 	const makeChoice = choice => {
@@ -102,6 +109,7 @@ function Game(props) {
 		<>
 			<div className="top-menu">
 				{storyLog.length ? <button onClick={() => toggleOverlay('log')}><Icon icon={faComments} /></button> : false}
+				<button onClick={() => toggleOverlay('load-save')}><Icon icon={faFloppyDisk} /></button>
 				<button onClick={() => toggleOverlay('credits')}><Icon icon={faRectangleList} /></button>
 			</div>
 			{<div className="background"><img src={office} alt="" /></div>}
@@ -115,6 +123,7 @@ function Game(props) {
 			</div> : false}
 			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
 			{overlay === 'credits' ? <Credits credits={credits} setOverlay={setOverlay} /> : false}
+			<Minigame currentText={currentText} minigames={minigames} progress={progress} changeVariable={changeVariable} />
 		</>
 	)
 

@@ -1,4 +1,5 @@
-LIST inv = visittkort, testamente
+LIST inv = (mobil), visittkort, testamente
+VAR puzzle1 = false
 
 // Historia starter på kontoret, så gå dit
 ->kontoret
@@ -8,8 +9,15 @@ LIST inv = visittkort, testamente
 + {inv ? visittkort} [Slott Krankelfnaas] ->snobbediengen
 
 === inventory
++ {inv ? mobil} [Mobiltelefonen]
+    Eg fann fram mobilen, skrolla raskt gjennom Twitter, og la han tilbake i lomma.
 + {inv ? testamente} [Theodor Krankelfnaas' testamente]
-    
+    I denne konvolutten lå testamentet til Theodor Krankelfnaas. Eit testamente som, visstnok, innehaldt ei gåte som leia til ein skatt.
+    Eg burde levere dette tilbake til fru Krankelfnaas så fort som mogleg, men ...
+    ... det skader vel ingen om eg berre tar ein kjapp titt?
+    ++ [Les testamentet]
+        MINIGAME #minigame:puzzle1
+    ++ [La vera]
 + {inv ? visittkort} [Fru Krankelfnaas' visittkort]
     På visittkortet står det eit namn - "Wenche Krankelfnaas" - og ei adresse - "Snobbediengen 3, Oslo". #style:narrative
     Det står ikkje ei e-postadresse her. Bah, typisk.
@@ -27,6 +35,9 @@ Lommene mine var tomme. ->->
 + [I lommene mine hadde eg ...] ->inventory->kontoret
 
 = first
++ Skip! ->kontoret
++ Les starten
+-
 Det var ein grå og regnfull formiddag. Den typen grå og regnfull du berre finner i Oslo i april. #style:narrative
 Utanfor det dårleg isolerte kontorvindauget var gata allereie fylt av bilar på veg til påskefjellet, og stressa menneske løp inn og ut av butikkar for å kjøpe marsipan eller skismurning eller noko anna dei berre måtte ha til påske.
 Eg hadde ikkje hatt ein kunde på mange dagar. Alt tyda på at dette kom til å bli ein særs uproduktiv dag.
@@ -98,6 +109,13 @@ Redaksjonsområdet til
 
 === snobbediengen
 {!Eg var framme.}
++ [Eg ringte på døra.] -> butler
 + [Eg bestemte meg for å dra til ...] ->map
 + [I lommene mine hadde eg ...] ->inventory->snobbediengen
+
+= butler
+Eg gjekk fram til den majestetiske døra og la fingeren på dørklokka. Ganske snart opna døra seg, og ein høg figur i grå dress stod på den andre sida av dørstokken og såg ned på meg. #style:narrative
+God dag. Korleis kan eg hjelpe deg? #style:dialog #person:butler
++ Er Wenche Krankelfnaas her? #person:meg
+- Hmm
 ->END
