@@ -35,6 +35,7 @@ function Game(props) {
 		if (autosave) {
 			setStoryLog(autosave.storyLog);
 			setCurrentText(autosave.storyLog[0]);
+			setGameObject(autosave.gameObject);
 		}
 
 		const ink = new Story(json);
@@ -108,7 +109,6 @@ function Game(props) {
 					timestamp: timestamp(),
 					location: false,
 				};
-				console.log(saveFile);
 				localStorage.setItem('autosave', JSON.stringify(saveFile));
 			}
 		}
@@ -129,6 +129,9 @@ function Game(props) {
 		inkStory.state.LoadJson(emptyInkSave);
 		setCurrentText(false);
 		setStoryLog([]);
+		setOverlay(0);
+		setShowMenu(true);
+		localStorage.removeItem('autosave');
 	};
 
 	const changeVariable = (name, value, doProgress = true) => {
@@ -164,7 +167,7 @@ function Game(props) {
 			</Helmet> : false}
 			<div className="top-menu">
 				{storyLog.length ? <button onClick={() => toggleOverlay('log')}><Icon icon={faComments} /></button> : false}
-				<button onClick={() => resetGame()}><Icon icon={faFloppyDisk} /></button>
+				<button onClick={() => toggleOverlay('save')}><Icon icon={faFloppyDisk} /></button>
 				<button onClick={() => toggleOverlay('options')}><Icon icon={faGears} /></button>
 				<button onClick={() => toggleOverlay('credits')}><Icon icon={faRectangleList} /></button>
 			</div>
@@ -178,7 +181,7 @@ function Game(props) {
 				{currentText ? <button onClick={() => setShowMenu(false)}>Hald fram</button> : <button onClick={() => progress()}>Start</button>}
 			</div> : false}
 			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
-			{overlay === 'options' ? <Options gameObject={gameObject} editGameProperty={editGameProperty} /> : false}
+			{overlay === 'options' ? <Options gameObject={gameObject} editGameProperty={editGameProperty} resetGame={resetGame} hasSaveData={storyLog.length ? true : false} /> : false}
 			{overlay === 'credits' ? <Credits credits={credits} setOverlay={setOverlay} /> : false}
 			<Minigame currentText={currentText} minigames={minigames} progress={progress} changeVariable={changeVariable} gameObject={gameObject} setGameObject={setGameObject} />
 		</>

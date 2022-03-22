@@ -8,7 +8,7 @@ function App() {
 	const characters = {
 		'wenche': {
 			name: 'Wenche X',
-			portrait: "/images/characters/ugly-mess.png",
+			portrait: "/images/characters/ugly-mess-pixelated.png",
 			color: "#00ff00",
 		}
 	};

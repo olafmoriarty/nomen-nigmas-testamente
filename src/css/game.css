@@ -223,6 +223,9 @@ button.link {
   padding: 1rem;
   text-align: center;
 }
+.start-menu h1 {
+  text-shadow: 0.25rem 0.25rem 0.25rem var(--black-1);
+}
 
 .story-log {
   position: absolute;
@@ -276,12 +279,15 @@ button.link {
 
 .single-setting {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   width: 100%;
+  margin-bottom: 2rem;
 }
 .single-setting p {
-  width: 50%;
-  flex-grow: 1;
+  width: 100%;
+  margin-bottom: 1rem;
 }
 .single-setting input {
   display: block;
@@ -408,7 +414,7 @@ button.link {
   margin-bottom: 0.8rem;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 50rem) {
   html {
     font-size: 200%;
   }
@@ -429,7 +435,19 @@ button.link {
     text-align: right;
   }
 
+  .single-setting {
+    flex-direction: row;
+    text-align: left;
+  }
+  .single-setting p {
+    width: 50%;
+    flex-grow: 1;
+  }
+
   .delete-autosave {
+    font-size: 0.5rem;
+  }
+  .delete-autosave button {
     font-size: 0.5rem;
   }
 }
