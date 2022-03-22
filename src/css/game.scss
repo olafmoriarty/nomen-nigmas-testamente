@@ -33,6 +33,27 @@ body {
 	font-family: var(--text-font);
 }
 
+@mixin cover {
+	position: absolute;
+	top: 2rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@mixin window {
+	position: absolute;
+	top: 2.5rem;
+	left: .5rem;
+	right: .5rem;
+	bottom: .5rem;
+	background: var(--black-2);
+	color: var(--white);
+	padding: .5rem;
+	border: solid 2px var(--cyan);
+	z-index: 25;
+}
+
 p {
 	margin: 0;
 }
@@ -81,8 +102,8 @@ button.link {
 	z-index: 5;
 
 	&.style-narrative {
+		@include cover;
 		font-family: Garamond, serif;
-		top: 2rem;
 		margin: 0;
 		background: var(--black-2);
 		display: flex;
@@ -136,6 +157,7 @@ button.link {
 		border: solid .125rem var(--border-color);
 		border-radius: .5rem;
 		padding: 1rem;
+		min-height: 4rem;
 	}
 }
 
@@ -159,12 +181,8 @@ button.link {
 }
 
 .progress-button {
-	position: absolute;
+	@include cover;
 	z-index: 10;
-	top: 2rem;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	background: transparent;
 	border: none;
 	font-size: 0;
@@ -209,31 +227,24 @@ button.link {
 }
 
 .start-menu {
-	position: absolute;
+	@include window;
 	z-index: 10;
-	background: #000000;
-	color: #d8829d;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background: var(--black-2);
+	color: var(--pink-2);
 	padding: 1rem;
 	text-align: center;
-	left: 1rem;
-	right: 1rem;
-	top: 2.5rem;
-	box-shadow: .5rem .5rem .5rem #2b3a67;
 }
 
 .story-log {
-	position: absolute;
-	z-index: 25;
+	@include window;
+
 	display: flex;
 	flex-direction: column-reverse;
-	top: 2.5rem;
-	left: .5rem;
-	right: .5rem;
-	bottom: .5rem;
-	background: var(--black-2);
-	color: var(--white);
-	padding: .5rem;
-	border: solid 2px var(--cyan);
 	overflow: auto;
 
 	.log-line {
@@ -257,14 +268,33 @@ button.link {
 	}
 }
 
+.options {
+	@include window;
+}
+
+.delete-autosave {
+	margin-top: 2rem;
+}
+
+.single-setting {
+	display: flex;
+	align-items: center;
+	width: 100%;
+
+	p {
+		width: 50%;
+		flex-grow: 1;
+	}
+	input {
+		display: block;
+		width: 100%;
+	}
+}
+
 .credits {
-	position: absolute;
+	@include cover;
 	z-index: 30;
 	background: #000000;
-	top: 2rem;
-	left: 0;
-	right: 0;
-	bottom: 0;
 	text-align: center;
 	color: var(--white);
 	display: flex;
@@ -348,11 +378,7 @@ button.link {
 }
 
 .minigame {
-	position: absolute;
-	top: 2rem;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	@include cover;
 	z-index: 20;
 	padding: 1rem;
 	overflow: auto;
@@ -390,6 +416,10 @@ button.link {
 			min-width: 20%;
 			text-align: right;
 		}
+	}
+
+	.delete-autosave {
+		font-size: .5rem;
 	}
 }
 

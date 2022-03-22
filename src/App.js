@@ -25,24 +25,24 @@ function App() {
 		</>,
 		<>
 			<h2>Laga med det narrative scriptspråket</h2>
-			<p><a href="https://www.inklestudios.com/ink/" target="_blank">Ink</a></p>
+			<p><a href="https://www.inklestudios.com/ink/" target="_blank" rel="noreferrer noopener">Ink</a></p>
 			<p className="developed-by">utvikla av inkle</p>
 			<h2>Javascript-port</h2>
-			<p><a href="https://github.com/y-lohse/inkjs" target="_blank">inkjs</a></p>
+			<p><a href="https://github.com/y-lohse/inkjs" target="_blank" rel="noreferrer noopener">inkjs</a></p>
 			<p className="developed-by">utvikla av Yannick Lohse</p>
 		</>,
 		<>
 		<h2>Karakterportrett laga i</h2>
-		<p><a href="https://mochakingup.itch.io/cc2d" target="_blank">Character Creator 2D</a></p>
+		<p><a href="https://mochakingup.itch.io/cc2d" target="_blank" rel="noreferrer noopener">Character Creator 2D</a></p>
 		<p className="developed-by">utvikla av mochakingup</p>
 		<h2>Ikon</h2>
-		<p><a href="https://fontawesome.com/icons/" target="_blank">FontAwesome</a></p>
+		<p><a href="https://fontawesome.com/icons/" target="_blank" rel="noreferrer noopener">FontAwesome</a></p>
 	</>,
 	<>
 			<h2>Skrifttypar</h2>
 			<p>Share Tech Mono</p>
-			<p style={{'font-family': 'Shadows Into Light'}}>Shadows Into Light</p>
-			<p style={{'font-family': 'Garamond'}}>Garamond</p>
+			<p style={{'fontFamily': 'Shadows Into Light'}}>Shadows Into Light</p>
+			<p style={{'fontFamily': 'Garamond'}}>Garamond</p>
 		</>,
 		<>
 			<p>Takk for at du spilte!</p>

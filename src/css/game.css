@@ -78,8 +78,12 @@ button.link {
   z-index: 5;
 }
 .story-line.style-narrative {
-  font-family: Garamond, serif;
+  position: absolute;
   top: 2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-family: Garamond, serif;
   margin: 0;
   background: var(--black-2);
   display: flex;
@@ -131,6 +135,7 @@ button.link {
   border: solid 0.125rem var(--border-color);
   border-radius: 0.5rem;
   padding: 1rem;
+  min-height: 4rem;
 }
 
 .portrait {
@@ -150,11 +155,11 @@ button.link {
 
 .progress-button {
   position: absolute;
-  z-index: 10;
   top: 2rem;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
   background: transparent;
   border: none;
   font-size: 0;
@@ -198,22 +203,6 @@ button.link {
 
 .start-menu {
   position: absolute;
-  z-index: 10;
-  background: #000000;
-  color: #d8829d;
-  padding: 1rem;
-  text-align: center;
-  left: 1rem;
-  right: 1rem;
-  top: 2.5rem;
-  box-shadow: 0.5rem 0.5rem 0.5rem #2b3a67;
-}
-
-.story-log {
-  position: absolute;
-  z-index: 25;
-  display: flex;
-  flex-direction: column-reverse;
   top: 2.5rem;
   left: 0.5rem;
   right: 0.5rem;
@@ -222,6 +211,32 @@ button.link {
   color: var(--white);
   padding: 0.5rem;
   border: solid 2px var(--cyan);
+  z-index: 25;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--black-2);
+  color: var(--pink-2);
+  padding: 1rem;
+  text-align: center;
+}
+
+.story-log {
+  position: absolute;
+  top: 2.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background: var(--black-2);
+  color: var(--white);
+  padding: 0.5rem;
+  border: solid 2px var(--cyan);
+  z-index: 25;
+  display: flex;
+  flex-direction: column-reverse;
   overflow: auto;
 }
 .story-log .log-line {
@@ -242,14 +257,45 @@ button.link {
   content: '"';
 }
 
+.options {
+  position: absolute;
+  top: 2.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background: var(--black-2);
+  color: var(--white);
+  padding: 0.5rem;
+  border: solid 2px var(--cyan);
+  z-index: 25;
+}
+
+.delete-autosave {
+  margin-top: 2rem;
+}
+
+.single-setting {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.single-setting p {
+  width: 50%;
+  flex-grow: 1;
+}
+.single-setting input {
+  display: block;
+  width: 100%;
+}
+
 .credits {
   position: absolute;
-  z-index: 30;
-  background: #000000;
   top: 2rem;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 30;
+  background: #000000;
   text-align: center;
   color: var(--white);
   display: flex;
@@ -381,6 +427,10 @@ button.link {
   .story-log .log-speaker-name {
     min-width: 20%;
     text-align: right;
+  }
+
+  .delete-autosave {
+    font-size: 0.5rem;
   }
 }
 /* NNT */

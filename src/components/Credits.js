@@ -32,6 +32,7 @@ function Credits(props) {
 		return () => {
 			isActive.current = false;
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const goToNextPage = () => {
