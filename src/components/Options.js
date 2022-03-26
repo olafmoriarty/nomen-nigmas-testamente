@@ -1,7 +1,8 @@
-import React from 'react'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function Options(props) {
-	const {gameObject, editGameProperty, resetGame, hasSaveData} = props;
+	const {gameObject, editGameProperty, resetGame, hasSaveData, setOverlay} = props;
 
 	return (
 		<div className="options">
@@ -16,6 +17,7 @@ function Options(props) {
 					<p><button onClick={() => resetGame()}>Slett autolagra data</button></p>
 				</div>
 			</div> : false}
+			<button className="close-window" onClick={() => setOverlay(0)}><Icon icon={faTimes} /></button>
 		</div>
 	)
 }

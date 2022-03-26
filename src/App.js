@@ -8,10 +8,17 @@ function App() {
 	const characters = {
 		'wenche': {
 			name: 'Wenche X',
-			portrait: "/images/characters/ugly-mess-pixelated.png",
+			portrait: "./images/characters/ugly-mess-pixelated.png",
 			color: "#00ff00",
 		}
 	};
+
+	const locations = {
+		'kontoret': {
+			name: 'Mitt kontor',
+			image: './images/backgrounds/office.png',
+		}
+	}
 
 	const minigames = {
 		puzzle1: <Puzzle1 />,
@@ -32,13 +39,8 @@ function App() {
 			<p className="developed-by">utvikla av Yannick Lohse</p>
 		</>,
 		<>
-		<h2>Karakterportrett laga i</h2>
-		<p><a href="https://mochakingup.itch.io/cc2d" target="_blank" rel="noreferrer noopener">Character Creator 2D</a></p>
-		<p className="developed-by">utvikla av mochakingup</p>
-		<h2>Ikon</h2>
-		<p><a href="https://fontawesome.com/icons/" target="_blank" rel="noreferrer noopener">FontAwesome</a></p>
-	</>,
-	<>
+			<h2>Ikon</h2>
+			<p><a href="https://fontawesome.com/icons/" target="_blank" rel="noreferrer noopener">FontAwesome</a></p>
 			<h2>Skrifttypar</h2>
 			<p>Share Tech Mono</p>
 			<p style={{'fontFamily': 'Shadows Into Light'}}>Shadows Into Light</p>
@@ -57,6 +59,7 @@ function App() {
 			json={json} 
 			title={title} 
 			characters={characters}
+			locations={locations}
 			credits={credits}
 			minigames={minigames}
 		/>

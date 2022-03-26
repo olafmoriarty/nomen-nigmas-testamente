@@ -1,7 +1,7 @@
 import Puzzle from "./Puzzle";
 
 function Puzzle1(props) {
-	const {changeVariable} = props;
+	const {progress, changeVariable} = props;
   return (
 	<Puzzle
 		answer="akersgata"
@@ -11,7 +11,9 @@ function Puzzle1(props) {
 			'Dei fire første platene gir deg ',
 			'Løysingsordet er eit stadnamn som har blitt nevnt i forteljinga tidlegare (hugs at du når som helst kan sjekke historieloggen ved å klikke på dei to snakkeboblene på toppen av skjermen).',
 		]}
+		pdf="./pdf/puffy.pdf"
 		changeVariable={changeVariable}
+		progress={progress}
 	>
 		<h1>Oppgåve 1</h1>
 		<p><em>Puffy AmiYumi</em> (2004)<br/>

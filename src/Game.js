@@ -11,14 +11,13 @@ import Choices from './components/Choices';
 import Portrait from './components/Portrait';
 import StoryLog from './components/StoryLog';
 
-// Background images
 import Credits from './components/Credits';
 import Minigame from './components/Minigame';
 import Background from './components/Background';
 import Options from './components/Options';
 
 function Game(props) {
-	const {json, title, characters, credits, minigames} = props;
+	const {json, title, characters, locations, credits, minigames} = props;
 
 	const [emptyInkSave, setEmptyInkSave] = useState(false);
 	const [inkStory, setInkStory] = useState(false);
@@ -44,8 +43,26 @@ function Game(props) {
 			ink.state.LoadJson(autosave.inkSave);
 		}
 		setInkStory(ink);
+
 	}, [json]);
 
+	const spaceToProgress = ev => {
+		if (ev.key === ' ') {
+			if ((!currentText.choices || !currentText.choices.length) && !showMenu && !currentText.input && !currentText.minigame) {
+				ev.preventDefault();
+				progress();
+			}
+		}
+		else {
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener('keydown', spaceToProgress);
+		return () => {
+			window.removeEventListener('keydown', spaceToProgress);
+		}
+	}, [currentText]);
 	const editGameProperty = (name, value) => {
 		let newGameObject = {
 			...gameObject,
@@ -60,7 +77,7 @@ function Game(props) {
 		return `${pad(now.getDate())}.${pad(now.getMonth() + 1)}.${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
 	}
 
-	const progress = () => {
+	const progress = (tags = []) => {
 		if (inkStory.canContinue) {
 			if (showMenu) {
 				setShowMenu(false);
@@ -74,11 +91,19 @@ function Game(props) {
 				choices: [],
 				text: text.trim(),
 			}
-			inkStory.currentTags.forEach(element => {
+			tags.concat(inkStory.currentTags).forEach(element => {
 				const tag = element.split(':');
 				if (tag[0] === 'person') {
 					if (characters[tag[1]]) {
 						textObject[tag[0]] = characters[tag[1]];
+					}
+					else {
+						textObject[tag[0]] = {name: tag[1]};
+					}
+				}
+				else if (tag[0] === 'location') {
+					if (locations[tag[1]]) {
+						textObject[tag[0]] = locations[tag[1]];
 					}
 					else {
 						textObject[tag[0]] = {name: tag[1]};
@@ -94,7 +119,7 @@ function Game(props) {
 			}
 			setCurrentText(textObject);
 			if (!textObject.text && !textObject.completeText && !textObject.minigame) {
-				progress();
+				progress(inkStory.currentTags);
 			}
 			else if (!textObject.minigame) {
 				// If text exists, add it to the story log.
@@ -120,6 +145,32 @@ function Game(props) {
 				...currentText,
 				minigame: false,
 				choices: inkStory.currentChoices,
+			}
+
+			if (tags.length) {
+				tags.forEach(element => {
+					const tag = element.split(':');
+					if (tag[0] === 'person') {
+						if (characters[tag[1]]) {
+							textObject[tag[0]] = characters[tag[1]];
+						}
+						else {
+							textObject[tag[0]] = {name: tag[1]};
+						}
+					}
+					else if (tag[0] === 'location') {
+						if (locations[tag[1]]) {
+							textObject[tag[0]] = locations[tag[1]];
+						}
+						else {
+							textObject[tag[0]] = {name: tag[1]};
+						}
+					}
+					else {
+						textObject[tag[0]] = tag[1];
+	
+					}
+				});
 			}
 			setCurrentText(textObject);
 		}
@@ -176,17 +227,16 @@ function Game(props) {
 			<Portrait currentText={currentText} />
 			<ProgressButton currentText={currentText} showMenu={showMenu} progress={progress} />
 			<Choices choices={currentText.choices} makeChoice={makeChoice} />
-			{showMenu ? <div className="start-menu">
+			{(showMenu && !overlay) ? <div className="start-menu">
 				<h1>{title}</h1>
 				{currentText ? <button onClick={() => setShowMenu(false)}>Hald fram</button> : <button onClick={() => progress()}>Start</button>}
 			</div> : false}
 			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
-			{overlay === 'options' ? <Options gameObject={gameObject} editGameProperty={editGameProperty} resetGame={resetGame} hasSaveData={storyLog.length ? true : false} /> : false}
+			{overlay === 'options' ? <Options gameObject={gameObject} editGameProperty={editGameProperty} resetGame={resetGame} hasSaveData={storyLog.length ? true : false} setOverlay={setOverlay} /> : false}
 			{overlay === 'credits' ? <Credits credits={credits} setOverlay={setOverlay} /> : false}
 			<Minigame currentText={currentText} minigames={minigames} progress={progress} changeVariable={changeVariable} gameObject={gameObject} setGameObject={setGameObject} />
 		</>
 	)
-
 }
 
 export default Game;

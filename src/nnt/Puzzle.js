@@ -8,7 +8,7 @@ function Puzzle(props) {
 	const [inputIsActive, setInputIsActive] = useState(false);
 	const [hintsShown, setHintsShown] = useState(0);
 	const [previousGuess, setPreviousGuess] = useState('');
-	const {answer, inkVariable, hints, children, progress, changeVariable} = props;
+	const {answer, inkVariable, hints, children, progress, changeVariable, pdf} = props;
 
 	const checkAnswer = e => {
 		e.preventDefault();
@@ -32,6 +32,7 @@ function Puzzle(props) {
 
 		<div className="bottom-links">
 			{hintsShown < hints.length ? <p><button className="link" onClick={() => setHintsShown(hintsShown + 1)}>{hintsShown ? "Vis eitt hint til" : "Vis hint"}</button></p> : false}
+			{pdf ? <p><a href={pdf} target="_blank" rel="noreferrer noopener">Last ned PDF</a></p> : false}
 			<p><button className="link" onClick={() => progress()}>Gå tilbake</button></p>
 		</div>
 		<button className="close-window" onClick={() => progress()}><Icon icon={faTimes} /></button>
