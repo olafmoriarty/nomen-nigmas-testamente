@@ -8,14 +8,14 @@ function Choices(props) {
 		if (!choices || !choices.length) {
 			return;
 		}
-		if (ev.key === 'ArrowUp' || ev.key === 'w' || ev.key === 'W') {
+		if (ev.key === 'ArrowUp') {
 			let newValue = activeChoice - 1;
 			if (newValue < 0) {
 				newValue += choices.length;
 			}
 			setActiveChoice(newValue);
 		}
-		if (ev.key === 'ArrowDown' || ev.key === 's' || ev.key === 'S') {
+		if (ev.key === 'ArrowDown') {
 			setActiveChoice((activeChoice + 1) % choices.length);
 		}
 		if (ev.key.match(/[1-9]/) && parseInt(ev.key) <= choices.length) {

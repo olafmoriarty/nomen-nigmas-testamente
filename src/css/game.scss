@@ -282,6 +282,38 @@ button.link {
 	}
 }
 
+.save-window {
+	@include window;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 1fr);
+	gap: .5rem;
+}
+
+.save-slot {
+	border: solid 1px var(--pink-1);
+	background: var(--black-1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	h2 {
+		font-size: 1em;
+	}
+	button {
+		display: block;
+		font-size: 1em; 
+		padding: .2rem;
+		margin: 1em .5em 0;
+	}
+}
+
+.load-save-buttons {
+	display: flex;
+}
+
 .options {
 	@include window;
 	& > :first-child {
@@ -449,6 +481,15 @@ button.link {
 	.delete-autosave {
 		font-size: .5rem;
 		button {
+			font-size: .5rem;
+		}
+	}
+
+	.save-window {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+
+		.save-slot {
 			font-size: .5rem;
 		}
 	}

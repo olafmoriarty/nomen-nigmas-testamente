@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import './css/game.css';
 import { Story } from 'inkjs';
-import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
-import { faComments, faFloppyDisk, faGears, faNotEqual, faRectangleList } from '@fortawesome/free-solid-svg-icons';
 
 import Line from './components/Line';
 import ProgressButton from './components/ProgressButton';
@@ -15,6 +13,8 @@ import Credits from './components/Credits';
 import Minigame from './components/Minigame';
 import Background from './components/Background';
 import Options from './components/Options';
+import LoadSave from './components/LoadSave';
+import TopMenu from './components/TopMenu';
 
 function Game(props) {
 	const {json, title, characters, locations, credits, minigames} = props;
@@ -30,25 +30,40 @@ function Game(props) {
 	});
 
 	useEffect(() => {
-		const autosave = JSON.parse(localStorage.getItem('autosave'));
+		const autosave = localStorage.getItem('autosave');
+		let autosaveJson = {};
 		if (autosave) {
-			setStoryLog(autosave.storyLog);
-			setCurrentText(autosave.storyLog[0]);
-			setGameObject(autosave.gameObject);
+			autosaveJson = JSON.parse(autosave);
+			setStoryLog(autosaveJson.storyLog);
+			setCurrentText(autosaveJson.storyLog[0]);
+			setGameObject(autosaveJson.gameObject);
+			setShowMenu(false);
 		}
 
 		const ink = new Story(json);
 		setEmptyInkSave(ink.state.ToJson());
 		if (autosave) {
-			ink.state.LoadJson(autosave.inkSave);
+			ink.state.LoadJson(autosaveJson.inkSave);
 		}
 		setInkStory(ink);
 
 	}, [json]);
 
+	const loadGame = saveFile => {
+		const file = localStorage.getItem(saveFile);
+		let json = {};
+		if (file) {
+			json = JSON.parse(file);
+			setStoryLog(json.storyLog);
+			setCurrentText(json.storyLog[0]);
+			setGameObject(json.gameObject);
+			inkStory.state.LoadJson(json.inkSave);
+		}
+	}
+
 	const spaceToProgress = ev => {
-		if (ev.key === ' ') {
-			if ((!currentText.choices || !currentText.choices.length) && !showMenu && !currentText.input && !currentText.minigame) {
+		if (ev.key === ' ' || ev.key === 'Enter') {
+			if ((!currentText.choices || !currentText.choices.length) && !currentText.input && !currentText.minigame && !overlay) {
 				ev.preventDefault();
 				progress();
 			}
@@ -62,7 +77,7 @@ function Game(props) {
 		return () => {
 			window.removeEventListener('keydown', spaceToProgress);
 		}
-	}, [currentText]);
+	}, [currentText, overlay]);
 	const editGameProperty = (name, value) => {
 		let newGameObject = {
 			...gameObject,
@@ -132,7 +147,7 @@ function Game(props) {
 					inkSave: inkStory.state.ToJson(),
 					gameObject: gameObject,
 					timestamp: timestamp(),
-					location: false,
+					location: textObject.location ? textObject.location : false,
 				};
 				localStorage.setItem('autosave', JSON.stringify(saveFile));
 			}
@@ -216,12 +231,7 @@ function Game(props) {
 					return <link key={el} rel="prefetch" href={characters[el].portrait} as="image" />
 				})}
 			</Helmet> : false}
-			<div className="top-menu">
-				{storyLog.length ? <button onClick={() => toggleOverlay('log')}><Icon icon={faComments} /></button> : false}
-				<button onClick={() => toggleOverlay('save')}><Icon icon={faFloppyDisk} /></button>
-				<button onClick={() => toggleOverlay('options')}><Icon icon={faGears} /></button>
-				<button onClick={() => toggleOverlay('credits')}><Icon icon={faRectangleList} /></button>
-			</div>
+			<TopMenu storyLog={storyLog} overlay={overlay} toggleOverlay={toggleOverlay} currentText={currentText} />
 			<Background currentText={currentText} />
 			<Line currentText={currentText} changeVariable={changeVariable} gameObject={gameObject} />
 			<Portrait currentText={currentText} />
@@ -234,6 +244,7 @@ function Game(props) {
 			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
 			{overlay === 'options' ? <Options gameObject={gameObject} editGameProperty={editGameProperty} resetGame={resetGame} hasSaveData={storyLog.length ? true : false} setOverlay={setOverlay} /> : false}
 			{overlay === 'credits' ? <Credits credits={credits} setOverlay={setOverlay} /> : false}
+			{overlay === 'save' ? <LoadSave loadGame={loadGame} setOverlay={setOverlay} /> : false}
 			<Minigame currentText={currentText} minigames={minigames} progress={progress} changeVariable={changeVariable} gameObject={gameObject} setGameObject={setGameObject} />
 		</>
 	)

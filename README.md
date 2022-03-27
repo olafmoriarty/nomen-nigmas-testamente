@@ -4,16 +4,17 @@ The purpose of this project is to create a wrapper component for [inkjs](https:/
 
 ## Features
 This component
-* Adds a splash title screen to your game, displaying its title and links to your credits/options (**NOT FINISHED**)
+* Adds a splash title screen to your game, displaying its title
 * Displays the text of your story one line at a time, letting you tap/click anywhere to continue
 * Lets you style the lines of your story, for example by displaying narrative text and spoken text differently
 * When displaying spoken text, lets you display a character portrait and character name
-* Displays different background images depending on where you are in the story (**NOT FINISHED**)
+* Displays different background images depending on where you are in the story
 * Adds a story log that the player can open at any time
 * Adds text inputs that lets you set variables in your Ink file
 * Lets you add credits to your game
 * Lets you add interactive minigames to your game
-* Lets your player load and save their game state (**NOT FINISHED**)
+* Lets your player load and save their game state
+* Adds keyboard navigation to the game
 
 ## Writing your story in Inky
 This component is based on the [Ink](https://www.inklestudios.com/ink/) narrative scripting language, developed by Inkle Studios.
@@ -165,3 +166,15 @@ Ink requires there to be a line of text for you to register tags. As this compon
 
 ## Anatomy of a minigame
 *(To be written later.)*
+
+## Keyboard controls
+* **Space/Enter** - progress story, or pick selected value in option list
+* **Arrow up/down** - previous/next option in option list
+* **1-9** - select a value from an option list
+* **L** - open/close story log
+* **S** - open/close load/save window
+* **O** - open/close options window
+* **C** - open/close credits
+* **Escape** - close story log / load/save window / options / credits
+
+All of these options are also available through the touchscreen.
