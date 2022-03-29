@@ -132,11 +132,12 @@ function Game(props) {
 			if (textObject.text === 'BLANK' || textObject.minigame) {
 				textObject.text = '';
 			}
-			setCurrentText(textObject);
 			if (!textObject.text && !textObject.completeText && !textObject.minigame) {
 				progress(inkStory.currentTags);
 			}
 			else if (!textObject.minigame) {
+				setCurrentText(textObject);
+
 				// If text exists, add it to the story log.
 				const newStoryLog = [textObject, ...storyLog];
 				setStoryLog(newStoryLog);
@@ -150,6 +151,9 @@ function Game(props) {
 					location: textObject.location ? textObject.location : false,
 				};
 				localStorage.setItem('autosave', JSON.stringify(saveFile));
+			}
+			else {
+				setCurrentText(textObject);
 			}
 		}
 		else if (inkStory.currentChoices.length > 0) {

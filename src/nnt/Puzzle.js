@@ -43,7 +43,7 @@ function Puzzle(props) {
 				{myAnswer.padEnd(answer.length, " ").split("").map((letter, index) => 
 					<div className={`puzzle-answer-letter${index === myAnswer.length && inputIsActive ? ' active' : (answer.charAt(index) === ' ' ? ' space' : (index >= myAnswer.length ? ' unused' : ''))}`} key={index}>{letter.toUpperCase()}</div>
 				)}
-				<input className="puzzle-answer-input" name="answer" maxLength={answer.length} value={myAnswer} onChange={el => setMyAnswer(el.target.value)} onFocus={() => setInputIsActive(true)} onBlur={() => setInputIsActive(false)} autoComplete="off" />
+				<input className="puzzle-answer-input" name="answer" maxLength={answer.length} value={myAnswer} onChange={el => setMyAnswer(el.target.value)} onFocus={() => setInputIsActive(true)} onBlur={() => setInputIsActive(false)} autoComplete="off" autoFocus />
 			</div>
 			<p><button type="submit">Sjekk svaret</button></p>
 			<p><button className="link" onClick={() => setShowForm(false)}>Gå tilbake</button></p>

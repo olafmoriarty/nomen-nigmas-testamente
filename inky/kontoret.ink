@@ -1,4 +1,5 @@
 === kontoret
+
 BLANK #location:kontoret
 {not first:
 ->first
@@ -91,6 +92,7 @@ Med mindre eg kan friste deg med ei ny heimeside? Kanskje ei kornblå og senneps
 
 Før eg hadde fullført setninga hadde fru Krankelfnaas storma ut og smelt døra bak seg. #style:narrative
 Dette hamna definitivt på topp ti-lista over dei merkelegaste formiddagane eg hadde hatt.
+
 ->kontoret
 
 = skrivebord

@@ -18,6 +18,7 @@ function Line(props) {
 	}, [lineIndex]);
 
 	useEffect(() => {
+		console.log(currentText.text);
 		if (currentText.text) {
 			setLineIndex(textSpeed ? 0 : currentText.text.length);
 			setCurrentTypewriterText(currentText.text);

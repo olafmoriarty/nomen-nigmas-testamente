@@ -4,6 +4,8 @@ INCLUDE villaen.ink
 INCLUDE avisa.ink
 
 LIST inv = (mobil), visittkort, testamente
+LIST flags = gittButlerenBrevet, spurtEtterRedaktoren
+
 VAR puzzle1 = false
 
 // Historia starter på kontoret, så gå dit
@@ -12,5 +14,5 @@ VAR puzzle1 = false
 === map
 + [Kontoret mitt] ->kontoret
 + {inv ? visittkort} [Slott Krankelfnaas] ->villaen
-+ {puzzle1} [Dagens Tidende] ->avisa 
++ {puzzle1} [Dagens Nyhende] ->avisa 
 

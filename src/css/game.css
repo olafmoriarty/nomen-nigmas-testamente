@@ -460,6 +460,9 @@ button.link {
   padding: 1rem;
   overflow: auto;
   text-align: center;
+  animation-name: enter-screen;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
   background: var(--white);
   /*	font-family: Garamond, serif;*/
 }
@@ -473,6 +476,14 @@ button.link {
   margin-bottom: 0.8rem;
 }
 
+@keyframes enter-screen {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @media screen and (min-width: 50rem) {
   html {
     font-size: 200%;
@@ -697,6 +708,7 @@ button.link {
 }
 .story-line.style-poem .text::first-letter {
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 /*# sourceMappingURL=game.css.map */

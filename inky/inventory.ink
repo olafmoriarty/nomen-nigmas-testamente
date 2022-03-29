@@ -16,7 +16,7 @@ Eg burde levere dette tilbake til fru Krankelfnaas så fort som mogleg, men ...
     ... det skader vel ingen om eg berre tar ein kjapp titt?
 + {not dikt} [Les testamentet] ->begge->
 + {dikt} [Sjå på diktet på side 1] ->dikt->
-+ {dikt} [Sjå på gåta på side 2] ->puzzle->
++ {dikt and (puzzle1 == 1)} [Sjå på gåta på side 2] ->puzzle->
 + [La vera]
 - ->->
 
@@ -50,7 +50,7 @@ MINIGAME #minigame:puzzle1
 {puzzle1:
     Hmm ... Eg var rimeleg sikker på at eg hadde funne eit sett med kartkoordinatar ... og at koordinatane førte til Akersgata i Oslo.
     Eg visste òg at Theodor Krankelfnaas eigde ei avis i Akersgata ...
-    Det kunne sjå ut som om det var på tide å avleggja ein visitt til Dagens Tidende.
+    Det kunne sjå ut som om det var på tide å avleggja ein visitt til Dagens Nyhende.
     ->->
 }
 Eg leste raskt gjennom det kryptiske papirarket. Eg var ikkje heilt sikker på kva eg skulle gjera med det.
