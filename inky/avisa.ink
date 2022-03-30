@@ -16,7 +16,7 @@ I det store rommet eg hadde kome inn i innehaldt eit opent landskap med rekke p�
 
 = resepsjonen
 Eg gjekk bort til resepsjonen{| igjen}.
-{God dag!|Hei igjen!} Korleis kan eg hjelpe deg? #style:dialog #person:resepsjonisten
+{not resepsjonist_flort: {God dag!|Hei igjen!}} Korleis kan eg hjelpe deg? #style:dialog #person:resepsjonisten
 + Eg skulle gjerne ha snakka med nokon. #person:meg
     Det skal vera fullt mogleg. Kven då? #person:resepsjonisten
     ** Ein journalist. #person:meg
@@ -29,8 +29,27 @@ Eg gjekk bort til resepsjonen{| igjen}.
     Kanskje du kan kome tilbake når du har funne det ut? #person:resepsjonisten
     Det er nok det smartaste. #person:meg
     Takk for hjelpa uansett.
-    Ha ein fin dag vidare. #person:resepsjonisten
+    {not resepsjonist_flort: Ha ein fin dag vidare.} #person:resepsjonisten
     ** Sjefsredaktøren. #person:meg
+        Eg ante ikkje kvar i dette bygget neste spor var gøymd. Men det var snakk om eit testamente her. Krankelfnaas ante ikkje når det kom til å bli lest, så han måtte ha gøymd det ein stad med stabilitet, utan for mykje utskifting. Og sjefsredaktøren var sannsynlegvis den personen i organisasjonen Krankelfnaas hadde hatt mest kontakt med. #style:narrative
+        Har du ein avtale? #person:resepsjonisten #style:dialog
+        Nei ... #person:meg
+        Ho er litt opptatt akkurat no, men det er mogleg eg kan presse deg inn i løpet av dagen om du kan vente litt ... #person:resepsjonisten
+        Tusen takk. #person:meg
+        Kva var namnet? #person:resepsjonisten
+        Skriv namnet ditt her: #input:true var:playerName
+        {playerName} ... #person:resepsjonisten
+        Og kva pronomen bruker du?
+        *** [Han/han.]
+        ~ playerPronoun = "han"
+        *** [Ho/henne.]
+        ~ playerPronoun = "ho"
+        *** [Hen/hen.]
+        ~ playerPronoun = "hen"         
+        *** [Dei/dei.]
+        ~ playerPronoun = "dei"
+        --- Resepsjonisten tasta raskt persondetaljane mine inn i datasystemet sitt. #style:narrative
+        ->spurt_etter_redaktoren
     ** Den som er ansvarleg for trykkeriet dykkar. #person:meg
     Testamentet var laga av papir. Kunne det vera eit hint? Kvar finner du papir i eit avisbygg? I trykkpressa. Kunne trykkpressa innehalde neste spor? #style:narrative
         Trykkeriet? Beklager, det er nok ikkje mogleg. #person:resepsjonisten #style:dialog
@@ -50,9 +69,57 @@ Eg gjekk bort til resepsjonen{| igjen}.
         Meg? Kva i alle dagar vil du snakke med meg om? #person:resepsjonisten
         Dersom Krankelfnaas hadde gøymd neste spor ein stad i denne bygningen, kvifor ikkje byrja å leite der folk faktisk kjem INN i bygningen? #style:narrative
         Du kjenner ikkje tilfeldigvis Theodor Krankelfnaas? #style:dialog person:meg
+        Ser eg ut som om eg pleier å henge med geriatriske milliardærar? #person:resepsjonisten
+        For den saks skuld, ser eg ut som om eg pleier å henge med DAUDE milliardærar?
+        Nei, altså, eg berre tenker, han eide jo denne avisa ... #person:meg
+        Han eide åtte tusen bedrifter. Han var ikkje på fornamn med ALLE som jobba for seg. Eg trur at sjølv sjefsredaktøren vår har møtt han berre fire-fem gonger. På tjue ÅR. #person:resepsjonisten
+        Eg meinte berre ... Du er ikkje kven som helst, liksom. Du er ... avisas ansikt utad, på ein måte. Alle dei viktige folka som er innom her, kjem til deg først. #person:meg
+        ... #person:resepsjonisten
+        Prøver du å flørte med meg? Er det det som er greia her?
+        *** (resepsjonist_flort) Ja ...? #person:meg
+            Ok... Lytt veldig nøye, eg seier dette berre ein gong. #person:resepsjonisten
+            SKJERP DEG, din creep.
+            Eg aner ikkje kva slags spel du trur du speler, men det er ALDRI greit å flørte med folk som er på jobb.
+            Utan. Unntak.
+            At eg smiler og er hyggeleg med deg betyr ikkje at eg liker deg. Det betyr at jobben min er å behandle alle som kjem inn gjennom den døra der som folk.
+            At du konfronterer meg på jobben betyr ikkje berre at eg befinner meg i ein kontekst der eg ikkje er på jakt etter ein date. Det betyr òg at eg er i ein kontekst der det, såvidt du veit, kan ha negative konsekvensar for meg å vise motvilje når du opptrer truande.
+            Er det forstått?
+            ... #person:meg
+            Er. Det. Forstått? #person:resepsjonisten
+            ... ja. Beklager. #person:meg
+            Og no har ikkje eg veldig lyst til å snakke meir med deg, så no synest eg at du skal gå bort dit litt, eventuelt gå ut ein tur, og ikkje kome tilbake til meg før faktisk har noko å snakke med meg om. #person:resepsjonisten
+            Unnskyld. #person:meg
+            Gå no. #person:resepsjonisten
+        *** Nei[!], det var ikkje sånn meint, eg berre ... #person:meg
+        Godt. Då foreslår eg at vi legger den ballen daud. Eg kjente ikkje Theodor Krankelfnaas, og det er alt eg har å seie om den saka. #person:resepsjonisten
+        Skjønner. Beklager. #person:meg 
 + Det var ingenting. #person:meg
-    Ok...? Ha ein fin dag vidare, då! #person:resepsjonisten
+     {not resepsjonist_flort: Ok...? Ha ein fin dag vidare, då!} #person:resepsjonisten
 - ->avisa
+
+= spurt_etter_redaktoren
+{Og kva er det du vil|Var det noko anna du ville} snakke med henne om? #person:resepsjonisten #style:dialog
+* Eit rebusløp. #person:meg
+    Du tøyser. Du tuller med meg. #person:resepsjonisten
+    Ikkje eigentleg. Greia er at ... #person:meg
+    Eg kan ikkje slippe deg inn til redaktøren for å snakke om eit rebusløp. Det vil ikkje kome noko anna ut av det enn store kvantum bortkasta tid, og eg kjem til å sjå ut som ein idiot som har sluppe deg inn til henne. #person:resepsjonisten
+    Skal du snakke med sjefsredaktøren, må du nesten kome opp med noko betre enn det. La meg spørja deg igjen ...
+* Theodor Krankelfnaas. #person:meg
+    {resepsjonist_flort:
+        Ikkje sei at du har tenkt å "flørte" med sjefen min òg? #person:resepsjonisten
+        Nei, eg ... #person:meg
+    }
+    Theodor Krankelfnaas er død. Kva er det å seie om han? #person:resepsjonisten
+    Nei, det gjelder ... arven hans. #person:meg
+    Er du advokat? #person:resepsjonisten
+    Eg lager Wordpress-themes. Men det er ikkje viktig akkurat no. Eg trur at ein del av testamentet hans er gøymd i dette huset. Eller at redaktøren har det. Eller ... #person:meg
+    Unnskyld, men det høyrast litt ... søkt ut. Er du i familie med Krankelfnaas? Har du nokre handfaste bevis på at redaktøren er involvert i dette? #person:resepsjonisten
+    Nei. Og nei. #person:meg
+    Då trur eg nesten ikkje eg kan hjelpe deg. Redaktøren er veldig opptatt i dag. Eg kan kanskje klare å presse deg inn på tysdag. #person:resepsjonisten
+    ... eg forstår. #person:meg
+* Det er hemmeleg. #person:meg
+* [NOMEN NIGMA.]
+- ->spurt_etter_redaktoren
 
 = journalist
 Det sat ein journalist og hamra frenetisk på tastaturet berre nokre meter frå meg.
