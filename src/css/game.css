@@ -78,6 +78,35 @@ button.link {
   right: 0;
   z-index: 5;
 }
+.story-line.style-input {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.story-line.style-input form {
+  border: solid 1px var(--cyan);
+  padding: 1rem;
+  background: var(--white);
+  box-shadow: 0.5rem 0.5rem 0.5rem var(--black-1);
+}
+.story-line.style-input .text-input {
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-family: "Shadows Into Light";
+  color: var(--yellow);
+  background: var(--black-2);
+}
 .story-line.style-narrative {
   position: absolute;
   top: 2rem;

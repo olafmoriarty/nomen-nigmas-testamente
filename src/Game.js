@@ -136,11 +136,11 @@ function Game(props) {
 				progress(inkStory.currentTags);
 			}
 			else if (!textObject.minigame) {
-				setCurrentText(textObject);
-
 				// If text exists, add it to the story log.
 				const newStoryLog = [textObject, ...storyLog];
 				setStoryLog(newStoryLog);
+
+				setCurrentText(textObject);
 
 				// Autosave the game.
 				const saveFile = {

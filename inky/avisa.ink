@@ -11,13 +11,13 @@ BLANK #location:avisa #style:narrative person:
 = first
 Dagens Nyhende-redaksjonen var, på ein eller annan måte, overveldande og antiklimatisk på ein gong. #style:narrative
 Lokalet var svært, iallfall samanlikna med det eg var vant til, men sannsynlegvis ein del mindre enn dei andre avisene i same gate, og sjølv om det store lokalet eg hadde kome inn i såg ut til å romme ein del journalistar, verka det som om det var berre denne etasjen.
-I det store rommet eg hadde kome inn i innehaldt eit opent landskap med rekke på rekke med skrivebord - det såg ut som om det var her journalistane jobba frå - og eit lite resepsjonsområde.
+Det store rommet eg hadde kome inn i innehaldt eit opent landskap med rekke på rekke med skrivebord - det såg ut som om det var her journalistane jobba frå - og eit lite resepsjonsområde.
 ->avisa
 
 = resepsjonen
 Eg gjekk bort til resepsjonen{| igjen}.
 {not resepsjonist_flort: {God dag!|Hei igjen!}} Korleis kan eg hjelpe deg? #style:dialog #person:resepsjonisten
-+ Eg skulle gjerne ha snakka med nokon. #person:meg
++ {not redaktoren_first} Eg skulle gjerne ha snakka med nokon. #person:meg
     Det skal vera fullt mogleg. Kven då? #person:resepsjonisten
     ** Ein journalist. #person:meg
     Vi har mange journalistar her, tenkte du på ein spesiell journalist, eller ... #person:resepsjonisten
@@ -37,17 +37,21 @@ Eg gjekk bort til resepsjonen{| igjen}.
         Ho er litt opptatt akkurat no, men det er mogleg eg kan presse deg inn i løpet av dagen om du kan vente litt ... #person:resepsjonisten
         Tusen takk. #person:meg
         Kva var namnet? #person:resepsjonisten
-        Skriv namnet ditt her: #input:true var:playerName
+        Skriv namnet ditt her: #input:true #var:playerName
         {playerName} ... #person:resepsjonisten
         Og kva pronomen bruker du?
         *** [Han/han.]
         ~ playerPronoun = "han"
+        ~ playerPronounCap = "Han"
         *** [Ho/henne.]
         ~ playerPronoun = "ho"
+        ~ playerPronounCap = "Ho"
         *** [Hen/hen.]
-        ~ playerPronoun = "hen"         
+        ~ playerPronoun = "hen"
+        ~ playerPronounCap = "Hen"
         *** [Dei/dei.]
         ~ playerPronoun = "dei"
+        ~ playerPronounCap = "Dei"
         --- Resepsjonisten tasta raskt persondetaljane mine inn i datasystemet sitt. #style:narrative
         ->spurt_etter_redaktoren
     ** Den som er ansvarleg for trykkeriet dykkar. #person:meg
@@ -83,11 +87,11 @@ Eg gjekk bort til resepsjonen{| igjen}.
             Utan. Unntak.
             At eg smiler og er hyggeleg med deg betyr ikkje at eg liker deg. Det betyr at jobben min er å behandle alle som kjem inn gjennom den døra der som folk.
             At du konfronterer meg på jobben betyr ikkje berre at eg befinner meg i ein kontekst der eg ikkje er på jakt etter ein date. Det betyr òg at eg er i ein kontekst der det, såvidt du veit, kan ha negative konsekvensar for meg å vise motvilje når du opptrer truande.
-            Er det forstått?
+            Det er fullstendig lavmål, og sjølv dersom eg hadde vore interessert i det, er det absolutt ikkje sånn ein opptrer ovanfor eit anna menneske. Er det forstått?
             ... #person:meg
             Er. Det. Forstått? #person:resepsjonisten
             ... ja. Beklager. #person:meg
-            Og no har ikkje eg veldig lyst til å snakke meir med deg, så no synest eg at du skal gå bort dit litt, eventuelt gå ut ein tur, og ikkje kome tilbake til meg før faktisk har noko å snakke med meg om. #person:resepsjonisten
+            Og no har ikkje eg veldig lyst til å snakke meir med deg, så no synest eg at du skal gå bort dit litt, eventuelt gå ut ein tur, og ikkje kome tilbake til meg med mindre du faktisk har ein god grunn til det. #person:resepsjonisten
             Unnskyld. #person:meg
             Gå no. #person:resepsjonisten
         *** Nei[!], det var ikkje sånn meint, eg berre ... #person:meg
@@ -115,11 +119,107 @@ Eg gjekk bort til resepsjonen{| igjen}.
     Eg lager Wordpress-themes. Men det er ikkje viktig akkurat no. Eg trur at ein del av testamentet hans er gøymd i dette huset. Eller at redaktøren har det. Eller ... #person:meg
     Unnskyld, men det høyrast litt ... søkt ut. Er du i familie med Krankelfnaas? Har du nokre handfaste bevis på at redaktøren er involvert i dette? #person:resepsjonisten
     Nei. Og nei. #person:meg
-    Då trur eg nesten ikkje eg kan hjelpe deg. Redaktøren er veldig opptatt i dag. Eg kan kanskje klare å presse deg inn på tysdag. #person:resepsjonisten
-    ... eg forstår. #person:meg
+    Eh. Redaktøren er veldig opptatt i dag. Eg kan kanskje klare å presse deg inn på tysdag. #person:resepsjonisten
+    Eg forstår. #person:meg
+    Med  mindre ... #person:resepsjonisten
 * Det er hemmeleg. #person:meg
+    Nei. Det kjem ikkje på tale. #person:resepsjonisten
+    Eg set ikkje opp avtaler mellom redaktøren og vilt framande som vandrer inn frå gata utan å vite kvifor. Det ender fort i at du skjeller henne ut for at vi har trykka artiklar som insinuerer at jorda er rund, eller at vaksiner virker, eller at Belgia er ein sjølvstendig stat.
+    Det ... er forsåvidt forståeleg. #person:meg
 * [NOMEN NIGMA.]
+    "Når du leser dette ..." #style:narrative
+    "Og i testamentet ..."
+    Første bokstav i kvar linje i testamentet var utheva. Var det berre eit samantreff, eller hadde dei ti bokstavane nokon form for meining?
+    ... NOMEN NIGMA. #style:dialog #person:meg
+    ... kva? Sa du ... Nomen Nigma? #person:resepsjonisten
+    Beklager. Eg skjønte då eg sa det at det ikkje gav ... #person:meg
+    KVIFOR SA DU IKKJE DET MED EIN GONG? #person:resepsjonisten
+    ... #person:meg
+    Ho sit opptatt med  nokon akkurat no, men eg trur ho straks er ledig. Bli med meg, kontoret hennes er rett her borte. #person:resepsjonisten
+    Du veit den kjensla når du seier noko veldig riktig, men du ikkje aner kva det var du sa? #style:narrative
+    ->redaktoren_first
 - ->spurt_etter_redaktoren
+
+= redaktoren_first
+... då trur eg at eg har fått oversikt over situasjonen. #style:dialog #person:twist
+Han dukkar nok opp igjen. Det har sannsynlegvis ei naturleg forklaring, men vi må nesten rapportere det likevel. #person:katrina
+Det er til stor hjelp. Eg drar til Snobbediengen no for å ta ein prat med den vesle venninna hans, men sannsynlegvis dukkar han opp igjen i løpet av helga. #person:twist
+Katrina? Har du fem minutt? #person:resepsjonisten
+Eksellent timing, Quinn. Twist skulle akkurat gå. #person:katrina
+... #person:twist
+Var det ... ein politimann? Ein politibetjent? Ein politiinspektør? Eg såg for lite krim til å vera sikker. #style:narrative
+Katrina, dette er {playerName}. {playerPronounCap} ville snakke med deg om ... Nomen Nigma.  #style:dialog #person:resepsjonisten
+Det kan ikkje vera mogleg ... #person:katrina
+Er det deg? Er det verkeleg deg?
+Uh... #person:meg
+Eg kan ikkje seie at eg sette pris på det vesle forsvinningsnummeret ditt, men ... Du har meir materiale no, ikkje sant? #person:katrina
+... beklager. Eg veit ikkje kva du snakkar om. #person:meg
+Er ... er ikkje du Nomen Nigma? #person:katrina
+* Nei. #person:meg
+* (har_spurt_kven_nn_er) Kven er Nomen Nigma? #person:meg
+- Huh. Du fekk opp håpet mitt eit lite augeblikk. #person:katrina
+{not har_spurt_kven_nn_er:
+    Unnskyld, men ... kven er Nomen Nigma? #person:meg
+}
+Nomen Nigma er eit dekknamn. Eg har aldri klart å finne ut kva hen eigentleg heiter, og gudane skal vite at eg har prøvd. #person:katrina
+Eg mottok ein konvolutt for tre år sidan frå ein anonym person. Konvolutten innehaldt ei gåte ... og eit følgjebrev der avsendaren, som kalte seg Nomen Nigma, spurte om å få lov til å lage oppgåver for oss.
+Oppgåver? #person:meg
+Kryssord, ordsøk, sudoku, rebusar, nonogram ... den typen ting. Hjernetrim som vi kan trykke ved sidan av teikneseriane i Dagens Nyhende kvar laurdag som folk kan prøve å løyse. #person:katrina
+"Kontakt meg på denne e-postadressa om tilbodet er av interesse." Eg liker ikkje å forholde meg til anonyme personar. Men Nigma var billig, og oppgåvene var av svært høg kvalitet. Betre enn dei konkurrentane våre har.
+Etter det har hen laga oppgåver for avisa vår. Og hen har alltid vore pålitelig som ei klokke. Etter det fekk eg ein ny e-post kvar onsdag morgon, med ei oppgåve vi kunne trykke komande laurdag.
+Førre veke kom det ingen e-post. Ikkje denne veka heller. Og eg har ikkje klart å få tak i Nigma etter det. Det er som om hen er sunke i jorda.
+Skjønner ... Vel, det er diverre ikkje meg. #person:meg
+Men du kjente namnet Nomen Nigma. Vi har ikkje delt det utanfor avisa, så korleis har du høyrd det? #person:resepsjonisten
+Eg ... veit kven Nomen Nigma er. #person:meg
+Ok? Kven? #person:katrina
+->kven_er_nomen_nigma
+
+= kven_er_nomen_nigma
+Eg trur at Nomen Nigma er ... #person:meg
+* Deg[?], redaktør!
+    Det var ein veldig merkeleg konklusjon på det eg nettopp fortalte deg. Kvifor skulle eg sende anonyme brev til meg sjølv? Kvifor skulle eg sitja her og vera desperat etter å finne ut kven Nomen Nigma er fordi hen har kutta all kontakt? #person:katrina
+    Det er nesten så eg kunne tenkja meg å høyra korleis i alle dagar du har resonnert deg fram til det.
+    Vel, eg tenkte ... #person:meg
+    Eg sa nesten. Gjett igjen. #person:redaktoren
+* Theodor Krankelfnaas[?].
+    Mangemilliardæren? Det er latterleg. Har du noko som helst som underbygger den påstanden? #person:katrina
+    Eg trur det. #person:meg
+    Krankelfnaas eigde denne avisa, gjorde han ikkje?
+    Det tyder ikkje at han jobba her i skjul. Eg trur ikkje Jeff Bezos skriver restaurantomtalar i Washington Post heller. #person:Katrina
+    Krankelfnaas var eksentrisk, og han elska å lage oppgåver. Så høgt at testamentet hans var eit rebusløp. #person:meg
+    Kanskje det, men ... #person:katrina
+    Og Nomen Nigma slutta å kontakte dykk i førre veke. Altså då Krankelfnaas døydde. #person:meg
+    Det kan jo vera eit samantreff, men ... #person:katrina
+    Og ... #person:meg
+    Eg blei leia hit av testamentet til Krankelfnaas. Eit testamente som innehaldt eit dikt. Eit dikt med ti utheva bokstavar ... N O M E N N I G M A.
+    Det er då ikkje ... Jo. Herregud, du har heilt rett. Krankelfnaas? Verkeleg? #person:katrina
+    ...
+    Så Nomen Nigma er død. Det er ikkje akkurat gode nyhende ... men du skal ha takk for at du oppklarte det for oss.
+    Er det noko vi kan gjera for deg til gjengjeld?
+    Eg leiter etter ei gåte. Eller ein rebus, eller ... noko som helst som Krankelfnaas kan ha gitt deg eller lagt igjen her på eit tidspunkt. Finst det noko slikt? #person:meg
+    ... ja. #person:katrina
+    Ho la hendene på PC-tastaturet, og leitte fram eit dokument. Ganske snart summa det i printeren, og ho gav meg arket som kom ut av han. Det såg ut som eit kryssord. #style:narrative
+    ~ inv += oppgaveark
+    For veldig lenge sidan sendte Nomen Nigma meg denne gåta. I e-posten som fulgte med stod det at dersom hen nokon gong ikkje leverte ei gåte i tide til deadline, kunne eg trykke den. Hen bad meg om å ikkje bruke ho før det. #style:dialog #person:katrina
+    Så denne stod i avisa på laurdag? #person:meg
+    Nei. Den er verkeleg ikkje blant hens beste, så eg endte opp med å trykke ei ekstra vitseteikning i staden for. Men du må gjerne ta ho med deg. Kan du bruke ho til noko ... #person:katrina
+    Det kan eg nok. Tusen takk skal du ha. #person:meg
+    Er det noko anna eg kan hjelpe deg med? #person:katrina
+    ->redaktoren
+* Gaute Ormåsen?
+    ... Kva? Kvifor i alle dagar skulle Gaute Ormåsen vera Nomen Nigma? #person:katrina
+    Fordi han er anonym, og Gaute Ormåsen er anonym? #person:meg
+    ... #person:katrina
+    ... er ikkje han er ein av dei Subwoolfer-folka? #person:meg
+    Eg trudde det var Ylvis-brørne. #person:resepsjonisten
+    Eg trudde det var Kurt Foss og Reidar Bøe. #person:katrina
+    Det ... det var berre ein spøk. #person:meg
+    Ikkje ein veldig god ein. #person:katrina
+- ->kven_er_nomen_nigma
+
+= redaktoren
++ [Gå tilbake til resepsjonen]
+- ->avisa
 
 = journalist
 Det sat ein journalist og hamra frenetisk på tastaturet berre nokre meter frå meg.

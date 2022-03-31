@@ -3,15 +3,17 @@ INCLUDE inventory.ink
 INCLUDE villaen.ink
 INCLUDE avisa.ink
 
-LIST inv = (mobil), visittkort, testamente
+LIST inv = (mobil), visittkort, testamente, oppgaveark
 LIST flags = gittButlerenBrevet, spurtEtterRedaktoren
 
 VAR playerName = ""
 VAR playerPronoun = "hen"
+VAR playerPronounCap = "Hen"
 VAR puzzle1 = false
 
 // Historia starter på kontoret, så gå dit
-->kontoret
+// ->kontoret
+->avisa
 
 === map
 + [Kontoret mitt] ->kontoret

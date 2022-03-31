@@ -102,6 +102,33 @@ button.link {
 
 	z-index: 5;
 
+	&.style-input {
+		@include cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
+
+		form {
+			border: solid 1px var(--cyan);
+			padding: 1rem;
+			background: var(--white);
+			box-shadow: .5rem .5rem .5rem var(--black-1);
+		}
+		.text-input {
+			font-size: 1rem;
+			display: block;
+			width: 100%;
+			padding: .2rem .5rem;
+			text-align: center;
+			margin: .5rem 0;
+			font-family: "Shadows Into Light";
+			color: var(--yellow);
+			background: var(--black-2);
+		}
+	}
+
 	&.style-narrative {
 		@include cover;
 		font-family: Garamond, serif;
