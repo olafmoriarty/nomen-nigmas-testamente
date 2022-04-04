@@ -21,7 +21,7 @@ function SetVariable(props) {
 	return (
 		<form onSubmit={e => onSubmit(e)}>
 			<p><label htmlFor="textInput">{currentText.text}</label></p>
-			<input type="text" className="text-input" id="textInput" value={input} onChange={e => updateInput(e)} />
+			<input type="text" autoFocus className="text-input" id="textInput" value={input} onChange={e => updateInput(e)} />
 			<button className="input-submit-button" type="submit">Svar</button>
 		</form>
 	)

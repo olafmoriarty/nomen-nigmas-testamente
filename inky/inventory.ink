@@ -1,11 +1,19 @@
 === inventory
 + {inv ? mobil} [Mobiltelefonen]
-    Eg fann fram mobilen, skrolla raskt gjennom Twitter, og la han tilbake i lomma.
+    Eg fann fram mobilen, skrolla raskt gjennom {Twitter|Snapchat|Instagram|tekstmeldingane mine|e-posten min|ein wikipediaartikkel om {~storpudlar|belgiske teikneseriar|ei elv i Malaysia|Bobbysocks|støvsugarar|stretchlaken|tikka masala-kylling|Hitra, Frøya og Fjellværøya|Heismann Hå|barbermaskiner|Metroid|akvariefisk|lysrør|Vincent van Gogh|unbrakonøklar|strikkhopping|Peter Christel Asbjørnsen|Brannmann Sam|flodhestar|Minecraft|Wikipedia|Pyongyang|påskemarsipan|Agatha Christie|Bernhard Borge|røykvarslarar|Sogn og Fjordane|selbuvottar|sverdfisk|krysantemum}}, og la han tilbake i lomma.
 + {inv ? testamente} [Theodor Krankelfnaas' testamente] ->testamentet->
 + {inv ? visittkort} [Fru Krankelfnaas' visittkort]
     På visittkortet står det eit namn - "Wenche Krankelfnaas" - og ei adresse - "Snobbediengen 3, Oslo". #style:narrative
     Det står ikkje ei e-postadresse her. Bah, typisk.
-    Det står eit telefonnummer nederst på kortet. Eg hatar å ringe folk, så å bruke det blir ikkje aktuelt.
+    Det står eit telefonnummer nederst på kortet. Eg har telefonskrekk, så å bruke det blir ikkje aktuelt.
++ {inv ? oppgaveark} [Oppgåvearket]
+    Eit A4-ark eg hadde fått frå redaktøren i Dagens Nyhende. På arket stod det nokre stikkord, og eit kryssordrutenett.
+    {puzzle2 == 0:
+        MINIGAME #minigame:puzzle2
+    }
+    {puzzle2:
+        Eg hadde fylt ut heile kryssordet. Løysingsordet var Kikazaru.
+    }
 + ->
 Lommene mine var tomme. ->->
 - ->->
@@ -16,7 +24,7 @@ Eg burde levere dette tilbake til fru Krankelfnaas så fort som mogleg, men ...
     ... det skader vel ingen om eg berre tar ein kjapp titt?
 + {not dikt} [Les testamentet] ->begge->
 + {dikt} [Sjå på diktet på side 1] ->dikt->
-+ {dikt and (puzzle1 == 1)} [Sjå på gåta på side 2] ->puzzle->
++ {dikt and (puzzle1 == 0)} [Sjå på gåta på side 2] ->puzzle->
 + [La vera]
 - ->->
 
@@ -30,7 +38,7 @@ Neste side såg ut til å vera sporet fru Krankelfnaas hadde snakka om.
 
 = dikt
 Når du leser dette er eg død og borte, akk og ve #style:poem
-Og i testamentet ligger sporet til eit skjulested
+Og i testamentet ligger vegen til eit skjulested
 Målet ditt er evig rikdom, spor er skjult frå topp til bunn
 Eitt er skjult på kartet, men dei fleste er på heimleg grunn
 Nøklar åtte må du finne, då må mange vegar gås

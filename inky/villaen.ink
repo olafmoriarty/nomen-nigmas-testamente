@@ -3,7 +3,29 @@ BLANK #location:villaen #person:
 {not first:
 ->first
 }
-+ [Eg ringte på døra.] -> butler
+{avisa.redaktoren_first and flags !? settTwistVedVillaen:
+    ... #person:twist #style:dialog
+    På veg til døra blei eg møtt av ein mann som gjekk i motsatt retning. Det var noko kjent med han, som om eg hadde sett han tidlegare. #person: #style:narrative
+    ~ flags += settTwistVedVillaen 
+}
++ {not kvifor_avhor} [Eg ringte på døra.] -> butler
++ {kvifor_avhor} [Eg ringte på døra.]
+    Ja? ... Åh, det er deg igjen. #person:astrid #style:dialog
+    ++ [Eg veit kvifor politiet var her.]
+        -> kvifor_avhor
+    ** Kvar blei det av butleren din? #person:meg
+        Knut? Han er ferdig for dagen og har gått heim. #person:astrid
+        Var det noko meir du ville snakke med han om?
+        Nei, ikkje eigentleg, eg var vel berre nysgjerrig. #person:meg
+        *** [Eg veit kvifor politiet var her.]
+            -> kvifor_avhor
+        *** Det var alt eg ville spørja om. #person:meg
+        Ringte du på berre for å ... Du er litt snål, veit du det? #person:astrid
+        ->villaen
+    ++ Eh, nei, det var ingenting. #person:meg
+        ... Neste gong du tulleringer på døra til nokon, hugs å løpe før dei opner. #person:astrid
+        ->villaen
+-> butler
 + [Eg bestemte meg for å dra til ...] ->map
 + [I lommene mine hadde eg ...] ->inventory->villaen
 
@@ -15,9 +37,10 @@ Frå oppkjørselen såg eg òg ein fantastisk, mangfoldig hage som omringa huset
 ->villaen
 
 = butler
-Eg gjekk fram til den majestetiske døra og la fingeren på dørklokka. Ganske snart opna døra seg, og ein høg figur i grå dress stod på den andre sida av dørstokken og såg ned på meg. #style:narrative
+Eg gjekk fram til den majestetiske døra og la fingeren på dørklokka. Ganske snart opna døra seg, og ein høg figur i dyr dress stod på den andre sida av dørstokken og såg ned på meg. #style:narrative
 God dag. Korleis kan eg hjelpe deg? #style:dialog #person:butler
-+ Er Wenche Krankelfnaas {her|tilbake}? #person:meg
++ [Er Wenche Krankelfnaas  {her|tilbake}?]
+    Er Wenche Krankelfnaas {her|tilbake}? #person:meg
     Nei, beklager. Ho er framleis ute. #person:butler
     Pokker. #person:meg
     {flags !? gittButlerenBrevet:
@@ -29,8 +52,57 @@ God dag. Korleis kan eg hjelpe deg? #style:dialog #person:butler
         Uh, nei, beklager. #person:meg
         ~ flags += gittButlerenBrevet
     }
+    {inv ? oppgaveark:
+        ... #person:butler
+        Frøken Astrid Isabella Krankelfnaas blei nettopp ledig, kanskje ho kan hjelpe deg? #person:butler
+        Kven? #person:meg
+        Avdøde herr Krankelfnaas' barnebarn. Ho kom til Oslo i natt for å hjelpe til med å rydde i buet. #person:butler
+        Eg trenger berre å gi frå meg ein konvolutt. Eg kan godt snakke med henne. #person:meg
+        Eit augeblikk. #person:butler
+        ->astrid_first
+    }
     Eg kjem tilbake seinare. #person:meg
     Gjer det. #person:butler
     Den vennlege kjempa lukka døra igjen, og eg såg ingen annan utveg enn å kome tilbake hit seinare. #person: #style:narrative
 - ->villaen
-->END
+
+= astrid_first
+Ja? Kven er du? #style:dialog #person:astrid
+Hei. Eg heiter {playerName}. Eg fekk besøk av di ... av Wenche Krankelfnaas i dag, og ho gløymde dette testamentet på kontoret mitt? #person:meg
+Åh. Typisk Wenche. #person:astrid
+Eg skal gi det til henne. Takk for at du kom innom.
+~ inv -= testamente
+Og med det var mi rolle i narrativet over. Eg kunne gå tilbake til kontoret, sprette ei pakke kolibristenger og stirre på døra i håp om at ein ny kunde skulle spasere inn. #style:narrative
+Eller ...
+... nei. Eg måtte sjå korleis denne historia utspelte seg vidare.
+Kunne eg få lov til å stille deg eit par spørsmål? Om bestefaren din, og ... #person:meg #style:dialog
+Ugh, nei! Eg har svart på spørsmål den siste timen, eg orkar ikkje ... #person:astrid
+... sorry. Eg er i litt dårleg humør. Eg kom med nattoget frå Bergen i natt, så eg har ikkje sove så godt, og eg har ikkje fått kvilt i dag fordi eg plutseleg fekk besøk av politiet.
+Politiet? #person:meg
+Dei leitar etter ein sakna person, og av ein eller annan grunn trur dei at eg kjenner han. Eg har aldri sett eller høyrd om fyren før. #person:astrid
+Hadde eg ikkje høyrd om noko slikt for ikkje så lenge sidan? #style:narrative
+->kvifor_avhor
+
+= kvifor_avhor
+Eg trur kanskje eg veit kvifor politiet ville snakke med deg om {flags ? veitOmUno: Uno Martinsen|denne personen}. #style:dialog #person:meg
+Javel? #person:astrid
++ Dei trur at han var i familie med deg. #person:meg
+    Han var ikkje det. #person:astrid
+    Er du heilt sikker? #person:meg
+    Han står ikkje på stamtreet, for å seie det sånn. Du meiner om eg har ein hemmeleg fetter eg aldri har høyrd om? #person:astrid
+    Eg veit ikkje. Kan bestefaren din ha hatt born utanfor ekteskap? #person:meg
+    Han hadde det, faktisk. Det eg er skeptisk til er at han skulle ha haldt det hemmeleg for oss. Det liknar ikkje bestefar. #person:astrid
+    Eller har du bevis på at denne personen var i familie med oss?
+    ++ Nei ... #person:meg
++ Dei trur at han var kjærasten din. #person:meg
+    ... æsj? #person:astrid
+    Eg googla han etter at politiet var her. Han er ti år eldre enn meg.
+    
++ Dei trur at han budde i dette nabolaget. #person:meg
+-
+Så det er berre ei gjetning ... #person:astrid
+Skaff meg eit handfast bevis på teorien din, så skal eg vera villig til å tru på han. Gjer du det, skal eg svare på spørsmåla dine. Ok?
++ [Gjett noko anna]
+->kvifor_avhor
++ OK.[] Eg kjem tilbake om eg finner noko konkret å vise deg. #person:meg
+->villaen

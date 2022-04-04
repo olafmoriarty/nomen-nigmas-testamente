@@ -326,6 +326,9 @@ button.link {
 	justify-content: center;
 	text-align: center;
 	flex-direction: column;
+	background-size: cover;
+	background-position: center;
+	text-shadow: .1em .1em .1em var(--black-1);
 	h2 {
 		font-size: 1em;
 	}
@@ -401,6 +404,10 @@ button.link {
 	}
 	a {
 		color: var(--cyan);
+	}
+
+	.credit-columns {
+		list-style-type: none;
 	}
 
 	.developed-by {
@@ -483,7 +490,7 @@ button.link {
 	100% {transform: translateY(0);}
 }
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 800px) {
 	html {
 		font-size: 200%;
 	}
@@ -518,6 +525,11 @@ button.link {
 		button {
 			font-size: .5rem;
 		}
+	}
+
+	.credit-columns {
+		columns: 2;
+		font-size: .5rem;
 	}
 
 	.save-window {

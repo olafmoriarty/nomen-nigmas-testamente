@@ -8,14 +8,14 @@ function Puzzle1(props) {
 		inkVariable="puzzle1"
 		hints={[
 			'Kva har desse artistane gjort i dei oppgitte årstala? Ser du nokre likdomstrekk?',
-			'Dei fire første platene gir deg ',
-			'Løysingsordet er eit stadnamn som har blitt nevnt i forteljinga tidlegare (hugs at du når som helst kan sjekke historieloggen ved å klikke på dei to snakkeboblene på toppen av skjermen).',
+			'Første bolk med artistar gir deg tre (X) og ein (Y). Neste bolk med artistar gir deg òg tre (X) og ein (Y). Kan du konvertere den informasjonen til ein stad?',
+			'Løysingsordet er eit stadnamn som har blitt nevnt i forteljinga tidlegare. Hugs at du kan opne historieloggen ved å trykke på snakkeboblene øvst på sida.',
 		]}
-		pdf="./pdf/puffy.pdf"
+		pdf="./pdf/mixtapes.pdf"
 		changeVariable={changeVariable}
 		progress={progress}
 	>
-		<h1>Oppgåve 1</h1>
+		<h1>#1: Mixtapes</h1>
 		<p><em>Puffy AmiYumi</em> (2004)<br/>
 		<em>Metropole Orkest</em> (2010)<br/>
 		<em>The Knocks</em> (2016)<br/>

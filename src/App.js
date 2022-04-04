@@ -1,6 +1,7 @@
 import './css/game.css';
 import Game from './Game';
 import Puzzle1 from './nnt/Puzzle1';
+import Puzzle2 from './nnt/Puzzle2';
 
 function App() {
 	const title = 'Nomen Nigmas testamente';
@@ -12,18 +13,47 @@ function App() {
 		},
 		'meg': {
 			name: "Meg",
-		}
+		},
+		'resepsjonisten': {
+			name: 'Resepsjonisten',
+			portrait: "./images/characters/quinn.png",
+		},
+		'katrina': {
+			name: 'Redaktøren',
+			portrait: "./images/characters/katrina.png",
+		},
+		'twist': {
+			name: 'Politimannen',
+			portrait: "./images/characters/twist.png",
+		},
+		'butler': {
+			name: 'Butleren',
+			portrait: "./images/characters/butler.png",
+		},
+		'astrid': {
+			name: 'Astrid Isabella',
+			portrait: "./images/characters/astridisabella.png",
+		},
 	};
 
 	const locations = {
 		'kontoret': {
 			name: 'Mitt kontor',
 			image: './images/backgrounds/office.png',
-		}
+		},
+		'avisa': {
+			name: 'Dagens Nyhende',
+			image: './images/backgrounds/avisa.png',
+		},
+		'villaen': {
+			name: 'Slott Krankelfnaas',
+			image: './images/backgrounds/mansion.png',
+		},
 	}
 
 	const minigames = {
 		puzzle1: <Puzzle1 />,
+		puzzle2: <Puzzle2 />,
 	};
 
 	const credits = [
@@ -39,6 +69,28 @@ function App() {
 			<h2>Javascript-port</h2>
 			<p><a href="https://github.com/y-lohse/inkjs" target="_blank" rel="noreferrer noopener">inkjs</a></p>
 			<p className="developed-by">utvikla av Yannick Lohse</p>
+		</>,
+		<>
+			<h2>Bakgrunnar</h2>
+			<ul className="credit-columns">
+
+			<li><a href="https://www.shutterstock.com/nb/image-illustration/3d-rendering-old-american-film-noir-123996652">Gehrke / Shutterstock.com</a></li> {/* Mitt kontor */}
+
+			<li><a href="https://www.istockphoto.com/photo/business-team-working-at-desks-in-modern-open-plan-office-gm1137070219-303064916">monkeybusinessimages / iStock.com</a></li>
+
+			<li><a href="https://www.istockphoto.com/photo/elizabethan-manor-house-in-the-cotswolds-oxfordshire-england-gm181875867-23857929">stevegeer / iStock.com</a></li>
+
+			<li><a href="https://www.shutterstock.com/nb/image-illustration/scary-endless-medieval-catacombs-torches-mystical-1940646100">Design Projects / Shutterstock.com</a></li> {/* Katakomber */}
+			</ul>
+		</>,
+		<>
+			<h2>Bildereferanser figurportrett</h2>
+			<ul className="credit-columns">
+				<li><a href="https://www.shutterstock.com/nb/image-photo/young-african-american-girl-wearing-casual-1933320524">Krakenimages.com / Shutterstock.com</a></li> {/* Resepsjonisten */}
+				<li><a href="https://www.shutterstock.com/nb/image-photo/portrait-serious-confident-mature-female-politician-2065717184">Pressmaster / Shutterstock.com</a></li> {/* Redaktøren */}
+				<li><a href="https://www.shutterstock.com/nb/image-photo/close-portrait-fashionable-trendy-elegant-wealthy-1278843670">UfaBizPhoto / Shutterstock.com</a></li> {/* Butleren */}
+				<li><a href="https://www.shutterstock.com/nb/image-photo/photo-self-confident-student-long-ginger-1354473620">WAYHOME studio / Shutterstock.com</a></li> {/* Astrid Isabella */}
+			</ul>
 		</>,
 		<>
 			<h2>Ikon</h2>

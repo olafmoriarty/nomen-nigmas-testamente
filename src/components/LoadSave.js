@@ -20,7 +20,7 @@ function SaveSlot(props) {
 	}
 	
 	return (
-		<div className="save-slot">
+		<div className="save-slot" style={{backgroundImage: saveFileJson && saveFileJson.location && saveFileJson.location.image ? 'url(' + saveFileJson.location.image + ')' : ''}}>
 			{prettyName ? <h2>{prettyName}</h2> : false}
 			{saveFileJson ? <>
 				{saveFileJson.location && saveFileJson.location.name ? <p>{saveFileJson.location.name}</p> : false}

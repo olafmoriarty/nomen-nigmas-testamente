@@ -7,7 +7,7 @@ function Portrait(props) {
 	}
 
 	return (
-		<div className="portrait">
+		<div className="portrait" key={currentText.person.portrait}>
 			<img src={currentText.person.portrait} alt={currentText.person.name} />
 		</div>
   )

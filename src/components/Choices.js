@@ -9,6 +9,7 @@ function Choices(props) {
 			return;
 		}
 		if (ev.key === 'ArrowUp') {
+			ev.preventDefault();
 			let newValue = activeChoice - 1;
 			if (newValue < 0) {
 				newValue += choices.length;
@@ -16,12 +17,15 @@ function Choices(props) {
 			setActiveChoice(newValue);
 		}
 		if (ev.key === 'ArrowDown') {
+			ev.preventDefault();
 			setActiveChoice((activeChoice + 1) % choices.length);
 		}
 		if (ev.key.match(/[1-9]/) && parseInt(ev.key) <= choices.length) {
+			ev.preventDefault();
 			setActiveChoice(parseInt(ev.key) - 1);
 		}
 		if ((ev.key === ' ' || ev.key === 'Enter') && activeChoice >= 0 && activeChoice < choices.length) {
+			ev.preventDefault();
 			makeChoice(activeChoice);
 		}
 	}

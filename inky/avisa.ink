@@ -1,10 +1,15 @@
 === avisa
-BLANK #location:avisa #style:narrative person:
+BLANK #location:avisa #style:narrative #person:
 {not first:
     ->first
 }
 + [Gå til resepsjonen] ->resepsjonen
++ {redaktoren_first} [Gå inn til redaktøren]
+    Eg gjekk inn på redaktørens kontor igjen.
+    Ja? Kva vil du? #person:katrina #style:dialog
+    ->redaktoren
 + [Prøv å få merksemda til ein journalist] ->journalist
++ [Sjå på skrivebordet til Uno] ->unodesk
 + [Eg bestemte meg for å dra til ...] ->map
 + [I lommene mine hadde eg ...] ->inventory->avisa
 
@@ -72,7 +77,7 @@ Eg gjekk bort til resepsjonen{| igjen}.
     ** Deg? #person:meg
         Meg? Kva i alle dagar vil du snakke med meg om? #person:resepsjonisten
         Dersom Krankelfnaas hadde gøymd neste spor ein stad i denne bygningen, kvifor ikkje byrja å leite der folk faktisk kjem INN i bygningen? #style:narrative
-        Du kjenner ikkje tilfeldigvis Theodor Krankelfnaas? #style:dialog person:meg
+        Du kjenner ikkje tilfeldigvis Theodor Krankelfnaas? #style:dialog #person:meg
         Ser eg ut som om eg pleier å henge med geriatriske milliardærar? #person:resepsjonisten
         For den saks skuld, ser eg ut som om eg pleier å henge med DAUDE milliardærar?
         Nei, altså, eg berre tenker, han eide jo denne avisa ... #person:meg
@@ -97,6 +102,8 @@ Eg gjekk bort til resepsjonen{| igjen}.
         *** Nei[!], det var ikkje sånn meint, eg berre ... #person:meg
         Godt. Då foreslår eg at vi legger den ballen daud. Eg kjente ikkje Theodor Krankelfnaas, og det er alt eg har å seie om den saka. #person:resepsjonisten
         Skjønner. Beklager. #person:meg 
+* {redaktoren_first} Kan eg få snakke med redaktøren igjen? #person:meg
+    Du kan berre gå rett inn. #person:resepsjonisten
 + Det var ingenting. #person:meg
      {not resepsjonist_flort: Ok...? Ha ein fin dag vidare, då!} #person:resepsjonisten
 - ->avisa
@@ -127,9 +134,7 @@ Eg gjekk bort til resepsjonen{| igjen}.
     Eg set ikkje opp avtaler mellom redaktøren og vilt framande som vandrer inn frå gata utan å vite kvifor. Det ender fort i at du skjeller henne ut for at vi har trykka artiklar som insinuerer at jorda er rund, eller at vaksiner virker, eller at Belgia er ein sjølvstendig stat.
     Det ... er forsåvidt forståeleg. #person:meg
 * [NOMEN NIGMA.]
-    "Når du leser dette ..." #style:narrative
-    "Og i testamentet ..."
-    Første bokstav i kvar linje i testamentet var utheva. Var det berre eit samantreff, eller hadde dei ti bokstavane nokon form for meining?
+    Eg hadde klart å leggja merke til dei ti bokstavane. Var det heilt tilfeldig, eller danna dei faktisk to ord? #style:narrative
     ... NOMEN NIGMA. #style:dialog #person:meg
     ... kva? Sa du ... Nomen Nigma? #person:resepsjonisten
     Beklager. Eg skjønte då eg sa det at det ikkje gav ... #person:meg
@@ -180,12 +185,12 @@ Eg trur at Nomen Nigma er ... #person:meg
     Det var ein veldig merkeleg konklusjon på det eg nettopp fortalte deg. Kvifor skulle eg sende anonyme brev til meg sjølv? Kvifor skulle eg sitja her og vera desperat etter å finne ut kven Nomen Nigma er fordi hen har kutta all kontakt? #person:katrina
     Det er nesten så eg kunne tenkja meg å høyra korleis i alle dagar du har resonnert deg fram til det.
     Vel, eg tenkte ... #person:meg
-    Eg sa nesten. Gjett igjen. #person:redaktoren
+    Eg sa nesten. Gjett igjen. #person:redaktøren
 * Theodor Krankelfnaas[?].
     Mangemilliardæren? Det er latterleg. Har du noko som helst som underbygger den påstanden? #person:katrina
     Eg trur det. #person:meg
     Krankelfnaas eigde denne avisa, gjorde han ikkje?
-    Det tyder ikkje at han jobba her i skjul. Eg trur ikkje Jeff Bezos skriver restaurantomtalar i Washington Post heller. #person:Katrina
+    Det tyder ikkje at han jobba her i skjul. Eg trur ikkje Jeff Bezos skriver restaurantomtalar i Washington Post heller. #person:katrina
     Krankelfnaas var eksentrisk, og han elska å lage oppgåver. Så høgt at testamentet hans var eit rebusløp. #person:meg
     Kanskje det, men ... #person:katrina
     Og Nomen Nigma slutta å kontakte dykk i førre veke. Altså då Krankelfnaas døydde. #person:meg
@@ -208,26 +213,59 @@ Eg trur at Nomen Nigma er ... #person:meg
     ->redaktoren
 * Gaute Ormåsen?
     ... Kva? Kvifor i alle dagar skulle Gaute Ormåsen vera Nomen Nigma? #person:katrina
-    Fordi han er anonym, og Gaute Ormåsen er anonym? #person:meg
+    Fordi hen er anonym, og Gaute Ormåsen er anonym? #person:meg
     ... #person:katrina
     ... er ikkje han er ein av dei Subwoolfer-folka? #person:meg
-    Eg trudde det var Ylvis-brørne. #person:resepsjonisten
+    Eg trudde det var Ylvis. #person:resepsjonisten
     Eg trudde det var Kurt Foss og Reidar Bøe. #person:katrina
     Det ... det var berre ein spøk. #person:meg
     Ikkje ein veldig god ein. #person:katrina
 - ->kven_er_nomen_nigma
 
 = redaktoren
++ {flags !? veitOmUno} Kva var det du snakka med politiet om?[] Eg skjønte at det var snakk om ein savna person, men ... #person:meg
+    Det? Det har ingenting med Theodor Krankelfnaas å gjera. #person:katrina
+    Er du sikker? #person:meg
+    Har du nokon grunn til å tru noko anna? #person:katrina
+    ** {inv ? visittkort} [Adressa hans.]
+        Theodor Krankelfnaas budde i Snobbediengen 3. Og han der Twist sa at han skulle prate med "den vesle venninna hans i Snobbediengen". #person:meg
+        Det kan vera eit samantreff ... #person:katrina
+        Men eg trur nok du har rett i at det ikkje er det.
+        ~ flags += veitOmUno
+        Twist var her for å stille meg nokre spørsmål om Uno Martinsen. Ein av journalistane våre.
+        Han har ikkje vore på jobb denne veka. Så eg ringte til mor hans, og han har visst ikkje vore heime sidan helga heller.
+        Trur du at noko har skjedd med han? #person:meg
+        Eg veit ikkje. Han har ein tendens til å vera ... eg vil ikkje kalle han dum, men ... korttenkt? Når han jobbar med ei stor sak, har han ein tendens til å dykke heilt ned i ho og gløyme resten av verda. #person:katrina
+        Så kva sak jobbar han med no? #person:meg
+        Eg veit ikkje. Sist eg snakka med han sa han at han hadde funne noko som muligens kunne vera ei sak, men at det ikkje var konkret nok til at han kunne dele nøyaktig kva det var enno. #person:katrina
+        Det siste han jobba med før det var ...
+        ... åh.
+        Kva? #person:meg
+        Ein nekrolog for Theodor Krankelfnaas. #person:katrina
+        Kan eg få sjå på skrivebordet hans? #person:meg
+        Twist ba meg om å ikkje la nokon røre det. #person:katrina
+        ... men det er nede i kontorlandskapet ved resepsjonen.
+    ++ Nei. #person:meg
+      Ikkje eg heller. Var det noko anna du ville? #person:katrina
 + [Gå tilbake til resepsjonen]
-- ->avisa
+    Lukk døra når du går. #person:katrina
+    ->avisa
+- ->redaktoren
 
 = journalist
 Det sat ein journalist og hamra frenetisk på tastaturet berre nokre meter frå meg.
-Unnskyld meg? #style:dialog person:meg
+Unnskyld meg? #style:dialog #person:meg
 ... #person:journalist
 Kan eg få spørja deg om noko? #person:meg
 ... #person:journalist
 {&Kan du høyra meg?|Er det gøy å vera journalist?|Er det vanskeleg å vera journalist?|Kor mange ord skriver du i minuttet?|Har du lest nokre fine bøker i det siste?|Gleder du deg til sommarferien?|What is the airspeed velocity of an unladen swallow?|Når har du bursdag?|Er du ein engel?|Kva er det du skriver, eigentleg?|Skriver du ein banebrytande artikkel som vil avsløre at ein korrupt politiker har gjort noko dumt og at vanlege folks sparepengar står i fare?|Skriver du om Charter-Svein?|Skriver du ein omtale av ein ny film? Eller eit teaterstykke? Oooh, eller eit dataspel?|Kvifor ignorerer du meg?|Eg tenkte å gå vidare no, skal eg ta med noko til deg neste gong eg kjem innom? Kaffi, eller kroneis, eller ...} #person:meg
 ... #person:journalist
 Hen svarte ikkje. Kanskje hen ikkje høyrde meg. #style:narrative
+->avisa
+
+= unodesk
+Eg lot blikket gli over rekka av skrivebord til eg såg eitt som hadde enkle politisperringar rundt seg, og byrja å bevege meg i den retninga.
+... og kvar har du tenkt deg? #style:dialog #person:resepsjonisten
+Eg ville berre ta ein titt på skrivebordet til Uno Martinsen. Er det i orden? #person:meg
+Nei. Politiet 
 ->avisa

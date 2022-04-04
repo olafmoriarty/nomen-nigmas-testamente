@@ -330,6 +330,9 @@ button.link {
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  text-shadow: 0.1em 0.1em 0.1em var(--black-1);
 }
 .save-slot h2 {
   font-size: 1em;
@@ -416,6 +419,9 @@ button.link {
 }
 .credits a {
   color: var(--cyan);
+}
+.credits .credit-columns {
+  list-style-type: none;
 }
 .credits .developed-by {
   font-size: 0.8rem;
@@ -513,7 +519,7 @@ button.link {
     transform: translateY(0);
   }
 }
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 800px) {
   html {
     font-size: 200%;
   }
@@ -547,6 +553,11 @@ button.link {
     font-size: 0.5rem;
   }
   .delete-autosave button {
+    font-size: 0.5rem;
+  }
+
+  .credit-columns {
+    columns: 2;
     font-size: 0.5rem;
   }
 
