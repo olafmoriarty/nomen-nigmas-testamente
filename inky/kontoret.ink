@@ -98,7 +98,7 @@ Dette hamna definitivt på topp ti-lista over dei merkelegaste formiddagane eg h
 = skrivebord
 Skrivebordet mitt var fullt av papirer. Det var eit salig rot, men det var mitt rot, og eg visste kvar alt var.
 {inv !? visittkort:Visittkortet fru Krankelfnaas hadde lagt frå seg lå framleis på bordet.}
-{inv !? testamente:Heilt på enden av bordkanten, lengst frå meg, lå det ... ein stor konvolutt. Huh. Kvar kom den frå? Den var ikkje min.}
+{inv !? testamente and puzzle1 == 0:Heilt på enden av bordkanten, lengst frå meg, lå det ... ein stor konvolutt. Huh. Kvar kom den frå? Den var ikkje min.}
 * [Plukk opp visittkortet]
 På visittkortet stod det eit namn og ei adresse. "Wenche Krankelfnaas, Slott Krankelfnaas, Snobbediveien 3, Oslo". Eg putta kortet raskt i lomma.
 ~ inv += visittkort

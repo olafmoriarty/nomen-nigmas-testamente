@@ -9,7 +9,7 @@ BLANK #location:villaen #person:
     ~ flags += settTwistVedVillaen 
 }
 + {not kvifor_avhor} [Eg ringte på døra.] -> butler
-+ {kvifor_avhor} [Eg ringte på døra.]
++ {kvifor_avhor and flags !? harAstridsTillit} [Eg ringte på døra.]
     Ja? ... Åh, det er deg igjen. #person:astrid #style:dialog
     ++ [Eg veit kvifor politiet var her.]
         -> kvifor_avhor
@@ -25,7 +25,8 @@ BLANK #location:villaen #person:
     ++ Eh, nei, det var ingenting. #person:meg
         ... Neste gong du tulleringer på døra til nokon, hugs å løpe før dei opner. #person:astrid
         ->villaen
--> butler
+    -> butler
++ {flags ? harAstridsTillit} [Spør Astrid Isabella om ...] ->snakkMedAstrid
 + [Eg bestemte meg for å dra til ...] ->map
 + [I lommene mine hadde eg ...] ->inventory->villaen
 
@@ -96,13 +97,39 @@ Javel? #person:astrid
     ++ Nei ... #person:meg
 + Dei trur at han var kjærasten din. #person:meg
     ... æsj? #person:astrid
-    Eg googla han etter at politiet var her. Han er ti år eldre enn meg.
-    
+    Eg googla han etter at politiet var her. Han er femten år eldre enn meg, og twitterfeeden hans har uansett fleire raude flagg enn eit albansk 28. november-tog.
+    Han var IKKJE kjærasten min.
+    Nei, nei! Eg sa ikkje at han var det! Eg sa at politiet TRUDDE at han var det! #person:meg
+    Kvifor? Kan du gi meg ein god grunn til at politiet skulle tru noko sånt? #person:astrid
+    ++ {flags ? veitOmApebildet} [Biletet over pulten hans.]
+        Du er heilt sikker på at du ikkje kjenner Uno Martinsen? #person:meg
+        Eg er bombesikker! #person:astrid
+        Så kvifor har han eit bilete av deg hengande over skrivebordet sitt? #person:meg
+        ... hæ? #person:astrid
+        Eg fann fram mobilen og viste henne biletet eg hadde tatt. #style:narrative
+        Det er deg, er det ikkje? #style:dialog #person:meg
+        Jo ... Men kvar har han ... #person:astrid
+        Vent! Eg kjenner igjen det biletet! Det er eit bilete eg lasta opp på Instagram i fjor sommer!
+        Ho trakk fram sin eigen telefon, og skrolla febrilsk tilbake i eit halvt minutt før ho haldt telefonen fram for meg og viste meg eit selfie ho hadde tatt. Det var utvilsamt same fotografi, og no kunne eg sjå fleire av detaljane på det. #style:narrative
+        Det var eit bilete av Astrid Isabella som smilte til kameraet. Ho hadde på seg ein raud- og kvitstripete topp og ein svart bøttehatt, og ho hadde eit lite anheng i eit kjede rundt halsen. Biletet var tatt innandørs, i eit rom med dyre tapetar, og bak henne hang det eit stort maleri av ein eldre mann og ... ei ape?
+        Det forklarer definitivt kvifor politiet kom hit, men ... det gir ikkje meining. Kvifor skulle denne journalisten printe ut eit fotografi av meg, og henge det på arbeidsplassen sin? #style:dialog #person:astrid
+        Hmm ... #person:meg
+        Vel, ein avtale er ein avtale. Spør meg om kva du vil. #person:astrid
+        ~ flags += harAstridsTillit
+        ->villaen
+    ++ Nei ... #person:meg
 + Dei trur at han budde i dette nabolaget. #person:meg
--
-Så det er berre ei gjetning ... #person:astrid
+    Han var ikkje heilt typen til det, trur eg. #person:astrid
+    Politiet sa at han var ein ung journalist. Du kjøper ikkje bolig her i strøket på journalistlønn, og 95 % av alle som bur her er godt over sytti. Så eg tviler.
+    Eller har du bevis på at denne personen budde i dette nabolaget?
+    ++ Nei ... #person:meg
+- Så det er berre ei gjetning ... #person:astrid
 Skaff meg eit handfast bevis på teorien din, så skal eg vera villig til å tru på han. Gjer du det, skal eg svare på spørsmåla dine. Ok?
 + [Gjett noko anna]
 ->kvifor_avhor
 + OK.[] Eg kjem tilbake om eg finner noko konkret å vise deg. #person:meg
+->villaen
+
+= snakkMedAstrid
+Bleep bloop. Denne delen av historia har ikkje blitt koda enno. Difor sluttar historia her for augeblikket. Eg skriver resten ferdig før helga. Bleep bloop.#style:narrative
 ->villaen

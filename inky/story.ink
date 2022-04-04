@@ -4,7 +4,7 @@ INCLUDE villaen.ink
 INCLUDE avisa.ink
 
 LIST inv = (mobil), visittkort, testamente, oppgaveark
-LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, settTwistVedVillaen
+LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, veitOmApebildet, settTwistVedVillaen, harAstridsTillit
 
 VAR playerName = ""
 VAR playerPronoun = "hen"

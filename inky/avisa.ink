@@ -9,7 +9,7 @@ BLANK #location:avisa #style:narrative #person:
     Ja? Kva vil du? #person:katrina #style:dialog
     ->redaktoren
 + [Prøv å få merksemda til ein journalist] ->journalist
-+ [Sjå på skrivebordet til Uno] ->unodesk
++ {flags ? veitOmUno and flags !? veitOmApebildet} [Sjå på skrivebordet til Uno] ->unodesk
 + [Eg bestemte meg for å dra til ...] ->map
 + [I lommene mine hadde eg ...] ->inventory->avisa
 
@@ -267,5 +267,28 @@ Hen svarte ikkje. Kanskje hen ikkje høyrde meg. #style:narrative
 Eg lot blikket gli over rekka av skrivebord til eg såg eitt som hadde enkle politisperringar rundt seg, og byrja å bevege meg i den retninga.
 ... og kvar har du tenkt deg? #style:dialog #person:resepsjonisten
 Eg ville berre ta ein titt på skrivebordet til Uno Martinsen. Er det i orden? #person:meg
-Nei. Politiet 
+Nei. Politiet var veldig tydelege på at ingen skulle røre pulten hans før dei gav oss klarsignal til det. #person:resepsjonisten
+Og det kan vera dokument på pulten hans som inneheld løyndomar, så å slippe tilfeldig forbipasserande frå gata bort dit er uansett uaktuelt.
+Kan eg ikkje berre få ta ein titt? #person:meg
+Det kan du fint gjera frå der du står no. #person:resepsjonisten
+Forsåvidt ... men han var for langt unna til at eg klarte å få eit godt overblikk. Hadde eg kanskje noko i lommene som eg kunne bruke til å sjå nærare på skrivebordet? #style:narrative #person:
+->unodesk_bruk_ting
+
+= unodesk_bruk_ting
+* [Bruk mobilen]
+    Eg plukka raskt mobiltelefonen ut av lomma, opna kameraappen og zooma inn på skrivebordet til Martinsen før eg tok eit bilete.
+    Hei! Kva var det du gjorde? #person:resepsjonisten #style:dialog
+    Ingenting. #person:meg
+    ... #person:resepsjonisten
+    Jodå, det lå nokre dokument på skrivebordet ... Men skrifta var for lita til at eg klarte å sjå kva som stod i dei. Og det var ingen illustrasjonar. #style:narrative #person:
+    Det stod ein PC-skjerm på bordet, men den var sjølvsagt av. Ved tastaturet stod det ein møkkete kaffikopp, og i eit hjørne av skrivebordet stod det ein stor pokémonfigur. Eg trur det var ein Ponyta.
+    På veggen over skrivebordet hang det eit stort bilete av ei jente med briller og langt hår. {villaen.astrid_first: Vent ... var det Astrid Isabella Krankelfnaas? Kvifor hadde Uno eit fotografi av henne på veggen? Dette MÅTTE ha ei form for meining.|Det kunne vera partneren hans, eller kanskje dottera hans. Ikkje godt å seie.}
+    ~ flags += veitOmApebildet
+    ->avisa
+* {inv ? testamente} [Bruk testamentet]
+* {inv ? visittkort} [Bruk visittkortet]
+* {inv ? oppgaveark} [Bruk oppgåvearket]
+- Kunne eg kanskje bruke ... nei. Det gav ikkje meining.
+->unodesk_bruk_ting
+
 ->avisa
