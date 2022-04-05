@@ -399,6 +399,11 @@ button.link {
 		font-size: 1rem;
 		margin: 2rem 0 .5rem;
 	}
+	h3 {
+		color: var(--pink-1);
+		font-size: 1rem;
+		margin: 1rem 0 .5rem;
+	}
 	p {
 		margin: 0 0 .5rem;
 	}
@@ -527,9 +532,8 @@ button.link {
 		}
 	}
 
-	.credit-columns {
-		columns: 2;
-		font-size: .5rem;
+	.credits p {
+		font-size: .75rem;
 	}
 
 	.save-window {
