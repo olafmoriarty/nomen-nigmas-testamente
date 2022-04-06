@@ -26,7 +26,7 @@ function Puzzle2(props) {
 			<li>Kongeleg Mjuzi</li>
 			<li>Monark over Bandar-log</li>
 		</ol>
-		<p><img src="./images/puzzles/downthestreet.png" alt="Kryssord med åtte rader. Første rad: Fire bokstaver, første rute er rosa. Andre rad: Seks bokstaver, fjerde rute er rosa. Tredje rad: Fire bokstaver, fjerde rute er rosa. Fjerde rad: Tre bokstaver, første rute er rosa. Femte rad: To bokstaver, andre rute er rosa. Sjette rad: Seks bokstaver, andre rute er rosa. Sjuende rad: Seks bokstaver, første rute er rosa. Åttende rad: Fem bokstaver, tredje rute er rosa." /></p>
+		<p><img src="./images/puzzles/downthestreet.png" className="kryssord" alt="Kryssord med åtte rader. Første rad: Fire bokstaver, første rute er rosa. Andre rad: Seks bokstaver, fjerde rute er rosa. Tredje rad: Fire bokstaver, fjerde rute er rosa. Fjerde rad: Tre bokstaver, første rute er rosa. Femte rad: To bokstaver, andre rute er rosa. Sjette rad: Seks bokstaver, andre rute er rosa. Sjuende rad: Seks bokstaver, første rute er rosa. Åttende rad: Fem bokstaver, tredje rute er rosa." /></p>
 	</Puzzle>
   )
 }

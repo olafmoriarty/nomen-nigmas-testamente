@@ -1,4 +1,5 @@
 === inventory
+BLANK #style:narrative person:
 + {inv ? mobil} [Mobiltelefonen]
     Eg fann fram mobilen, skrolla raskt gjennom {Twitter|Snapchat|Instagram|tekstmeldingane mine|e-posten min|ein wikipediaartikkel om {~storpudlar|belgiske teikneseriar|ei elv i Malaysia|Bobbysocks|støvsugarar|stretchlaken|tikka masala-kylling|Hitra, Frøya og Fjellværøya|Heismann Hå|barbermaskiner|Metroid|akvariefisk|lysrør|Vincent van Gogh|unbrakonøklar|strikkhopping|Peter Christel Asbjørnsen|Brannmann Sam|flodhestar|Minecraft|Wikipedia|Pyongyang|påskemarsipan|Agatha Christie|Bernhard Borge|røykvarslarar|Sogn og Fjordane|selbuvottar|sverdfisk|krysantemum}}, og la han tilbake i lomma.
 + {inv ? testamente} [Theodor Krankelfnaas' testamente] ->testamentet->
@@ -13,6 +14,19 @@
     }
     {puzzle2:
         Eg hadde fylt ut heile kryssordet. Løysingsordet var Kikazaru.
+    - else:
+        Eg stirra på papirarket ei stund før eg gav opp og la det tilbake i lomma.
+    }
+    
++ {inv ? apeark} [Arket frå apemaleriet]
+    Det enkle papirarket innehaldt litt tekst som såg ut til å vera skrive i ein slags kode, og eit kryssordrutenett.
+    {puzzle3 == 0:
+        MINIGAME #minigame:puzzle3
+    }
+    {puzzle3:
+        Eg hadde fylt ut heile kryssordet. Whittaker ... {|Var det ikkje ei stor liste over etternamn ein stad i dette huset?}
+    - else:
+        Eg fekk nesten hovudpine av å sjå på dei merkelege bokstavane. Kva slags kode var dette?
     }
 + ->
 Lommene mine var tomme. ->->

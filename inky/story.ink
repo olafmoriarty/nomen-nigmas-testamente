@@ -13,8 +13,8 @@ INCLUDE dagligstua.ink
 
 
 
-LIST inv = (mobil), visittkort, testamente, oppgaveark
-LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, veitOmApebildet, settTwistVedVillaen, harAstridsTillit, harTilgangTilHuset
+LIST inv = (mobil), visittkort, testamente, oppgaveark, apeark
+LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, veitOmApebildet, veitAtApaErDov, settTwistVedVillaen, harAstridsTillit, harTilgangTilHuset
 
 VAR playerName = ""
 VAR playerPronoun = "hen"
@@ -22,6 +22,7 @@ VAR playerPronounCap = "Hen"
 
 VAR puzzle1 = 0
 VAR puzzle2 = 0
+VAR puzzle3 = 0
 
 // Historia starter på kontoret, så gå dit
 ->kontoret

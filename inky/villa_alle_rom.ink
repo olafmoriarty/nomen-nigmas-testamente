@@ -1,6 +1,8 @@
 === villa_delte(->return_to)
 + {flags ? harAstridsTillit} [Spør Astrid Isabella om ...] ->snakkMedAstrid->return_to
 + {flags ? harTilgangTilHuset} [Gå til rom ...] ->velgrom->return_to
++ [Eg bestemte meg for å dra til ...] ->map
++ [I lommene mine hadde eg ...] ->inventory->return_to
 
 = snakkMedAstrid
 * (astridHarSettTestamentet) [Testamentet]

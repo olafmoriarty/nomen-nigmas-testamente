@@ -550,6 +550,15 @@ button.link {
 
 .puzzle {
 	--number-of-letters: 10;
+
+	ol {
+		text-align: left;
+		margin-left: 2rem;
+	}
+	.kryssord {
+		filter: drop-shadow(.2rem .2rem .2rem #000000);
+		max-width: 100%;
+	}
 }
 .puzzle[data-answer-length="3"] {
 	--number-of-letters: 3;

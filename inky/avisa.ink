@@ -81,7 +81,7 @@ Eg gjekk bort til resepsjonen{| igjen}.
         Ser eg ut som om eg pleier å henge med geriatriske milliardærar? #person:resepsjonisten
         For den saks skuld, ser eg ut som om eg pleier å henge med DAUDE milliardærar?
         Nei, altså, eg berre tenker, han eide jo denne avisa ... #person:meg
-        Han eide åtte tusen bedrifter. Han var ikkje på fornamn med ALLE som jobba for seg. Eg trur at sjølv sjefsredaktøren vår har møtt han berre fire-fem gonger. På tjue ÅR. #person:resepsjonisten
+        Han eide hundrevis av  bedrifter. Han var ikkje på fornamn med ALLE som jobba for seg. Eg trur at sjølv sjefsredaktøren vår har møtt han berre fire-fem gonger. På tjue ÅR. #person:resepsjonisten
         Eg meinte berre ... Du er ikkje kven som helst, liksom. Du er ... avisas ansikt utad, på ein måte. Alle dei viktige folka som er innom her, kjem til deg først. #person:meg
         ... #person:resepsjonisten
         Prøver du å flørte med meg? Er det det som er greia her?

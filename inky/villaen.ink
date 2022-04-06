@@ -26,8 +26,6 @@ BLANK #location:villaen #style:narrative #person:
     ++ Eh, nei, det var ingenting. #person:meg
         ... Neste gong du tulleringer på døra til nokon, hugs å løpe før dei opner. #person:astrid
         ->villaen
-+ [Eg bestemte meg for å dra til ...] ->map
-+ [I lommene mine hadde eg ...] ->inventory->villaen
 
 = first
 Å kome av t-banen og spasere dei få hundre meterne opp til Slott Krankelfnaas var som å passere gjennom ein portal til ei anna røynd, ei verd eg primært kjente frå Trond Kirkvaag-sketsjar eller britiske TV-seriar med høge kostymebudsjett.

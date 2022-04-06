@@ -577,6 +577,14 @@ button.link {
 .puzzle {
   --number-of-letters: 10;
 }
+.puzzle ol {
+  text-align: left;
+  margin-left: 2rem;
+}
+.puzzle .kryssord {
+  filter: drop-shadow(0.2rem 0.2rem 0.2rem #000000);
+  max-width: 100%;
+}
 
 .puzzle[data-answer-length="3"] {
   --number-of-letters: 3;
