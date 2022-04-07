@@ -7,7 +7,6 @@ function SetVariable(props) {
 
 	const updateInput = e => {
 		setInput(e.target.value);
-		console.log(e.target.value);
 	}
 
 	const onSubmit = e => {

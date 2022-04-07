@@ -23,6 +23,11 @@ VAR playerPronounCap = "Hen"
 VAR puzzle1 = 0
 VAR puzzle2 = 0
 VAR puzzle3 = 0
+VAR puzzle4 = 0
+VAR puzzle5 = 0
+VAR puzzle6 = 0
+VAR puzzle7 = 0
+VAR puzzle8 = 0
 
 // Historia starter på kontoret, så gå dit
 ->kontoret

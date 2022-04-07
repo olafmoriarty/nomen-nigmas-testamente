@@ -27,7 +27,7 @@
     Onkel Oskar driver eit ysteri på Fosen. Tante Agatha har ein gård i Nord-Sverige. Tante Zelda jobber i miljøverndepartementet og har eit husvære på Grünerløkka. Eg trur ho var med på opplesinga av testamentet i dag.
     Kva med Wenche? Kva forhold har de til henne? #person:meg
     Ho er vel ok ... Ho er bestefars tredje kone. #person:astrid
-    Vi var sjølvsagt litt skeptiske til henne då dei gifta seg. Ho var yngre enn borna hans, og det føltes openbart at ho berre var ute etter pengane hans.
+    Vi var sjølvsagt litt skeptiske til henne då dei gifta seg. Ho var halvparten så gamal som han, og det føltes openbart at ho berre var ute etter pengane hans.
     Men det er ti år sidan, og dei har haldt saman sidan, så ... nokon form for gnist må det nesten vera der.
 * [Instagram-biletet]
     Eg skjøner ikkje kvifor den mannen hadde det biletet av meg. Var han ein stalker? #style:dialog #person:astrid
@@ -76,6 +76,7 @@
 	Og eg veit at han har brukt mykje tid i hagen dei siste åra. Den er heilt gigantisk, det må vera tusenvis av blomsterartar der.
 	Hmm ... #person:meg
 	~ flags += harTilgangTilHuset
++ {puzzle2}
 + [Det var alt.]
 Eg trur ikkje eg har meir å spørja deg om akkurat no. #person:meg #style:dialog
 Ok. #person:astrid
@@ -86,5 +87,6 @@ Ok. #person:astrid
 + [Inngangspartiet] ->villaen
 + [Biblioteket] ->biblioteket
 + [Theodors kontor] ->theodors_kontor
++ [Daglegstua] ->dagligstua
 + [Hagen] ->hagen
 ->villaen

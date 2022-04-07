@@ -53,7 +53,23 @@ function App() {
 		'theodorskontor': {
 			name: 'Theodor Krankelfnaas\' kontor',
 			image: './images/backgrounds/theodorskontor.png',
-		}
+		},
+		'biblioteket': {
+			name: 'Biblioteket',
+			image: './images/backgrounds/bibliotek.png',
+		},
+		'hagen': {
+			name: 'Hagen',
+			image: './images/backgrounds/hagen.png',
+		},
+		'daglegstua': {
+			name: 'Daglegstua',
+			image: './images/backgrounds/daglegstua.png',
+		},
+		'kjelleren': {
+			name: 'Kjelleren',
+			image: './images/backgrounds/kjeller.png',
+		},
 	}
 
 	const minigames = {
