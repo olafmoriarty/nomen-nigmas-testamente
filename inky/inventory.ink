@@ -2,6 +2,9 @@
 BLANK #style:narrative person:
 + {inv ? mobil} [Mobiltelefonen]
     Eg fann fram mobilen, skrolla raskt gjennom {Twitter|Snapchat|Instagram|tekstmeldingane mine|e-posten min|ein wikipediaartikkel om {~storpudlar|belgiske teikneseriar|ei elv i Malaysia|Bobbysocks|støvsugarar|stretchlaken|tikka masala-kylling|Hitra, Frøya og Fjellværøya|Heismann Hå|barbermaskiner|Metroid|akvariefisk|lysrør|Vincent van Gogh|unbrakonøklar|strikkhopping|Peter Christel Asbjørnsen|Brannmann Sam|flodhestar|Minecraft|Wikipedia|Pyongyang|påskemarsipan|Agatha Christie|Bernhard Borge|røykvarslarar|Sogn og Fjordane|selbuvottar|sverdfisk|krysantemum}}, og la han tilbake i lomma.
+    {flags ? veitOmApebildet:
+        I galleriappen hadde eg eit fotografi av skrivebordet til Uno Martinsen.
+    }
 + {inv ? testamente} [Theodor Krankelfnaas' testamente] ->testamentet->
 + {inv ? visittkort} [Fru Krankelfnaas' visittkort]
     På visittkortet står det eit namn - "Wenche Krankelfnaas" - og ei adresse - "Snobbediengen 3, Oslo". #style:narrative
@@ -28,6 +31,17 @@ BLANK #style:narrative person:
     - else:
         Eg fekk nesten hovudpine av å sjå på dei merkelege bokstavane. Kva slags kode var dette?
     }
++ {inv ? diktbok} [Diktboka frå biblioteket]
+Nesten heile boka var kaudervelsk, men midt i boka var det ei side som såg ut som eit dikt, fulgt av eit kryssordrutenett.
+    {puzzle4 == 0:
+        MINIGAME #minigame:puzzle4
+    }
+    {puzzle4:
+        Eg var ganske sikker på at løysingsordet var "Jaja ding dong". {|Det var ein song, var det ikkje?}
+    - else:
+        Eg studerte diktet i nokre minutt før eg lukka boka igjen for å fundere litt på kva løysinga kunne vera.
+    }
+
 + ->
 Lommene mine var tomme. ->->
 - ->->

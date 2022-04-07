@@ -3,6 +3,7 @@ import Game from './Game';
 import Puzzle1 from './nnt/Puzzle1';
 import Puzzle2 from './nnt/Puzzle2';
 import Puzzle3 from './nnt/Puzzle3';
+import Puzzle4 from './nnt/Puzzle4';
 
 function App() {
 	const title = 'Nomen Nigmas testamente';
@@ -76,6 +77,7 @@ function App() {
 		puzzle1: <Puzzle1 />,
 		puzzle2: <Puzzle2 />,
 		puzzle3: <Puzzle3 />,
+		puzzle4: <Puzzle4 />,
 	};
 
 	const credits = [

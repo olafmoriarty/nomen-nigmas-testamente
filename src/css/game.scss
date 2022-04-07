@@ -503,6 +503,13 @@ button.link {
 	.choices {
 		position: static;
 		min-width: 50%;
+
+		columns: 2;
+		column-gap: .5rem;
+
+		&[data-choices="1"], &[data-choices="2"], &[data-choices="3"], &[data-choices="4"], &[data-choices="5"] {
+			columns: 1;
+		}
 	}
 
 	.story-log {
@@ -716,4 +723,8 @@ button.link {
 			font-size: 1.1em;
 		}
 	}
+}
+
+.diktbok {
+	font-family: Garamond;
 }

@@ -532,6 +532,11 @@ button.link {
   .choices {
     position: static;
     min-width: 50%;
+    columns: 2;
+    column-gap: 0.5rem;
+  }
+  .choices[data-choices="1"], .choices[data-choices="2"], .choices[data-choices="3"], .choices[data-choices="4"], .choices[data-choices="5"] {
+    columns: 1;
   }
 
   .story-log {
@@ -761,6 +766,10 @@ button.link {
 .story-line.style-poem .text::first-letter {
   font-weight: bold;
   font-size: 1.1em;
+}
+
+.diktbok {
+  font-family: Garamond;
 }
 
 /*# sourceMappingURL=game.css.map */

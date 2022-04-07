@@ -280,7 +280,8 @@ Forsåvidt ... men han var for langt unna til at eg klarte å få eit godt overb
     Hei! Kva var det du gjorde? #person:resepsjonisten #style:dialog
     Ingenting. #person:meg
     ... #person:resepsjonisten
-    Jodå, det lå nokre dokument på skrivebordet ... Men skrifta var for lita til at eg klarte å sjå kva som stod i dei. Og det var ingen illustrasjonar. #style:narrative #person:
+    Eg opna mobilbiletet eg hadde tatt og titta raskt over det. #style:narrative #person:
+    Jodå, det lå nokre dokument på skrivebordet ... Men skrifta var for lita til at eg klarte å sjå kva som stod i dei. Og det var ingen illustrasjonar.
     Det stod ein PC-skjerm på bordet, men den var sjølvsagt av. Ved tastaturet stod det ein møkkete kaffikopp, og i eit hjørne av skrivebordet stod det ein stor pokémonfigur. Eg trur det var ein Ponyta.
     På veggen over skrivebordet hang det eit stort bilete av ei jente med briller og langt hår. {villaen.astrid_first: Vent ... var det Astrid Isabella Krankelfnaas? Kvifor hadde Uno eit fotografi av henne på veggen? Dette MÅTTE ha ei form for meining.|Det kunne vera partneren hans, eller kanskje dottera hans. Ikkje godt å seie.}
     ~ flags += veitOmApebildet

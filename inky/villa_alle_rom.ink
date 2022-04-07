@@ -76,7 +76,44 @@
 	Og eg veit at han har brukt mykje tid i hagen dei siste åra. Den er heilt gigantisk, det må vera tusenvis av blomsterartar der.
 	Hmm ... #person:meg
 	~ flags += harTilgangTilHuset
-+ {puzzle2}
++ {puzzle2 == 0} [Oppgåvearket frå redaktøren]
+    Denne oppgåva er laga av bestefaren din. Eg trur den leiar til neste steg i rebusløpet. #person:meg #style:dialog
+    Interessant. #person:astrid
+    Har du nokre idear til korleis vi kan løyse det? #person:meg
+    Ser ut som eit heilt vanleg Påskenøtter-kryssord for meg. Det er vel berre å finne ut kva stikkorda henviser til og fylle inn orda? #person:astrid
+    Hmm... #person:meg
++ {puzzle2 and inv !? apeark} [Kikazaru]
+    Har du høyrd ordet "Kikazaru" før? #person:meg #style:dialog
+    Eg trur ikkje det. Eg er ikkje sikker. #person:astrid
+    Kan det vera noko bestefaren din har snakka om ein gong? #person:meg
+    Det trur eg ikkje. Det er meir realistisk at det er noko eg har lest om på nettet ein gong. #person:astrid
+    Kva trur du Kikazaru betyr? #person:meg
+    Har du prøvd å google det? #person:astrid
+    ... #person:meg
+    Gjer det. #person:astrid
++ {inv ? apeark and puzzle3 == 0} [Oppgavearket frå printeren]
+    Så kva trur du det er meininga at vi skal gjera med denne kryptiske teksten? #person:meg #style:dialog
+    Det er openbart ein kode{| ... ein slags Cæsarchiffer, kanskje?| ... kanskje ROT-13 eller noko sånt}. Løyser vi den, ser det ikkje ut som om det skal vera veldig vanskeleg å fylle inn resten. #person:astrid
+    Hmm ... #person:meg
++ {puzzle3 and inv !? diktbok} [Whittaker]
+    Har du noko forhold til namnet Whittaker? #style:dialog #person:meg
+    Eg har binga Doctor Who nokre gonger, om det teller. Men eg kjem ikkje umiddelbart på noko her i huset som har med det namnet å gjera. #person:astrid
+    Men det er definitivt eit etternamn.
+    Hadde bestefaren din ... eit arkivskap eller noko, fullt av mapper merka med tilfeldige etternamn? #person:meg
+    {Smart tenkt ... men n|N}ei, eg trur ikkje han hadde noko sånt. #person:astrid
++ {inv ? diktbok and puzzle4 == 0} [Diktboka]
+    Kva trur du om diktet i diktboka? #style:dialog #person:meg
+    Det er tolv avsnitt. Og tolv linjer i kryssordet. Så ... eitt hint per linje. Ganske standard for kryssord. #person:astrid
+    Nokre av dei formuleringane verkar litt kjente ... Men eg trur ikkje eg har høyrd dei på norsk.
+    Hmm ... #person:meg
++ {puzzle4} [Jaja ding dong]
+    Lurer på kvar dette hintet er meint å føre oss ... #style:dialog #person:meg
+    Kva er Jaja ding dong, eigentleg? Ein gamal barne-TV-serie? #person:astrid
+    Det er ein song frå ein film som kom for nokre år sidan. #person:meg
+    Ah. Det gir litt meir meining. #person:astrid
+    Kvifor? #person:meg
+    Bestefar elska filmmusikk. Han pleide å øve inn sangar som han spelte for oss. My Heart Will Go On ... Moon River ... Can You Feel The Love Tonight ... #person:astrid
+    ... Jaja ding dong er ... kanskje ikkje heilt på det nivået. #person:meg
 + [Det var alt.]
 Eg trur ikkje eg har meir å spørja deg om akkurat no. #person:meg #style:dialog
 Ok. #person:astrid

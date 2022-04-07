@@ -46,7 +46,7 @@ function Choices(props) {
 	}
 	return (
 		<div className="choices-wrapper">
-			<div className="choices">
+			<div className="choices" data-choices={choices.length}>
 				{choices.map((el, index) => <button key={index} className={`option${index === activeChoice ? ' selected' : ''}`} onClick={() => makeChoice(index)}>{el.text}</button>)}
 			</div>
 		</div>
