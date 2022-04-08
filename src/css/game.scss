@@ -166,6 +166,10 @@ button.link {
 			width: 100%;
 			display: block;
 		}
+		&.has-options {
+			background-color: transparent;
+			text-shadow: .1em .1em .1em var(--black-1);
+		}
 	}
 
 	.speaker-name {
@@ -566,6 +570,9 @@ button.link {
 		filter: drop-shadow(.2rem .2rem .2rem #000000);
 		max-width: 100%;
 	}
+	.kryssordclue {
+		max-width: 100%;
+	}
 }
 .puzzle[data-answer-length="3"] {
 	--number-of-letters: 3;
@@ -727,4 +734,9 @@ button.link {
 
 .diktbok {
 	font-family: Garamond;
+}
+
+.handskrift {
+	font-family: 'Shadows Into Light';
+	font-weight: bold;
 }

@@ -63,7 +63,7 @@ function Game(props) {
 
 	const spaceToProgress = ev => {
 		if (ev.key === ' ' || ev.key === 'Enter') {
-			if ((!currentText.choices || !currentText.choices.length) && !currentText.input && !currentText.minigame && !overlay) {
+			if (showMenu || ((!currentText.choices || !currentText.choices.length) && !currentText.input && !currentText.minigame && !overlay)) {
 				ev.preventDefault();
 				progress();
 			}
@@ -77,7 +77,7 @@ function Game(props) {
 		return () => {
 			window.removeEventListener('keydown', spaceToProgress);
 		}
-	}, [currentText, overlay]);
+	}, [currentText, overlay, emptyInkSave]);
 	const editGameProperty = (name, value) => {
 		let newGameObject = {
 			...gameObject,
@@ -156,7 +156,7 @@ function Game(props) {
 				setCurrentText(textObject);
 			}
 		}
-		else if (inkStory.currentChoices.length > 0) {
+		else if (inkStory.currentChoices && inkStory.currentChoices.length > 0) {
 			if (showMenu) {
 				setShowMenu(false);
 			}

@@ -4,6 +4,7 @@ import Puzzle1 from './nnt/Puzzle1';
 import Puzzle2 from './nnt/Puzzle2';
 import Puzzle3 from './nnt/Puzzle3';
 import Puzzle4 from './nnt/Puzzle4';
+import Puzzle5 from './nnt/Puzzle5';
 
 function App() {
 	const title = 'Nomen Nigmas testamente';
@@ -78,6 +79,7 @@ function App() {
 		puzzle2: <Puzzle2 />,
 		puzzle3: <Puzzle3 />,
 		puzzle4: <Puzzle4 />,
+		puzzle5: <Puzzle5 />,
 	};
 
 	const credits = [
@@ -152,6 +154,7 @@ function App() {
 		<>
 			<p>Takk for at du spilte!</p>
 			<p className="developed-by"><em>Olaf 2022</em></p>
+			<p className="developed-by"><a href="https://twitter.com/olafmoriarty">@olafmoriarty</a> | <a href="mailto:olafmoriarty@gmail.com">olafmoriarty@gmail.com</a></p>
 		</>
 ];
 

@@ -13,7 +13,7 @@ INCLUDE dagligstua.ink
 
 
 
-LIST inv = (mobil), visittkort, testamente, oppgaveark, apeark, diktbok
+LIST inv = (mobil), visittkort, testamente, oppgaveark, apeark, diktbok, notehefte, blomsterark
 LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, veitOmApebildet, veitAtApaErDov, settTwistVedVillaen, harAstridsTillit, harTilgangTilHuset
 
 VAR playerName = ""

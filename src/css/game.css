@@ -148,6 +148,10 @@ button.link {
   width: 100%;
   display: block;
 }
+.story-line.style-narrative.has-options {
+  background-color: transparent;
+  text-shadow: 0.1em 0.1em 0.1em var(--black-1);
+}
 .story-line .speaker-name {
   background: #e88710;
   color: #000000;
@@ -590,6 +594,9 @@ button.link {
   filter: drop-shadow(0.2rem 0.2rem 0.2rem #000000);
   max-width: 100%;
 }
+.puzzle .kryssordclue {
+  max-width: 100%;
+}
 
 .puzzle[data-answer-length="3"] {
   --number-of-letters: 3;
@@ -770,6 +777,11 @@ button.link {
 
 .diktbok {
   font-family: Garamond;
+}
+
+.handskrift {
+  font-family: "Shadows Into Light";
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=game.css.map */

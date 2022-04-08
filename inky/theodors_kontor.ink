@@ -25,11 +25,11 @@ På ein av veggane i rommet var det eit pengeskap montert i veggen. Absolutt av 
 }
 Kva er greia med dette maleriet, eigentleg? Kvifor sit bestefaren din saman med ei ape? Er han på safari? Hadde han ho som kjæledyr? #style:dialog #person:meg
 Han jobba tre månader i ein dyrehage på nittitalet. Han blei visst veldig gode vener med den apa. #person:astrid
+Ho var visst døv. Apa, altså. Ho trengte litt ekstra oppfølging, og bestefar meldte seg frivillig til å passe litt ekstra på henne.
 Nittitalet? Var han ikkje allereie styrtrik på det tidspunktet? #person:meg
 Jo. Men kvar gong han kjøpte ei ny bedrift, forsøkte han å jobbe der i nokre månader. Han sa at det var den beste måten å lære korleis eit selskap faktisk fungerte. #person:astrid
 Huh. Han må ha opplevd mykje interessant på den måten. #person:meg
 Han elska å fortelja historier. Og han snakka mykje om den apa der. Eg trur det var difor han hadde det maleriet, for å ha ei unnskyldning for å bringe opp den historia til folk. #person:astrid
-Ho var visst døv. Apa, altså.
 ~ flags += veitAtApaErDov
 {puzzle2:
     ->trykk_paa_maleriet

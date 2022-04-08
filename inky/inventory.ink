@@ -41,7 +41,27 @@ Nesten heile boka var kaudervelsk, men midt i boka var det ei side som såg ut s
     - else:
         Eg studerte diktet i nokre minutt før eg lukka boka igjen for å fundere litt på kva løysinga kunne vera.
     }
-
++ {inv ? notehefte} [Noteheftet]
+Noteheftet eg hadde funne hadde noko skribla i margen ...
+    {puzzle5 == 0:
+        MINIGAME #minigame:puzzle5
+    }
+    {puzzle5:
+        "Fabaceae"? {Kva i alle dagar er det?|Er det ... latin eller noko sånt?}
+    - else:
+        Hmm ... kva i alle dagar var det meininga at eg skulle gjera her?
+    }
++ {inv ? blomsterark} [Oppgåva frå blomsterbedet]
+Den vesle bunken med papirark var definitivt eit nytt sett med oppgåver. {puzzle6 == 0:Var dette ...  matematikk?}
+    {puzzle6 == 0:
+        MINIGAME #minigame:puzzle6
+    }
+    {puzzle6:
+        Det er Fibonacci-sekvensen! Hmm ... Kva er det meininga at vi skal gjera med den? #style:dialog #person:meg
+        Ein lengre nummerkombinasjon? Eg kan iallfall tenke meg ein stad i dette huset som verkar temmeleg openbar ... #person:astrid
+    - else:
+        Eg bretta papirarket og la det bort eit augeblikk for å tenke meg om.
+    }
 + ->
 Lommene mine var tomme. ->->
 - ->->

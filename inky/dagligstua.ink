@@ -27,20 +27,34 @@ Dette slo meg ikkje umiddelbart som ein stad der nokon ville ha gøymd eit spor 
 {!Flygelet stod i eit hjørne, men klarte likevel på ein måte å vera rommets midtpunkt. På veggen bak pianokrakken stod det ei hylle fylt til randen av pianonoter.}
 + [Studer flygelet nærare]
     Dette var sannsynlegvis det penaste - og garantert det dyraste - musikkinstrumentet eg nokon gong hadde sett. Det brune treverket var så blankpolert at eg kunne spegle meg i det, og det var fleire detaljar på flygelet i eit metall eg gjekk ut frå at var gull. #style:narrative
-    Lokket på flygelet stod opent, og det var lett å bli overvelda av den imponerande mekanismen. Eg hadde ikkje akkurat mykje erfaring med flygel, men basert på den Tom og Jerry-teiknefilmen med pianokonserten spg det ut som om alle delane var her. #style:narrative
+    Lokket på flygelet stod opent, og det var lett å bli overvelda av den imponerande mekanismen. Eg hadde ikkje akkurat mykje erfaring med flygel, men basert på den Tom og Jerry-teiknefilmen med pianokonserten såg det ut som om alle delane var her. #style:narrative
     Det frista å leite gjennom flygelet etter skjulte gåter, men eg mistenkte at det var veldig lett å øydeleggja noko, og at dette flygelet kosta meir enn folk flest betaler for eit hus. Eg byrja ikkje å rote rundt inni det om eg ikkje måtte.
-    Sjølv om heile pianoet var skinnande reint, var det tydeleg når eg studerte dei kvite og svarte tangentane at det var godt brukt.
+    Sjølv om heile pianoet var skinnande reint, var det tydeleg når eg studerte dei kvite og svarte tangentane at det var godt brukt. Det var noko veldig koseleg med det. Like over tangentane stod det "Bösendorfer Opus 50000" med ei pen skrift.
 + [Spel på flygelet]
     Eg la fingrane på tangentane og byrja å spele ... #style:narrative
-    + [{~Pachelbels kanon i D|Eine Kleine Nachtmusik|Måneskinnssonaten}]
-    + [{~"The Phantom of the Opera"|"Alexander Hamilton"|"Jellicle Songs for Jellicle Cats"}]
-    + [{~"The Circle of Life"|"Part of your World"|"Let it Go"}]
-    - Eg hadde ikkje rørt eit piano sidan ungdomsskulen, så eg var litt rusten, men eg klarte å klimpre ut ein kort melodi.
+    ++ [{~Pachelbels kanon i D|Eine Kleine Nachtmusik|Måneskinnssonaten}]
+    ++ [{~"The Phantom of the Opera"|"Alexander Hamilton"|"Jellicle Songs for Jellicle Cats"}]
+    ++ {puzzle4} ["Jaja Ding Dong"]
+    ++ [{~"The Circle of Life"|"Part of your World"|"Let it Go"|"A Whole New World"}]
+    ++ [{~Hampster Dance|"Friday"|"Never Gonna Give You Up"|"Caramelldansen"|"What Does The Fox Say?"|"All Star"}]
+    -- Eg hadde ikkje rørt eit piano sidan ungdomsskulen, så eg var litt rusten, men eg klarte å klimpre ut ein kort melodi.
     Ingenting skjedde ... #style:dialog #person:meg
     Kva hadde du forventa at skulle skje? #person:astrid
     Aner ikkje. Men eg måtte nesten prøve det. #person:meg
 + [Bla gjennom notene]
-    
+    Bak flygelet var det ei imponerande samling av noter. Klassisk musikk, musikalar, moderne pop, åttitalsslagarar, filmmusikk ... #style:narrative
+    {puzzle4:
+        Hmm ... #style:dialog #person:meg
+        Kva leiter du etter? #person:astrid
+        Det er ein del filmmusikk her, så eg må berre sjå om bestefaren din kanskje kunne ha ... #person:meg
+        Her! Eurovision Song Contest: The Story of Fire Saga!
+        Eg bladde raskt opp på sida som innehaldt notene til "Jaja ding dong". Det måtte vera hit oppgåvesvaret var meint å leie oss. #style:narrative
+        Eg ser ikkje umiddelbart noko feil med sjølve notene ... Men det er nokon som har skribla noko i margen med blyant! #style:dialog #person:meg
+        Det er definitivt bestefars handskrift. Dette er oppgåve 5! Godt jobba! #person:astrid
+        ~ inv += notehefte
+    - else:
+        Eg såg raskt gjennom nokre av titlane, men utan å vite kva eg leitte etter var det som å leite etter eit strå i ein nålefabrikk.
+    }
 + [Gå tilbake]
     ->dagligstua
-- ->dagligstua
+- ->pianoet

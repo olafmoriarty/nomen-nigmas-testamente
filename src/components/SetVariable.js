@@ -11,7 +11,9 @@ function SetVariable(props) {
 
 	const onSubmit = e => {
 		e.preventDefault();
-		changeVariable(currentText.var, input);
+		if (input) {
+			changeVariable(currentText.var, input);
+		}
 	}
 
 	if (!currentText || !currentText.input) {

@@ -29,7 +29,7 @@
     Ho er vel ok ... Ho er bestefars tredje kone. #person:astrid
     Vi var sjølvsagt litt skeptiske til henne då dei gifta seg. Ho var halvparten så gamal som han, og det føltes openbart at ho berre var ute etter pengane hans.
     Men det er ti år sidan, og dei har haldt saman sidan, så ... nokon form for gnist må det nesten vera der.
-* [Instagram-biletet]
+* {inv !? apeark} [Instagram-biletet]
     Eg skjøner ikkje kvifor den mannen hadde det biletet av meg. Var han ein stalker? #style:dialog #person:astrid
     Kva slags bilete er det eigentleg? #person:meg
     Det er ein heilt vanleg selfie. Eg tok han her i huset, faktisk. #person:astrid
@@ -86,7 +86,7 @@
     Har du høyrd ordet "Kikazaru" før? #person:meg #style:dialog
     Eg trur ikkje det. Eg er ikkje sikker. #person:astrid
     Kan det vera noko bestefaren din har snakka om ein gong? #person:meg
-    Det trur eg ikkje. Det er meir realistisk at det er noko eg har lest om på nettet ein gong. #person:astrid
+    Det trur eg ikkje. Det er meir realistisk at det er noko eg har lest om på nettet ein gong. Eller at det er ein emoji eller noko sånt. #person:astrid
     Kva trur du Kikazaru betyr? #person:meg
     Har du prøvd å google det? #person:astrid
     ... #person:meg
@@ -106,7 +106,7 @@
     Det er tolv avsnitt. Og tolv linjer i kryssordet. Så ... eitt hint per linje. Ganske standard for kryssord. #person:astrid
     Nokre av dei formuleringane verkar litt kjente ... Men eg trur ikkje eg har høyrd dei på norsk.
     Hmm ... #person:meg
-+ {puzzle4} [Jaja ding dong]
++ {puzzle4 and inv !? notehefte} [Jaja ding dong]
     Lurer på kvar dette hintet er meint å føre oss ... #style:dialog #person:meg
     Kva er Jaja ding dong, eigentleg? Ein gamal barne-TV-serie? #person:astrid
     Det er ein song frå ein film som kom for nokre år sidan. #person:meg

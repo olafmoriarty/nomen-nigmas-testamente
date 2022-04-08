@@ -29,7 +29,7 @@ function Line(props) {
 		return false;
 	}
 	return (
-		<div className={`story-line${currentText.input ? ' style-input' : (currentText.style ? ' style-' + currentText.style : '')}`}>
+		<div className={`story-line${currentText.input ? ' style-input' : (currentText.style ? ' style-' + currentText.style : '')}${currentText.choices && currentText.choices.length ? ' has-options' : ''}`}>
 			{currentText.input ? <SetVariable currentText={currentText} changeVariable={changeVariable} /> : <>
 				{currentText.person ? <div className="speaker-name" style={currentText.person.color ? {backgroundColor: currentText.person.color} : {}}>{currentText.person.name}</div> : false}
 				<div className="text">{currentTypewriterText.substring(0, lineIndex)}</div>
