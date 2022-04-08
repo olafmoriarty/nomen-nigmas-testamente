@@ -4,7 +4,7 @@ BLANK #location:daglegstua #style:narrative #person:
     ->first
 }
 <-villa_delte(->dagligstua)
-+ [Gå til pianoet] ->pianoet
++ [Gå til flygelet] ->pianoet
 + [Sjå på peisen]
     Den store peisen såg ut som om den kunne bringe både kos og varme, men den var heilt rein, så den hadde nok ikkje vore i bruk på nokre månader.
     Eg lente meg inn i peisen for å undersøkte han. Eg trykka på eit par murstein på bakveggen i håp om at ein av dei skulle opne ei hemmeleg dør, men utan hell.
@@ -24,4 +24,23 @@ Dette slo meg ikkje umiddelbart som ein stad der nokon ville ha gøymd eit spor 
 ->dagligstua
 
 = pianoet
-->dagligstua
+{!Flygelet stod i eit hjørne, men klarte likevel på ein måte å vera rommets midtpunkt. På veggen bak pianokrakken stod det ei hylle fylt til randen av pianonoter.}
++ [Studer flygelet nærare]
+    Dette var sannsynlegvis det penaste - og garantert det dyraste - musikkinstrumentet eg nokon gong hadde sett. Det brune treverket var så blankpolert at eg kunne spegle meg i det, og det var fleire detaljar på flygelet i eit metall eg gjekk ut frå at var gull. #style:narrative
+    Lokket på flygelet stod opent, og det var lett å bli overvelda av den imponerande mekanismen. Eg hadde ikkje akkurat mykje erfaring med flygel, men basert på den Tom og Jerry-teiknefilmen med pianokonserten spg det ut som om alle delane var her. #style:narrative
+    Det frista å leite gjennom flygelet etter skjulte gåter, men eg mistenkte at det var veldig lett å øydeleggja noko, og at dette flygelet kosta meir enn folk flest betaler for eit hus. Eg byrja ikkje å rote rundt inni det om eg ikkje måtte.
+    Sjølv om heile pianoet var skinnande reint, var det tydeleg når eg studerte dei kvite og svarte tangentane at det var godt brukt.
++ [Spel på flygelet]
+    Eg la fingrane på tangentane og byrja å spele ... #style:narrative
+    + [{~Pachelbels kanon i D|Eine Kleine Nachtmusik|Måneskinnssonaten}]
+    + [{~"The Phantom of the Opera"|"Alexander Hamilton"|"Jellicle Songs for Jellicle Cats"}]
+    + [{~"The Circle of Life"|"Part of your World"|"Let it Go"}]
+    - Eg hadde ikkje rørt eit piano sidan ungdomsskulen, så eg var litt rusten, men eg klarte å klimpre ut ein kort melodi.
+    Ingenting skjedde ... #style:dialog #person:meg
+    Kva hadde du forventa at skulle skje? #person:astrid
+    Aner ikkje. Men eg måtte nesten prøve det. #person:meg
++ [Bla gjennom notene]
+    
++ [Gå tilbake]
+    ->dagligstua
+- ->dagligstua
