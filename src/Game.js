@@ -15,6 +15,7 @@ import Background from './components/Background';
 import Options from './components/Options';
 import LoadSave from './components/LoadSave';
 import TopMenu from './components/TopMenu';
+import GameOver from './components/GameOver';
 
 function Game(props) {
 	const {json, title, characters, locations, credits, minigames} = props;
@@ -28,7 +29,7 @@ function Game(props) {
 	const [gameObject, setGameObject] = useState({
 		textSpeed: 25,
 	});
-
+	const [gameOver, setGameOver] = useState(false);
 	useEffect(() => {
 		const autosave = localStorage.getItem('autosave');
 		let autosaveJson = {};
@@ -58,6 +59,8 @@ function Game(props) {
 			setCurrentText(json.storyLog[0]);
 			setGameObject(json.gameObject);
 			inkStory.state.LoadJson(json.inkSave);
+			setGameOver(false);
+			setShowMenu(false);
 		}
 	}
 
@@ -93,6 +96,9 @@ function Game(props) {
 	}
 
 	const progress = (tags = []) => {
+		if (gameOver) {
+			return false;
+		}
 		if (inkStory.canContinue) {
 			if (showMenu) {
 				setShowMenu(false);
@@ -193,6 +199,10 @@ function Game(props) {
 			}
 			setCurrentText(textObject);
 		}
+		else {
+			setGameOver(true);
+			setOverlay('credits');
+		}
 	}
 
 	const resetGame = () => {
@@ -201,6 +211,7 @@ function Game(props) {
 		setStoryLog([]);
 		setOverlay(0);
 		setShowMenu(true);
+		setGameOver(false);
 		localStorage.removeItem('autosave');
 	};
 
@@ -245,11 +256,12 @@ function Game(props) {
 				<h1>{title}</h1>
 				{currentText ? <button onClick={() => setShowMenu(false)}>Hald fram</button> : <button onClick={() => progress()}>Start</button>}
 			</div> : false}
-			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} /> : false}
+			{overlay === 'log' ? <StoryLog showStoryLog={true} storyLog={storyLog} setOverlay={setOverlay} /> : false}
 			{overlay === 'options' ? <Options gameObject={gameObject} editGameProperty={editGameProperty} resetGame={resetGame} hasSaveData={storyLog.length ? true : false} setOverlay={setOverlay} /> : false}
 			{overlay === 'credits' ? <Credits credits={credits} setOverlay={setOverlay} /> : false}
 			{overlay === 'save' ? <LoadSave loadGame={loadGame} setOverlay={setOverlay} /> : false}
 			<Minigame currentText={currentText} minigames={minigames} progress={progress} changeVariable={changeVariable} gameObject={gameObject} setGameObject={setGameObject} />
+			{gameOver ? <GameOver resetGame={resetGame} setOverlay={setOverlay} /> : false}
 		</>
 	)
 }

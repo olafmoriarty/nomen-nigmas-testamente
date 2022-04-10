@@ -44,6 +44,7 @@
     Du sa at dette testamentet var typisk bestefaren din? #person:meg #style:dialog
     Absolutt. For det første fordi han alltid sa at han mislikte folk som hadde arva alt dei eigde og som aldri hadde måttet jobbe for noko som helst. Det hadde ikkje likna han å berre gi oss mange milliarder kroner berre fordi han var død. #person:astrid
     Dessutan elska han nittitalsfilmar. Da Vinci-koden. Ready Player One. Sånne narrativ der folk med sitt siste livspust sette himmel og jord i rørsle for å skape eit svært mysterium som dei som kom etter dei måtte løyse.
+    ~ flags += harHoyrdOmDaVinci
     ... Ingen av dei filmane er frå nittitalet. #person:meg
     Men du skjøner kva eg meiner. Han likte dei store, episke twistane som snudde opp ned på alt. Han var ikkje så god på det vesle, kvardagslege. Han var ikkje så glad i å handtere kjensler og kommunikasjon og dei små handlingane som faktisk driver livet framover. Han var meir ... BAM, her er ein plot twist som endrer ALT. Forteljaren er eit spøkjelse. Personen som blir avhørt er ein upåliteleg forteljar. Badguyen er eigentleg protagonistens pappa. #person:astrid
     Delte du den mentaliteten? #person:meg
@@ -114,6 +115,31 @@
     Kvifor? #person:meg
     Bestefar elska filmmusikk. Han pleide å øve inn sangar som han spelte for oss. My Heart Will Go On ... Moon River ... Can You Feel The Love Tonight ... #person:astrid
     ... Jaja ding dong er ... kanskje ikkje heilt på det nivået. #person:meg
++ {inv ? notehefte and puzzle5 == 0} [Noteheftet]
+    Kor god er du på å lese noter? #style:dialog #person:meg
+    Eg lærte det på skulen, men det er ikkje noko eg gjer ofte. Bestefar var den musikalske i familien. #person:astrid
+    Kva trur du desse skribleriane i margen kan vera? #person:meg
+    Heksadesimalar, kanskje? Nei ... #person:astrid
+    Eg såg at det var mange forekomstar av bokstavane A-F her, men det er jo ein del andre bokstavar òg ... og ingen tal ... Så då er det nok noko anna.
++ {puzzle5 and inv !? blomsterark} [Fabaceae]
+    Fabaceae ... #person:meg #style:dialog
+    Er det ... latin? Isåfall er det sikkert lett å slå opp kva det betyr. #person:astrid
+    Sannsynlegvis ... #person:meg
++ {inv ? blomsterark and puzzle6 == 0} [Arket frå blomsterbedet]
+    Kva trur du alt dette betyr? #style:dialog #person:meg
+    Hmm ... #person:astrid
+    {&Eg trur "Danielsen" er Jan Werner Danielsen?|Er det ikkje ein stillasleverandør som heiter Instant eller noko sånt?|ICAO-kode, er ikkje det ei flyplass-greie?|Eg trur Valkendorfsgaten ligger i Bergen.|Er ikkje det namnet der han frontfiguren i U2?|Er det der ei referanse til Monty Python and the Holy Grail?|"Tore" må vera Tore Strømøy, trur du ikkje?}
++ {puzzle6 and flags !? harOpnaPengeskapet} [Fibonacci-sekvensen]
+    Kva er det meininga at vi skal gjera med denne Fibonacci-sekvensen ... #person:meg #style:dialog
+    Ein stad i dette huset der ein må leggja inn ein nummerkombinasjon for å få tilgong? Er ikkje det openbart? #person:astrid
++ {inv ? skrinark and puzzle7 == 0} [Fem linjer]
+    Kva kan desse fem linjene bety ... #style:dialog #person:meg
+    Åh, kom igjen. Det ser du vel? #person:astrid
+    Eg bur ikkje i Oslo eingong, og sjølv eg kjenner igjen dei fem linjene der.
+    Men det er nokre bokstavar som manglar der, trur eg ...
++ {kjeller.wenche} [Det siste passordet]
+    Det var ikkje døra i kjelleren som var rett stad å putte inn dette passordet. Så ... kvar? #style:dialog #person:meg
+    Det er iallfall ein stad ikkje langt frå kjelleren som krever at ein tastar inn eit passord ... #person:astrid
 + [Det var alt.]
 Eg trur ikkje eg har meir å spørja deg om akkurat no. #person:meg #style:dialog
 Ok. #person:astrid
@@ -126,4 +152,5 @@ Ok. #person:astrid
 + [Theodors kontor] ->theodors_kontor
 + [Daglegstua] ->dagligstua
 + [Hagen] ->hagen
++ {flags ? harOpnaPengeskapet} [Kjelleren] ->kjeller
 ->villaen

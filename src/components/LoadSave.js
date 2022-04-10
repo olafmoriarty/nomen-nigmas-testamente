@@ -1,4 +1,6 @@
 import {useState, useEffect} from 'react'
+import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function SaveSlot(props) {
 	const {name, prettyName, loadGame, setOverlay} = props;
@@ -47,6 +49,7 @@ function LoadSave(props) {
 		<SaveSlot name="saveSlot1" loadGame={loadGame} setOverlay={setOverlay} />
 		<SaveSlot name="saveSlot2" loadGame={loadGame} setOverlay={setOverlay} />
 		<SaveSlot name="saveSlot3" loadGame={loadGame} setOverlay={setOverlay} />
+		<button className="close-window" onClick={() => setOverlay(0)}><Icon icon={faTimes} /></button>
 	</div>
   )
 }

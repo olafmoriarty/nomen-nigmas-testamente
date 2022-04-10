@@ -7,14 +7,18 @@ INCLUDE biblioteket.ink
 INCLUDE theodors_kontor.ink
 INCLUDE hagen.ink
 INCLUDE dagligstua.ink
+INCLUDE kjeller.ink
+INCLUDE epilog.ink
 
 
 
 
 
 
-LIST inv = (mobil), visittkort, testamente, oppgaveark, apeark, diktbok, notehefte, blomsterark
-LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, veitOmApebildet, veitAtApaErDov, settTwistVedVillaen, harAstridsTillit, harTilgangTilHuset
+
+
+LIST inv = (mobil), visittkort, testamente, oppgaveark, apeark, diktbok, notehefte, blomsterark, skrinark
+LIST flags = gittButlerenBrevet, spurtEtterRedaktoren, veitOmUno, veitOmApebildet, veitAtApaErDov, settTwistVedVillaen, harAstridsTillit, harTilgangTilHuset, harOpnaPengeskapet, harHoyrdOmDaVinci, harSettSkrinet, harRingtPolitiet
 
 VAR playerName = ""
 VAR playerPronoun = "hen"

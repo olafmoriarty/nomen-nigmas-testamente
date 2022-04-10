@@ -108,7 +108,7 @@ Javel? #person:astrid
         Jo ... Men kvar har han ... #person:astrid
         Vent! Eg kjenner igjen det biletet! Det er eit bilete eg lasta opp på Instagram i fjor sommer!
         Ho trakk fram sin eigen telefon, og skrolla febrilsk tilbake i eit halvt minutt før ho haldt telefonen fram for meg og viste meg eit selfie ho hadde tatt. Det var utvilsamt same fotografi, og no kunne eg sjå fleire av detaljane på det. #style:narrative
-        Det var eit bilete av Astrid Isabella som smilte til kameraet. Ho hadde på seg ein raud- og kvitstripete topp og ein svart bøttehatt, og ho hadde eit lite anheng i eit kjede rundt halsen. I handa hadde ho eit glas som var halvfullt av noko eg gjekk ut frå at var Solo.  Biletet var tatt innandørs, i eit rom med dyre tapetar, og bak henne hang det eit stort maleri av ein eldre mann og ... ei ape? Under biletet stod hashtaggen "\#oslosommer".
+        Det var eit bilete av Astrid Isabella som smilte til kameraet. Ho hadde på seg ein raud- og kvitstripete topp og ein svart bøttehatt, og ho hadde eit lite lilla anheng i eit kjede rundt halsen. I handa hadde ho eit glas som var halvfullt av noko eg gjekk ut frå at var Solo.  Biletet var tatt innandørs, i eit rom med dyre tapetar, og bak henne hang det eit stort maleri av ein eldre mann og ... ei ape? Under biletet stod hashtaggen "\#oslosommer".
         Det forklarer definitivt kvifor politiet kom hit, men ... det gir ikkje meining. Kvifor skulle denne journalisten printe ut eit fotografi av meg, og henge det på arbeidsplassen sin? #style:dialog #person:astrid
         Hmm ... #person:meg
         Vel, ein avtale er ein avtale. Spør meg om kva du vil. #person:astrid

@@ -62,6 +62,14 @@ Den vesle bunken med papirark var definitivt eit nytt sett med oppgåver. {puzzl
     - else:
         Eg bretta papirarket og la det bort eit augeblikk for å tenke meg om.
     }
++ {inv ? skrinark} [Arket frå sølvskrinet]
+    Den vesle papirlappen innehaldt nokre lister med ord, og farga linjer ved sidan av dei ... {puzzle7 == 0:Kva kunne dette bety?}
+    {puzzle7 == 0:
+        MINIGAME #minigame:puzzle7
+    }
+    {puzzle7:
+        Ensjø. Svaret måtte vera Ensjø. Og det hadde fem bokstavar!
+    }
 + ->
 Lommene mine var tomme. ->->
 - ->->

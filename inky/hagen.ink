@@ -5,6 +5,7 @@ BLANK #location:hagen #style:narrative #person:
 }
 <-villa_delte(->hagen)
 + [Sjå på blomstene]
+    ->blomsterbed
 - ->hagen
 
 = first

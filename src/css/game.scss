@@ -284,7 +284,6 @@ button.link {
 
 .story-log {
 	@include window;
-
 	display: flex;
 	flex-direction: column-reverse;
 	overflow: auto;
@@ -311,10 +310,24 @@ button.link {
 	.log-style-poem {
 		font-family: "Shadows Into Light";
 	}
+	.log-tooltip {
+		text-align: center;
+		font-style: italic;
+		border-top: solid 1px var(--yellow);
+		margin-top: 1rem;
+		padding-top: .25rem;
+		.tast {
+			font-style: normal;
+			font-weight: bold;
+			color: var(--pink-2);
+		}
+	}
 }
 
 .save-window {
 	@include window;
+
+	padding-top: 2rem;
 
 	display: grid;
 	grid-template-columns: 1fr;
@@ -469,6 +482,17 @@ button.link {
 		padding: .5rem;
 		margin-bottom: 0;
 	}
+}
+
+.game-over {
+	@include cover;
+	z-index: 20;
+	background: var(--black-1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 .minigame {
@@ -739,4 +763,57 @@ button.link {
 .handskrift {
 	font-family: 'Shadows Into Light';
 	font-weight: bold;
+}
+
+.linje {
+	list-style-type: none;
+	text-align: left;
+	margin: 0 0 3rem;
+	break-inside: avoid-column;
+	border-left: solid .5rem #000000;
+	padding: 0;
+	li {
+		padding: .1rem 0 .1rem .25rem;
+	}
+}
+
+.linje1 {
+	border-left-color: #009cdc;
+}
+.linje2 {
+	border-left-color: #ea5b0b;
+}
+.linje3 {
+	border-left-color: #a683a5;
+}
+.linje4 {
+	border-left-color: #00489a;
+}
+.linje5 {
+	border-left-color: #3aaa35;
+}
+
+@media screen and (min-width: 800px) {
+	.linjer {
+		columns: 2;
+	}
+}
+
+.story-line.style-pcskjerm {
+	@include cover;
+	margin: 0;
+	background: var(--black-1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	.speaker-name {
+		display: none;
+	}
+	.text {
+		border: none;
+		background: transparent;
+		color: var(--orange-3);
+	}
 }

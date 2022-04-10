@@ -5,6 +5,9 @@ import Puzzle2 from './nnt/Puzzle2';
 import Puzzle3 from './nnt/Puzzle3';
 import Puzzle4 from './nnt/Puzzle4';
 import Puzzle5 from './nnt/Puzzle5';
+import Puzzle6 from './nnt/Puzzle6';
+import Puzzle7 from './nnt/Puzzle7';
+import Puzzle8 from './nnt/Puzzle8';
 
 function App() {
 	const title = 'Nomen Nigmas testamente';
@@ -62,7 +65,7 @@ function App() {
 		},
 		'hagen': {
 			name: 'Hagen',
-			image: './images/backgrounds/hagen.png',
+			image: './images/backgrounds/hagen.jpg',
 		},
 		'daglegstua': {
 			name: 'Daglegstua',
@@ -80,6 +83,9 @@ function App() {
 		puzzle3: <Puzzle3 />,
 		puzzle4: <Puzzle4 />,
 		puzzle5: <Puzzle5 />,
+		puzzle6: <Puzzle6 />,
+		puzzle7: <Puzzle7 />,
+		puzzle8: <Puzzle8 />,
 	};
 
 	const credits = [
