@@ -872,4 +872,16 @@ button.link {
   color: var(--orange-3);
 }
 
+.hintbilder {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hintbilder img {
+  display: block;
+  height: 200px;
+  margin: 0 0.5rem 0.5rem 0;
+  border: solid 1px var(--black-1);
+  box-shadow: 0.25rem 0.25rem 0.25rem var(--black-1);
+}
+
 /*# sourceMappingURL=game.css.map */

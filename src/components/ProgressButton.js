@@ -1,5 +1,3 @@
-import {useEffect} from 'react'
-
 function ProgressButton(props) {
 	const {currentText, progress, showMenu} = props;
 

@@ -116,5 +116,5 @@ Eg trur det berre er affeksjonsverdi som har gjort at bestefar har tatt vare på
 Det ser ut som om den krever at ein tastar inn eit passord ... Nokre tankar om kva det kan vera? #person:meg
 Nei. Han delte aldri sånt med andre. Ikkje med Wenche eingong. #person:astrid
 Ok ... Då får vi ikkje brukt denne til noko akkurat no. #person:meg
-Eg slo PC-en av igjen.
-->kontoret
+Eg slo PC-en av igjen. #style:narrative
+->theodors_kontor

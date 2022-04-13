@@ -241,7 +241,7 @@ function Game(props) {
 			{characters ? <Helmet>
 				{Object.keys(characters).map(el => {
 					if (!characters[el].portrait) {
-						return;
+						return false;
 					}
 					return <link key={el} rel="prefetch" href={characters[el].portrait} as="image" />
 				})}

@@ -1,7 +1,7 @@
 import React from 'react'
 
 function GameOver(props) {
-	const {resetGame, title, setOverlay} = props;
+	const {resetGame, setOverlay} = props;
   return (
 	<div className="game-over">
 		<p>Takk for at du spilte!</p>

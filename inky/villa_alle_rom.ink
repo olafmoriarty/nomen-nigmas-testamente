@@ -128,7 +128,7 @@
 + {inv ? blomsterark and puzzle6 == 0} [Arket frå blomsterbedet]
     Kva trur du alt dette betyr? #style:dialog #person:meg
     Hmm ... #person:astrid
-    {&Eg trur "Danielsen" er Jan Werner Danielsen?|Er det ikkje ein stillasleverandør som heiter Instant eller noko sånt?|ICAO-kode, er ikkje det ei flyplass-greie?|Eg trur Valkendorfsgaten ligger i Bergen.|Er ikkje det namnet der han frontfiguren i U2?|Er det der ei referanse til Monty Python and the Holy Grail?|"Tore" må vera Tore Strømøy, trur du ikkje?}
+    {&Eg trur "Danielsen" er Jan Werner Danielsen?|Er det ikkje ein stillasleverandør som heiter Instant eller noko sånt?|ICAO-kode, er ikkje det ei flyplass-greie?|Valkendorfsgaten ligger iallfall i Bergen ...|Er ikkje det namnet der han frontfiguren i U2?|Er det der ei referanse til Monty Python and the Holy Grail?|"Tore" må vera Tore Strømøy, trur du ikkje?}
 + {puzzle6 and flags !? harOpnaPengeskapet} [Fibonacci-sekvensen]
     Kva er det meininga at vi skal gjera med denne Fibonacci-sekvensen ... #person:meg #style:dialog
     Ein stad i dette huset der ein må leggja inn ein nummerkombinasjon for å få tilgong? Er ikkje det openbart? #person:astrid

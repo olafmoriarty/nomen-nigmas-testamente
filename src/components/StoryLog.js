@@ -1,5 +1,5 @@
 function StoryLog(props) {
-	const {storyLog, setOverlay} = props;
+	const {storyLog} = props;
 	return (
 		<div className="story-log">
 			<p className="log-tooltip">Trykk på loggikonet i menyen, eller bruk hurtigtast <span className="tast">L</span> eller <span className="tast">Esc</span>, for å lukke dette vindauget.</p>

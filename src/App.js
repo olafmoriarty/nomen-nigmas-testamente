@@ -150,6 +150,17 @@ function App() {
 			<p><a href="https://www.shutterstock.com/nb/image-photo/studio-portrait-male-businessman-gray-coat-1831157218">Peyker / Shutterstock.com</a></p>
 		</>,
 		<>
+			<h2>Bilder i oppgave 5</h2>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=174728">KENPEI – KENPEI&#039;s photo, CC BY-SA 3.0</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=132241">David Monniaux – Eget verk, CC BY-SA 3.0</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=10706794">Stickpen – Eget verk, Offentlig eiendom</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=110698">Bernd Reuschenberg – Bernd Reuschenberg, CC BY-SA 3.0</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=767398">John O&#039;Neill – Eget verk, CC BY-SA 3.0</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=3892602">Willow – Eget verk, CC BY 2.5</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=16584">André Karwath aka Aka – Eget verk, CC BY-SA 2.5</a></p>
+			<p><a href="https://commons.wikimedia.org/w/index.php?curid=247630">Tobias Gasser – above Lac de Moiry (CH, Wallis), CC BY-SA 2.5</a></p>
+		</>,
+		<>
 			<h2>Ikon</h2>
 			<p><a href="https://fontawesome.com/icons/" target="_blank" rel="noreferrer noopener">FontAwesome</a></p>
 			<h2>Skrifttypar</h2>

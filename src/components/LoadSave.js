@@ -42,7 +42,6 @@ function SaveSlot(props) {
 
 function LoadSave(props) {
 	const {loadGame, setOverlay} = props;
-	const autosave = JSON.parse(localStorage.getItem('autosave'));
   return (
 	<div className="save-window">
 		<SaveSlot name="autosave" prettyName="Automatisk lagring" loadGame={loadGame} setOverlay={setOverlay} />
