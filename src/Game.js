@@ -30,6 +30,8 @@ function Game(props) {
 		textSpeed: 25,
 	});
 	const [gameOver, setGameOver] = useState(false);
+	const [isTyping, setIsTyping] = useState(false);
+
 	useEffect(() => {
 		const autosave = localStorage.getItem('autosave');
 		let autosaveJson = {};
@@ -80,7 +82,7 @@ function Game(props) {
 		return () => {
 			window.removeEventListener('keydown', spaceToProgress);
 		}
-	}, [currentText, overlay, emptyInkSave]);
+	}, [currentText, overlay, emptyInkSave, isTyping]);
 	const editGameProperty = (name, value) => {
 		let newGameObject = {
 			...gameObject,
@@ -96,6 +98,10 @@ function Game(props) {
 	}
 
 	const progress = (tags = []) => {
+		if (isTyping) {
+			setIsTyping(false);
+			return false;
+		}
 		if (gameOver) {
 			return false;
 		}
@@ -248,7 +254,7 @@ function Game(props) {
 			</Helmet> : false}
 			<TopMenu storyLog={storyLog} overlay={overlay} toggleOverlay={toggleOverlay} currentText={currentText} />
 			<Background currentText={currentText} />
-			<Line currentText={currentText} changeVariable={changeVariable} gameObject={gameObject} />
+			<Line currentText={currentText} changeVariable={changeVariable} gameObject={gameObject} isTyping={isTyping} setIsTyping={setIsTyping} />
 			<Portrait currentText={currentText} />
 			<ProgressButton currentText={currentText} showMenu={showMenu} progress={progress} />
 			<Choices choices={currentText.choices} makeChoice={makeChoice} />
