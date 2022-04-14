@@ -1,0 +1,29 @@
+{
+	"wenche": {
+		"name": "Wenche Krankelfnaas",
+		"portrait": "./images/characters/wenche.png"
+	},
+	"meg": {
+		"name": "Meg"
+	},
+	"resepsjonisten": {
+		"name": "Resepsjonisten",
+		"portrait": "./images/characters/quinn.png"
+	},
+	"katrina": {
+		"name": "Redaktøren",
+		"portrait": "./images/characters/katrina.png"
+	},
+	"twist": {
+		"name": "Politimannen",
+		"portrait": "./images/characters/twist.png"
+	},
+	"butler": {
+		"name": "Butleren",
+		"portrait": "./images/characters/butler.png"
+	},
+	"astrid": {
+		"name": "Astrid Isabella",
+		"portrait": "./images/characters/astridisabella.png"
+	}
+}

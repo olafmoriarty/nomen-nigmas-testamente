@@ -1,180 +1,61 @@
-# WORK IN PROGRESS - DO NOT USE!
+# Nomen Nigmas testamente
 
-The purpose of this project is to create a wrapper component for [inkjs](https://github.com/y-lohse/inkjs) to easier make visual-novel-like games using Inky and React.
+**Nomen Nigmas testamente** is an interactive fiction puzzle game written in React, using the narrative scripting language [Ink](https://www.inklestudios.com/ink/) . It can be played [on my itch.io page](https://olafmoriarty.itch.io/nomen-nigmas-testamente/) (Norwegian only).
 
-## Features
-This component
-* Adds a splash title screen to your game, displaying its title
-* Displays the text of your story one line at a time, letting you tap/click anywhere to continue
-* Lets you style the lines of your story, for example by displaying narrative text and spoken text differently
-* When displaying spoken text, lets you display a character portrait and character name
-* Displays different background images depending on where you are in the story
-* Adds a story log that the player can open at any time
-* Adds text inputs that lets you set variables in your Ink file
-* Lets you add credits to your game
-* Lets you add interactive minigames to your game
-* Lets your player load and save their game state
-* Adds keyboard navigation to the game
+All code of the game is available here. I hope to eventually publish parts of this on npm in case anyone's interested in using it to create their own interactive stories, and hopefully I'll add a license file to this repo eventually. For now, all of this code is written by one very inexperienced person in under two months, so if you're interested in any of it, **use it at your own risk**.
 
-## Writing your story in Inky
-This component is based on the [Ink](https://www.inklestudios.com/ink/) narrative scripting language, developed by Inkle Studios.
+## Game script
+The uncompiled Ink files for the game are available in the `/inky/` folder. Obviously, if you haven't played the game and you wish to do so in the future, those files contain **major spoilers** as the entire game is in there.
 
-* [Download Inky](https://github.com/inkle/inky/releases/tag/0.12.0)
-* [Ink Writer's Manual](https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md)
+This readme file has no intention of describing how Ink works, for that I recommend the [Ink Writer's Manual](https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md). The story is written in [Inky](https://github.com/inkle/inky/releases/tag/0.12.0).
 
-Write your story in Inky, export it to JSON, and 
+The JSON file exported from Inky is located in `/src/story.json`.
 
-## How to use
-*It is my intention to, as a part of this project, figure out how one publishes projects to npm so that you can use a simple `npm install` to get the script, but I'm not there yet. Until then, consider this README a draft.*
-
-The component is used in the following way:
+## Wrapper component
+This repository contains the wrapper component I've written for Ink/inkjs to create a visual novel-style browser game. The main functionality of the component lies in the `<Game />` component, available in `/src/Game.js`, which is called like this:
 
     <Game
-        json={json}
+        json={json} 
+        title={title} 
         characters={characters}
-        title="The title of the game!"
+        locations={locations}
         credits={credits}
         minigames={minigames}
     />
 
-At the time of writing this, all attributes are mandatory. At the time of publishing, the `json` attribute will be mandatory and the others will be optional.
+where
 
-### `json`
-*(Note to self: Okay, I have to rename that parameter. Perhaps to `story`.) Yeah, that sounds better.*
+* `json` is the story.json file exported from Inky.
+* `title` is a string containing the title of the game.
+* `characters` is an object of objects containing information about the characters in the game. For example, `characters.wenche` contains the object `{"name": "Wenche Krankelfnaas", "portrait": "./images/characters/wenche.png"}`, telling the script which name and portrait should be displayed on screen when a line in the Ink file is tagged `#person:wenche`.
+* Likewise, `locations` is an object of objects containing information about the locations in the game. For example, when `locations.hagen` is set to `{"name": "Hagen", "image": "./images/backgrounds/hagen.jpg"}`, that tells the script which background picture should be displayed for lines tagged `#location:hagen`, and also what the name of that location is (which is displayed in savedata).
+* `credits` is an array of JSX components, each a page of the game's credits, in order.
+* `minigames` is an object of JSX components, each a separate puzzle or minigame to be included in the game. For example, if a line in the story is tagged `#minigame:puzzle1`, then that line will be replaced by the component stored in `minigames.puzzle1`. Functions to progress the story or set variables in the Ink script will be set as props in the component.
 
-The `json` is the json file exported from *Inky* that contains your story. `require` or `fetch` it into your script, and pass it into the json attribute.
+## Known issues
+Eventually I hope to make the `<Game />` component available on npm so that it can be used by anyone to make any game in this style. *Mostly,* `Game.js` already contains all the general stuff while the other files imported or required in `App.js` are the *Nomen Nigmas testamente*-specific ones, but with two exceptions:
 
-### `title`
-The title of the game. Should be a string.
+* All CSS styling is currently centralized in one single SCSS file. I hope to eventually separate out all colors, fonts and other *Nomen Nigmas testamente*-specific styles to a separate CSS file so that the template CSS will be a bit more neutral than this one is.
+* While most text in the game comes from the Ink files, a little is hardcoded into the .js files - and in those cases that text is in Norwegian (so, the Save button is marked "Lagre"). I'll eventually fix this so that GUI language can be set with an attribute and that English language will be the default.
 
-### `characters`
-A javascript object containing information about the characters appearing in the game, in the following format:
-
-    {
-        john: {
-            name: "John Doe",
-            portrait: "/images/john.png",
-            color: "#ff0000",
-        },
-        chris: {
-            name: "Christina Plonkston",
-            portrait: "/images/chris.png",
-        },
-    }
-
-If a character referenced in the Ink file (as described below) is found in this object, that character's name and portrait (if given) are displayed on the screen during that person's dialogue. So if our Ink story contains this line:
-
-    Sounds good to me! #style:dialog #person:john
-
-... John's name and portrait will be displayed on screen.
-
-### `minigames`
-A javascript object containing all the minigames you wish to include in the game, in the following format:
-
-    {
-        cardGame: <CardGame />,
-        jigsawPuzzle: <Jigsaw />,
-    }
-
-## Ink file setup
-The component uses the tags provided in your ink script for formatting and stuff.
-
-Say, for example, your ink file without any tags looks like this:
-
-    I walked up to the counter.
-    "Hi, can I help you?" the receptionist asked.
-    "Hi," I said. "My name is ..."
-    + [John]
-    + [Kate]
-    + [Flarn the Destroyer]
-    - "I have an appointment with the prime minister."
-    The receptionist gave me a strange look.
-    "The prime minister has been dead for ten years," she said.
-    "Also, this is a Starbucks."
-
-### `style:[style-name]`
-Use the `style` tag to set a CSS style. By default two styles are available:
-
-* `style:dialog` (default) displays text in a box at the bottom of the screen, labeled with the speaker's name (if available).
-* `style:narrative` displays a semitransparent black overlay on the screen with the text in the center of the screen.
-
-You can set a different style if you want, but in that case you'll have to add the CSS yourself. If you, for example, use `style:innerMonologue`, no formatting will be set by default, but the container holding the text will get the CSS class `style-innerMonologue`.
-
-### `person:[person-name]`
-Use the `person` tag to tell the script who's talking. This person is looked up in the `characters` object, and their name and portrait will be displayed on screen. If you tag `#person:john` and there is no `john` in the character object, `john` will be displayed as the person's name.
-
-Implementing the `style` and `person` tags into our ink script gives us something like this:
-
-    I walked up to the counter. #style:narrative
-    Hi, can I help you? #style:dialog #person:receptionist
-    Hi. My name is ... #person:me
-    + [John]
-    + [Kate]
-    + [Flarn the Destroyer]
-    - I have an appointment with the prime minister.
-    The receptionist gave me a strange look. #style:narrative
-    The prime minister has been dead for ten years. #style:dialog person:receptionist
-    Also, this is a Starbucks.
-
-Note that most set tags persist until they're changed, so when we set the `#style:dialog` tag on line two, we don't have to set it again on line three, and if the receptionist says two lines in a row it is enough to tag her on the first one.
-
-### `input:true` and `var:[variable-name]`
-Use the `input` tag to let the player enter text in an input field and save this text to a variable in the Ink story. For example, if you want to ask the player their name instead of letting them choose from a list, you can do this:
-
-    VAR player = ""
-    
-    I walked up to the counter. #style:narrative
-    Hi, can I help you? #style:dialog #person:receptionist
-    What is your name? #input:true #var:player
-    Hi. My name is {player}. I have an appointment with the prime minister. #person:me
-    The receptionist gave me a strange look. #style:narrative
-    The prime minister has been dead for ten years. #style:dialog person:receptionist
-    Also, this is a Starbucks.
-
-### `minigame:[minigame-name]`
-In this context, a "minigame" is any chunk of gameplay that's not made in Ink, that you wish to include in your game that your player has to finish *) before the ink story continues. Basically every time you want your player to do something that it's easier for you to code in a React component than it is to create in Ink. From your minigame you can then alter Ink variables or just tell the game to continue.
-
-In the example below, imagine I have set up a minigame containing a small racing game, and that inside this minigame I have a function that sets the Ink variable `arcadeGameScore` to the score you get:
-
-    VAR arcadeGameScore = 0
-    
-    I walked up to the arcade cabinet. The title screen, "CAIRO KART", flashed towards me, luring me in.
-    + [Play game!]
-        MINIGAME #minigame:racing
-        I got {arcadeGameScore} points.
-    + [Nah, don't do it.]
-        I decided against it. It looked like a lot of fun, though.
-    - Then, I sat back down.
-
-Note that as long as a `minigame` tag is present, the text itself will not be displayed to the player, so you can write anything you want on that line. (In the example above, I've written "MINIGAME".)
-
-*) Since the minigame is made by you, "Finish" can mean whatever you want, including clicking "I give up". If so, adding a conditional right after the minigame to check whether the player completed the goal or not is a good idea.
-
-For coding the minigame itself, see "Anatomy of a minigame" below.
-
-### Tags without text
-Ink requires there to be a line of text for you to register tags. As this component stores tags for future use, you may want to set a tag without outputting any text, for example if you wish to alter the tags before displaying a list of options. As a workaround, you can use the text BLANK to set the tags and then progress in the story without pausing to display text, like this:
-
-    // The following example changes the CSS style from dialog to narrative and clear the person portrait before displaying the beverage options.
-    And what would you like to drink? #style:dialog #person:waitress
-    BLANK #style:narrative #person:
-    + Coffee.
-    + Tea.
-    + Lemonade.
-
-(This is not very useful at the moment, but as the plan is to expand the component to also let you change backgrounds and soundtracks using tags, something like this could come in very handy.)
-
-## Anatomy of a minigame
-*(To be written later.)*
-
-## Keyboard controls
-* **Space/Enter** - progress story, or pick selected value in option list
-* **Arrow up/down** - previous/next option in option list
-* **1-9** - select a value from an option list
-* **L** - open/close story log
-* **S** - open/close load/save window
-* **O** - open/close options window
-* **C** - open/close credits
-* **Escape** - close story log / load/save window / options / credits
-
-All of these options are also available through the touchscreen.
+## Features
+* A splash screen is displayed, showing the game's title
+* The story text is displayed on the screen, one line at a time
+* New text is displayed on the screen one letter at a time, unless the player chooses to turn it off. Player can change the text speed
+* A line can be tagged with different text styles, like spoken text or narrative text
+* When a line is tagged with a character name, the character's name and portrait picture will be displayed on screen
+* When a line is tagged with a location, the background picture will be set to the correct location data
+* The player can open the story log at any time
+* Lets you add text inputs to the story so that the player can type text in an input field to set an Ink variable
+* Lets you add credits to your game
+* Lets you add interactive minigames to your game so that when a minigame is called, the story pauses until the player has completed or closed the minigame. The minigame can also set Ink variables
+* The player's game is autosaved, and they can load/save files in a separate dialog
+* In addition to touch/mouse controls, the player can also use keyboard shortcuts to play the game:
+    * **Space/Enter** - progress story, or pick selected value in option list
+    * **Arrow up/down** - previous/next option in option list
+    * **1-9** - select a value from an option list
+    * **L** - open/close story log
+    * **S** - open/close load/save window
+    * **O** - open/close options window
+    * **C** - open/close credits
+    * **Escape** - close current overlay
